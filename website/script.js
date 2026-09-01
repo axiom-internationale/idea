@@ -26,7 +26,7 @@ dialog.addEventListener('click', (event) => {
 
 const supportsMotion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const cards = document.querySelectorAll('[data-depth]');
-const bento = document.querySelector('.bento');
+const bento = document.querySelector('.hero-bento');
 
 if (supportsMotion && window.matchMedia('(pointer: fine)').matches) {
   bento.addEventListener('pointermove', (event) => {
