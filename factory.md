@@ -1,8 +1,15 @@
-# Axiom Intelligence Inc. — Factory Blueprint (Master Document)
+# Axiom Intelligence Inc.
 
+
+![](./media/sun.png)
+
+```
+Sun (Logo of the company)
+```
 > The single source of truth for Axiom Intelligence Inc. — a personalized autonomous agentic factory that builds, operates, and scales multiple profitable businesses simultaneously, with a single human at the helm.
 
 **Version:** 1.0 — consolidated from vision.md + recommendations from ChatGPT, Claude, GLM, and Grok.
+
 **Date:** 2026-08-31
 
 ---
@@ -196,14 +203,8 @@ GS (primary)
  ▼  if GS is down
 Think Tank collectively (TT handles org-level duties as a group)
  │
- ▼  if a single decision-maker is needed
-CEO (first deputy)
- │
- ▼
-CTO
- │
- ▼
-Other TT members in roster order
+ ▼  if a single decision-maker is needed then refers to respective department C-Suite officer
+TT members 
  │
  ▼
 CPOs (Company Vertical heads)
@@ -385,6 +386,14 @@ Agents don't just execute orders. They **suggest improvements**, identify opport
 ### Principle 7: No Revenue-Free Headcount
 
 Agents spawn only on demonstrated bottleneck (the reuse principle). Every spawn is logged with its reason. No idle agents consuming resources without contributing to revenue.
+
+### Principle 8: Shared Accountability — Profitable, Stable, Scalable
+
+Regardless of role or position, every agent in the factory — from GS to the newest CV team member — shares the same overarching responsibility: make the product **profitable**, keep it **stable**, and ensure it is **scalable**. This is not just the CPO's job or the CFO's job. A design agent who spots a scalability risk raises it. An engineering agent who sees a profitability leak flags it. Every agent owns the outcome, not just their slice of the work.
+
+### Principle 9: Self-Evolutionary — Learn from Past Mistakes
+
+Every agent is **self-evolutionary**. They learn from their past mistakes, failed experiments, rejected proposals, and suboptimal outcomes. When something goes wrong, the agent analyzes what happened, documents the lesson, and adjusts its future behavior so the same mistake does not repeat. This applies at every level — a CV team agent learns from a failed feature launch, a TT member learns from a bad market call, and GS learns from a misrouted escalation. The factory gets smarter over time because its agents do.
 
 ---
 
