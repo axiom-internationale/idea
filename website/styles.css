@@ -276,17 +276,7 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 /* ==============================
    HERO SECTION
    ============================== */
-.hero { position: relative; padding-top: max(calc(70vh - 112px), 200px); padding-bottom: 10px; }
-.constellation {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 900px;
-  height: max(calc(70vh - 132px), 180px);
-  pointer-events: auto;
-}
+.hero { position: relative; padding-top: 24px; padding-bottom: 10px; }
 
 /* ==============================
    BENTO GRID — BASE
@@ -1209,7 +1199,7 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
    ============================== */
 @media (max-width: 1090px) {
   .shell { width: min(900px, calc(100% - 56px)); }
-  .hero { padding-top: max(40vh, 180px); padding-bottom: 10px; }
+  .hero { padding-top: 20px; padding-bottom: 10px; }
 
   /* Hero grid */
   .bento--hero {
@@ -1337,7 +1327,7 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
   .nav-locations--short { display: inline; }
   .footer-locations--full { display: none; }
   .footer-locations--short { display: inline; }
-  .hero { padding-top: max(35vh, 120px); padding-bottom: 8px; }
+  .hero { padding-top: 16px; padding-bottom: 8px; }
 
   .card { border-radius: 17px; padding: 13px; }
   .card-topline { font-size: 9px; }
