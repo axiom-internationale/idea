@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Axiom Intelligence — an autonomous agentic factory for building and operating companies." />
+    <meta property="og:title" content="Axiom Intelligence — Agentic Factory" />
+    <meta property="og:description" content="A self-directed organization that turns ideas into enduring, profitable companies — with one human at the helm." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.axiomintelligence.xyz" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Axiom Intelligence — Agentic Factory" />
+    <meta name="twitter:description" content="Many businesses. One intelligence." />
+    <link rel="icon" type="image/png" href="./assets/mini_sun.png" />
+    <title>Axiom Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem('axiom-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+
+    <main class="shell">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand-symbol" href="#top" aria-label="Back to top">
+          <img class="brand-logo" src="./assets/mini_sun.png" alt="" />
+        </a>
+        <a class="wordmark" href="#top" aria-label="Axiom Intelligence home">
+          <span>Axiom<span class="wordmark-muted">/</span>Intelligence</span>
+          <span class="nav-locations">
+            <span class="nav-locations--full">Bhiwadi — Los Angeles — New York — San Diego</span>
+            <span class="nav-locations--short">BH — LA — NY — SD</span>
+          </span>
+        </a>
+        <div class="nav-right">
+          <span class="nav-status" aria-hidden="true">
+            <span class="pulse"></span>
+            <span>Live</span>
+          </span>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon theme-icon--sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3.7"/><path d="M12 2.2v2.1M12 19.7v2.1M2.2 12h2.1M19.7 12h2.1M5.1 5.1l1.5 1.5M17.4 17.4l1.5 1.5M18.9 5.1l-1.5 1.5M6.6 17.4l-1.5 1.5"/></svg>
+            </span>
+            <span class="theme-icon theme-icon--moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 15.3A8.5 8.5 0 0 1 8.7 3.5 8.5 8.5 0 1 0 20.5 15.3Z"/></svg>
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="bento bento--hero" data-bento>
+          <article class="card card--manifesto" data-depth="3">
+            <p class="eyebrow"><span></span> A personalized agentic factory</p>
+            <h1 id="hero-title">Many businesses.<br /><em>One intelligence.</em></h1>
+            <p class="intro">
+              Axiom Intelligence is a self-directed organization that turns ideas into enduring,
+              profitable companies—with one human at the helm.
+            </p>
+            <div class="hero-actions">
+              <button class="button button--primary" type="button" data-open-brief>
+                Read the factory brief
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.8 10h12.4M11 5.2l4.8 4.8-4.8 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <a class="text-link" href="#machine">Explore the system <span>↓</span></a>
+            </div>
+          </article>
+
+          <article class="card card--status-card" data-depth="6">
+            <div class="card-topline"><span>Workforce status</span><span>24 / 7</span></div>
+            <div class="hero-note">
+              <span class="pulse" aria-hidden="true"></span>
+              <span>Agentic workforce <b>active</b></span>
+            </div>
+            <p class="status-copy">One system.<br /><strong>Always in motion.</strong></p>
+          </article>
+
+          <article class="card card--sun card--large" data-depth="14">
+            <div class="card-topline"><span>01 / Origin</span><span>⌁</span></div>
+            <div class="solar-system" aria-hidden="true">
+              <span class="orbit orbit--one"></span>
+              <span class="orbit orbit--two"></span>
+              <span class="orbit orbit--three"></span>
+              <span class="solar-core"><i></i></span>
+              <span class="satellite satellite--one"></span>
+              <span class="satellite satellite--two"></span>
+            </div>
+            <div class="card-label card-label--inverse">
+              <strong>Founding Partner</strong>
+              <span>The only human in the system</span>
+            </div>
+          </article>
+
+          <article class="card card--glass card--orchestrator" data-depth="8">
+            <div class="card-topline"><span>02 / Direction</span><span class="status">Live</span></div>
+            <div class="agent-row">
+              <span class="agent-orb agent-orb--orange">GS</span>
+              <span>
+                <strong>General Secretary</strong>
+                <small>Orchestrator &amp; manager</small>
+              </span>
+            </div>
+            <div class="signal-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </article>
+
+          <article class="card card--lime card--think" data-depth="6">
+            <div class="card-topline"><span>03 / Intelligence</span><span>11</span></div>
+            <div>
+              <h2>Think<br />Tank</h2>
+              <p>One shared C-suite, across every company.</p>
+            </div>
+            <div class="stacked-initials" aria-hidden="true"><span>CE</span><span>CF</span><span>CT</span><span>CM</span></div>
+          </article>
+
+          <article class="card card--violet card--verticals" data-depth="10">
+            <div class="card-topline"><span>04 / Expansion</span><span>∞</span></div>
+            <div class="vertical-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="card-label card-label--inverse">
+              <strong>Company Verticals</strong>
+              <span>Parallel by design</span>
+            </div>
+          </article>
+
+          <article class="card card--dark card--metrics" data-depth="4">
+            <div class="card-topline"><span>Operating principle</span><span class="metric-glyph">↗</span></div>
+            <strong>Profitability<br />first.</strong>
+            <div class="metric-line" aria-hidden="true"><i></i></div>
+            <span class="metric-caption">Decisions measured<br />against real revenue.</span>
+          </article>
+
+          <article class="card card--pearl card--gates" data-depth="7">
+            <div class="card-topline"><span>Safe to scale</span><span>●</span></div>
+            <div class="gate-grid" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="card-label">
+              <strong>Human approval, when it matters.</strong>
+              <span>Clear gates for money, legal &amp; irreversible moves.</span>
+            </div>
+          </article>
+
+          <article class="card card--async" data-depth="5">
+            <div class="card-topline"><span>Operating rhythm</span><span>↗</span></div>
+            <div class="async-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="card-label">
+              <strong>Async by default.</strong>
+              <span>Focus compounds when work never waits.</span>
+            </div>
+          </article>
+
+          <article class="card card--command" data-depth="4">
+            <div class="card-topline"><span>Control layer</span><span>01</span></div>
+            <p>The human gives direction.<br /><strong>The factory does the work.</strong></p>
+            <span class="command-note">Final approval for the moves that matter.</span>
+          </article>
+
+          <article class="card card--memory" data-depth="7">
+            <div class="card-topline"><span>Memory</span><span>⌁</span></div>
+            <div class="memory-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="card-label">
+              <strong>Local-first.</strong>
+              <span>Readable, durable, yours.</span>
+            </div>
+          </article>
+
+          <article class="card card--parallel" data-depth="5">
+            <div class="card-topline"><span>Scale</span><span>n</span></div>
+            <p><strong>One C-suite.</strong><br />Every company.</p>
+            <div class="parallel-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <span>Built to operate in parallel.</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== THE MACHINE ===== -->
+      <section class="section" id="machine">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> How it works</p>
+        </div>
+        <div class="bento bento--machine" data-bento>
+          <article class="card card--glass card--pipeline" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> The process</p>
+            <h2 class="section-h2">From spark<br /><em>to scale.</em></h2>
+            <p class="intro-sm">
+              Every idea enters the same machine: research, build, launch, optimize.
+              The factory handles each stage autonomously—from market analysis to revenue.
+            </p>
+            <div class="pipeline-flow" aria-hidden="true">
+              <span class="pip-dot pip-dot--active"></span><span class="pip-label">Idea</span>
+              <span class="pip-line"></span>
+              <span class="pip-dot pip-dot--active"></span><span class="pip-label">Research</span>
+              <span class="pip-line"></span>
+              <span class="pip-dot pip-dot--active"></span><span class="pip-label">Build</span>
+              <span class="pip-line"></span>
+              <span class="pip-dot"></span><span class="pip-label">Launch</span>
+              <span class="pip-line"></span>
+              <span class="pip-dot"></span><span class="pip-label">Revenue</span>
+            </div>
+          </article>
+
+          <article class="card card--teal card--research" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Step 01</span><span>⌁</span></div>
+            <div class="step-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="card-label">
+              <strong>Research</strong>
+              <span>Deep market analysis before market entry.</span>
+            </div>
+          </article>
+
+          <article class="card card--rose card--build" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Step 02</span><span>⌁</span></div>
+            <div class="step-blocks" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="card-label">
+              <strong>Build</strong>
+              <span>Ship products, not pitch decks.</span>
+            </div>
+          </article>
+
+          <article class="card card--indigo card--launch" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Step 03</span><span>⌁</span></div>
+            <div class="launch-arrow" aria-hidden="true">↗</div>
+            <div class="card-label card-label--inverse">
+              <strong>Launch</strong>
+              <span>Go-to-market at machine speed.</span>
+            </div>
+          </article>
+
+          <article class="card card--dark card--opt" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Step 04</span><span>↻</span></div>
+            <strong class="opt-title">Optimize.<br />Compound.</strong>
+            <div class="metric-line" aria-hidden="true"><i></i></div>
+            <span class="command-note">Every cycle, the system gets sharper.</span>
+          </article>
+
+          <article class="card card--pearl card--always" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Uptime</span><span>∞</span></div>
+            <div class="always-pulse">
+              <span class="pulse" aria-hidden="true"></span>
+              <strong>Always on.</strong>
+            </div>
+            <div class="card-label">
+              <strong>No weekends. No holidays.</strong>
+              <span>The factory never sleeps.</span>
+            </div>
+          </article>
+
+          <article class="card card--glass card--stats" data-depth="3" data-reveal>
+            <div class="card-topline"><span>Factory output</span><span class="status">Live</span></div>
+            <div class="stat-grid">
+              <div class="stat"><span class="stat-val">24/7</span><span class="stat-label">Active</span></div>
+              <div class="stat"><span class="stat-val">∞</span><span class="stat-label">Potential</span></div>
+              <div class="stat"><span class="stat-val">1</span><span class="stat-label">Human</span></div>
+            </div>
+          </article>
+
+          <article class="card card--amber card--loop" data-depth="4" data-reveal>
+            <div class="card-topline"><span>The flywheel</span><span>↻</span></div>
+            <div class="loop-ring" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="card-label">
+              <strong>Learn. Improve. Repeat.</strong>
+              <span>Compounding intelligence across every company.</span>
+            </div>
+          </article>
+
+          <article class="card card--mint card--speed" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Velocity</span><span>↗</span></div>
+            <strong class="speed-title">10x speed.<br />1/10th cost.</strong>
+            <span class="speed-note">When agents work, capital stays lean.</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== THE PILLARS ===== -->
+      <section class="section" id="pillars">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> The pillars</p>
+        </div>
+        <div class="bento bento--pillars" data-bento>
+          <article class="card card--dark card--pillar-main" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> Operating principles</p>
+            <h2 class="section-h2">Four pillars.<br /><em>One system.</em></h2>
+            <p class="intro-sm">
+              Every decision, every process, every agent in the factory
+              operates under four non-negotiable principles.
+            </p>
+          </article>
+
+          <article class="card card--mint card--pillar-self" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Pillar 01</span><span>↻</span></div>
+            <strong class="pillar-title">Self-<br />improving.</strong>
+            <div class="card-label">
+              <span>Every cycle makes the system smarter. Intelligence compounds.</span>
+            </div>
+          </article>
+
+          <article class="card card--amber card--pillar-profit" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Pillar 02</span><span>↗</span></div>
+            <strong class="pillar-title">Profitable.</strong>
+            <div class="card-label">
+              <span>Revenue is truth. Every decision measured against real returns.</span>
+            </div>
+          </article>
+
+          <article class="card card--indigo card--pillar-stable" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Pillar 03</span><span>∞</span></div>
+            <strong class="pillar-title">Stable.</strong>
+            <div class="card-label card-label--inverse">
+              <span>24/7 uptime. No burnout, no turnover. Mechanical reliability.</span>
+            </div>
+          </article>
+
+          <article class="card card--glass card--pillar-auton" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Pillar 04</span><span>⌁</span></div>
+            <strong class="pillar-title">Autonomous.</strong>
+            <div class="card-label">
+              <span>The factory runs itself. Agents decide, execute, and coordinate.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== THE THINK TANK ===== -->
+      <section class="section" id="think-tank">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> The think tank</p>
+        </div>
+        <div class="bento bento--tank" data-bento>
+          <article class="card card--glass card--gs" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> Central command</p>
+            <h2 class="section-h2">One brain.<br /><em>Many arms.</em></h2>
+            <p class="intro-sm">
+              The General Secretary orchestrates every agent, every company, every decision.
+              It delegates, monitors, and ensures the factory stays aligned.
+            </p>
+            <div class="agent-row">
+              <span class="agent-orb agent-orb--orange">GS</span>
+              <span>
+                <strong>General Secretary</strong>
+                <small>Chief orchestrator</small>
+              </span>
+            </div>
+          </article>
+
+          <article class="card card--sun card--agent-ceo" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Agent</span><span>CEO</span></div>
+            <div class="agent-orb agent-orb--sm" aria-hidden="true">CE</div>
+            <div class="card-label card-label--inverse">
+              <strong>Chief Executive</strong>
+              <span>Strategy, positioning & growth direction.</span>
+            </div>
+          </article>
+
+          <article class="card card--amber card--agent-cfo" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Agent</span><span>CFO</span></div>
+            <div class="agent-orb agent-orb--sm" aria-hidden="true">CF</div>
+            <div class="card-label">
+              <strong>Chief Financial</strong>
+              <span>Revenue tracking, budgets & financial modeling.</span>
+            </div>
+          </article>
+
+          <article class="card card--indigo card--agent-cto" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Agent</span><span>CTO</span></div>
+            <div class="agent-orb agent-orb--sm" aria-hidden="true">CT</div>
+            <div class="card-label card-label--inverse">
+              <strong>Chief Technology</strong>
+              <span>Architecture, development & infrastructure.</span>
+            </div>
+          </article>
+
+          <article class="card card--lime card--agent-cmo" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Agent</span><span>CMO</span></div>
+            <div class="agent-orb agent-orb--sm" aria-hidden="true">CM</div>
+            <div class="card-label">
+              <strong>Chief Marketing</strong>
+              <span>Brand, growth & customer acquisition.</span>
+            </div>
+          </article>
+
+          <article class="card card--dark card--agent-count" data-depth="3" data-reveal>
+            <div class="card-topline"><span>Think tank</span><span class="status">Live</span></div>
+            <div class="stat-grid">
+              <div class="stat"><span class="stat-val">1</span><span class="stat-label">GS</span></div>
+              <div class="stat"><span class="stat-val">4+</span><span class="stat-label">Agents</span></div>
+              <div class="stat"><span class="stat-val">∞</span><span class="stat-label">Scale</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== PORTFOLIO ===== -->
+      <section class="section" id="portfolio">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> Portfolio</p>
+        </div>
+        <div class="bento bento--portfolio" data-bento>
+          <article class="card card--pearl card--ventures" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> The ventures</p>
+            <h2 class="section-h2">Building in<br /><em>parallel.</em></h2>
+            <p class="intro-sm">
+              The factory doesn't build one company at a time. It runs multiple verticals
+              simultaneously—each with its own strategy, each sharing the same intelligence.
+            </p>
+          </article>
+
+          <article class="card card--teal card--vent-1" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Vertical 01</span><span class="status">Live</span></div>
+            <div class="card-label">
+              <strong>SaaS Tooling</strong>
+              <span>Software products that solve real workflow problems.</span>
+            </div>
+          </article>
+
+          <article class="card card--violet card--vent-2" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Vertical 02</span><span>⌁</span></div>
+            <div class="card-label card-label--inverse">
+              <strong>AI Services</strong>
+              <span>Intelligent automation for businesses that need it.</span>
+            </div>
+          </article>
+
+          <article class="card card--rose card--vent-3" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Vertical 03</span><span>⌁</span></div>
+            <div class="card-label">
+              <strong>Digital Commerce</strong>
+              <span>Revenue-generating storefronts and marketplaces.</span>
+            </div>
+          </article>
+
+          <article class="card card--dark card--vent-stats" data-depth="3" data-reveal>
+            <div class="card-topline"><span>Pipeline</span><span class="metric-glyph">↗</span></div>
+            <strong class="opt-title">More<br />coming.</strong>
+            <span class="command-note">The factory identifies opportunities continuously.</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== THE DNA ===== -->
+      <section class="section" id="dna">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> The DNA</p>
+        </div>
+        <div class="bento bento--dna" data-bento>
+          <article class="card card--pearl card--story" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> The origin</p>
+            <h2 class="section-h2">Born from<br /><em>a question.</em></h2>
+            <p class="intro-sm">
+              What if one person could build and run many profitable companies—not by hiring hundreds,
+              but by directing an intelligent system that does the work?
+            </p>
+            <p class="intro-sm">
+              That question became Axiom Intelligence: a factory where AI agents operate as a unified
+              workforce under human direction.
+            </p>
+          </article>
+
+          <article class="card card--dark card--year" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Founded</span><span>⌁</span></div>
+            <strong class="year-num">2026</strong>
+            <span class="command-note">Axiom Intelligence Inc.</span>
+          </article>
+
+          <article class="card card--rose card--different" data-depth="5" data-reveal>
+            <div class="card-topline"><span>No overhead</span><span>⌁</span></div>
+            <div class="card-label">
+              <strong>Zero employees.<br />Pure execution.</strong>
+            </div>
+          </article>
+
+          <article class="card card--lime card--vals" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Core values</span><span>03</span></div>
+            <div class="vals-list" aria-hidden="true">
+              <span>Speed</span>
+              <span>Focus</span>
+              <span>Compounding</span>
+            </div>
+            <div class="card-label">
+              <strong>Move fast, stay sharp, stack gains.</strong>
+            </div>
+          </article>
+
+          <article class="card card--amber card--principle" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Axiom</span><span>01</span></div>
+            <strong class="principle-text">Revenue<br />is truth.</strong>
+            <div class="card-label">
+              <span>The only metric that matters.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== THE STACK ===== -->
+      <section class="section" id="stack">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> The stack</p>
+        </div>
+        <div class="bento bento--stack" data-bento>
+          <article class="card card--dark card--stack-main" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> Infrastructure</p>
+            <h2 class="section-h2">Built on<br /><em>modern AI.</em></h2>
+            <p class="intro-sm">
+              The factory runs on frontier language models, custom orchestration,
+              and persistent memory—designed for autonomous operation at scale.
+            </p>
+          </article>
+
+          <article class="card card--violet card--stack-models" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Layer 01</span><span>⌁</span></div>
+            <div class="card-label card-label--inverse">
+              <strong>AI Models</strong>
+              <span>Frontier LLMs for reasoning, coding & analysis.</span>
+            </div>
+          </article>
+
+          <article class="card card--memory card--stack-mem" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Layer 02</span><span>⌁</span></div>
+            <div class="memory-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="card-label">
+              <strong>Persistent Memory</strong>
+              <span>Local-first, durable knowledge across sessions.</span>
+            </div>
+          </article>
+
+          <article class="card card--amber card--stack-orch" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Layer 03</span><span>↻</span></div>
+            <div class="card-label">
+              <strong>Orchestration</strong>
+              <span>Multi-agent coordination and task delegation.</span>
+            </div>
+          </article>
+
+          <article class="card card--mint card--stack-infra" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Layer 04</span><span>∞</span></div>
+            <div class="card-label">
+              <strong>Infrastructure</strong>
+              <span>Cloud-native, auto-scaling, always available.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== THE FOUNDER ===== -->
+      <section class="section" id="founder">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> The founder</p>
+        </div>
+        <div class="bento bento--founder" data-bento>
+          <article class="card card--pearl card--founder-bio" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> The human at the helm</p>
+            <h2 class="section-h2">One founder.<br /><em>Infinite leverage.</em></h2>
+            <p class="intro-sm">
+              Axiom Intelligence was built on a conviction: one person with the right system
+              can outperform entire organizations. Not by working harder—by directing smarter.
+            </p>
+            <p class="intro-sm">
+              The founder sets the vision, approves the high-stakes decisions, and lets the factory
+              handle everything else.
+            </p>
+          </article>
+
+          <article class="card card--dark card--founder-role" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Role</span><span>01</span></div>
+            <strong class="opt-title">Vision &<br />direction.</strong>
+            <span class="command-note">Strategy, final approvals, and the decisions that shape everything.</span>
+          </article>
+
+          <article class="card card--sun card--founder-phil" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Philosophy</span><span>⌁</span></div>
+            <div class="card-label card-label--inverse">
+              <strong>Build systems, not teams.</strong>
+              <span>The right architecture beats the right hire every time.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== CONNECT ===== -->
+      <section class="section" id="connect">
+        <div class="section-divider">
+          <p class="eyebrow"><span></span> Connect</p>
+        </div>
+        <div class="bento bento--connect" data-bento>
+          <article class="card card--dark card--cta" data-depth="3" data-reveal>
+            <p class="eyebrow"><span></span> Get in touch</p>
+            <h2 class="section-h2">Let's<br /><em>build.</em></h2>
+            <p class="intro-sm">
+              Interested in what Axiom Intelligence is building?
+              Have an idea worth exploring? We're always looking for the next opportunity.
+            </p>
+            <a class="button button--primary" href="mailto:hello@axiomintelligence.xyz">
+              Start a conversation
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.8 10h12.4M11 5.2l4.8 4.8-4.8 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+
+          <article class="card card--glass card--web" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Website</span><span>↗</span></div>
+            <div class="web-link">
+              <strong>axiomintelligence.xyz</strong>
+              <span>Visit our main site</span>
+            </div>
+            <a class="card-overlay-link" href="https://www.axiomintelligence.xyz" target="_blank" rel="noreferrer" aria-label="Visit axiomintelligence.xyz"></a>
+          </article>
+
+          <article class="card card--sun card--contact" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Email</span><span>✉</span></div>
+            <div class="card-label card-label--inverse">
+              <strong>Say hello</strong>
+              <span>hello@axiomintelligence.xyz</span>
+            </div>
+          </article>
+
+          <article class="card card--violet card--social" data-depth="4" data-reveal>
+            <div class="card-topline"><span>Social</span><span>@</span></div>
+            <div class="social-links">
+              <a href="#" class="social-pill">Twitter / X <span>↗</span></a>
+              <a href="#" class="social-pill">LinkedIn <span>↗</span></a>
+              <a href="#" class="social-pill">GitHub <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="card card--teal card--loc" data-depth="5" data-reveal>
+            <div class="card-topline"><span>Location</span><span>◉</span></div>
+            <strong class="loc-headline">Remote-first.</strong>
+            <div class="loc-offices">
+              <span class="loc-office"><b>BH</b> Bhiwadi <em>HQ</em></span>
+              <span class="loc-office"><b>LA</b> Los Angeles</span>
+              <span class="loc-office"><b>NY</b> New York</span>
+              <span class="loc-office"><b>SD</b> San Diego</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-brand">
+          <img class="footer-logo" src="./assets/mini_sun.png" alt="" />
+          <span class="footer-name">Axiom Intelligence</span>
+        </div>
+        <span class="footer-locations">
+          <span class="footer-locations--full">Bhiwadi — Los Angeles — New York — San Diego</span>
+          <span class="footer-locations--short">BH — LA — NY — SD</span>
+        </span>
+        <span class="footer-tagline">Built to build what's next.</span>
+        <div class="footer-meta">
+          <span>© 2026 Axiom Intelligence Inc.</span>
+          <a href="https://www.axiomintelligence.xyz" target="_blank" rel="noreferrer">axiomintelligence.xyz <span>↗</span></a>
+        </div>
+      </footer>
+    </main>
+
+    <dialog class="brief-dialog" aria-labelledby="brief-title">
+      <button class="dialog-close" type="button" aria-label="Close factory brief">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+      </button>
+      <div class="dialog-mark" aria-hidden="true"><i></i></div>
+      <p class="eyebrow"><span></span> The factory, in one line</p>
+      <h2 id="brief-title">One human founder + one autonomous organization + many parallel businesses.</h2>
+      <p>
+        The General Secretary directs a shared Think Tank, which in turn powers independent Company Verticals. The result: deliberate autonomy, real-world focus, and a system designed to compound.
+      </p>
+      <button class="button button--primary dialog-button" type="button">Understood <span>→</span></button>
+    </dialog>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
