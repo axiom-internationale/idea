@@ -276,7 +276,17 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 /* ==============================
    HERO SECTION
    ============================== */
-.hero { padding-top: max(calc(70vh - 112px), 200px); padding-bottom: 10px; }
+.hero { position: relative; padding-top: max(calc(70vh - 112px), 200px); padding-bottom: 10px; }
+.constellation {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  height: max(calc(70vh - 132px), 180px);
+  pointer-events: auto;
+}
 
 /* ==============================
    BENTO GRID — BASE
