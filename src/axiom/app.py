@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname
 _STATIC = pathlib.Path(__file__).resolve().parent.parent / "website" / "static"
 _MEDIA = pathlib.Path(__file__).resolve().parent.parent / "website" / "media"
 
-app = Starlette(
+axiom_app = Starlette(
     debug=False,
     routes=[
         Mount("/api", app=create_backend_app()),
@@ -27,6 +27,6 @@ app = Starlette(
     ],
     lifespan=lifespan,
 )
-app.state.name = "axiom-intelligence"
-app.state.version = __version__
-app.state.description = "Axiom Intelligence — autonomous agentic factory"
+axiom_app.state.name = "axiom-intelligence"
+axiom_app.state.version = __version__
+axiom_app.state.description = "Axiom Intelligence — autonomous agentic factory"

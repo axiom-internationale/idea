@@ -16,11 +16,11 @@ Marketing site + stub API. Vision lives in `docs/factory.md`, implementation sta
 ```powershell
 cp .env.example .env   # optional
 uv sync --extra dev
-uv run uvicorn axiom.app:app --reload --port 8000
+uv run uvicorn axiom.app:axiom_app --reload --port 4000
 # or: make dev
 ```
 
-Open `http://localhost:8000`, API at `http://localhost:8000/api/health`.
+Open `http://localhost:4000`, API at `http://localhost:4000/api/health`.
 
 | Command | What |
 |---|---|
@@ -35,7 +35,7 @@ Docker:
 
 ```powershell
 docker build -t axiom .
-docker run -p 8000:8000 axiom
+docker run -p 4000:4000 axiom
 ```
 
 ## Config

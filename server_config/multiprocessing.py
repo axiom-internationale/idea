@@ -1,8 +1,8 @@
 """Gunicorn configuration with Uvicorn workers.
 
 Usage:
-    Dev:  gunicorn axiom.app:app -c server_config/multiprocessing.py --reload
-    Prod: gunicorn axiom.app:app -c server_config/multiprocessing.py
+    Dev:  gunicorn axiom.app:axiom_app -c server_config/multiprocessing.py --reload
+    Prod: gunicorn axiom.app:axiom_app -c server_config/multiprocessing.py
 """
 
 from server_config.settings import (

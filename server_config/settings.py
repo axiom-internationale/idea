@@ -68,7 +68,7 @@ _LOG_LEVELS = {"debug", "info", "warning", "error", "critical"}
 ENV: str = os.getenv("AXIOM_ENV", "development").strip().lower() or "development"
 IS_PROD: bool = ENV == "production"
 
-BIND: str = os.getenv("AXIOM_BIND", "0.0.0.0:8000").strip() or "0.0.0.0:8000"
+BIND: str = os.getenv("AXIOM_BIND", "0.0.0.0:4000").strip() or "0.0.0.0:4000"
 WORKERS: int = _get_int("AXIOM_WORKERS", _mp.cpu_count() * 2 + 1 if IS_PROD else 1, minimum=1)
 TIMEOUT: int = _get_int("AXIOM_TIMEOUT", 120, minimum=1)
 GRACEFUL_TIMEOUT: int = _get_int("AXIOM_GRACEFUL_TIMEOUT", 30, minimum=1)
