@@ -4,53 +4,52 @@ import logging
 
 from fasthtml.common import FastHTML, Link, Meta, Script
 
-from website.routes import setup_routes
+from axiom import __version__
+from website.routes import setup_home_routes
 
 log = logging.getLogger("axiom.website")
 
-SITE_URL = "https://www.axiomintelligence.xyz"
-SITE_TITLE = "Axiom Intelligence — Autonomous Agentic Factory"
-SITE_DESCRIPTION = (
-    "Axiom Intelligence is an autonomous agentic factory that turns ideas into "
-    "enduring, profitable companies — with one human at the helm."
-)
 
-
-def create_app() -> FastHTML:
-    theme_init_script = Script(
+def _theme_init_script() -> Script:
+    return Script(
         "(()=>{"
-        "const s=localStorage.getItem('axiom-theme');"
+        "document.documentElement.classList.add('js');"
+        # Day/night default from the visitor's local clock — fixed window,
+        # no location needed: light 06:00-18:00, dark otherwise.
+        "window.__axiomAutoTheme=function(d){"
+        "d=d||new Date();"
+        "const h=d.getHours()+d.getMinutes()/60;"
+        "return (h>=6&&h<18)?'light':'dark';"
+        "};"
+        "let s=null;"
+        "try{s=localStorage.getItem('axiom-theme-v2');}catch(e){}"
+        # Drop values pinned by the old always-persist behavior — they were
+        # rarely explicit choices and would override the day/night default.
+        "try{localStorage.removeItem('axiom-theme');}catch(e){}"
         "const d=window.matchMedia('(prefers-color-scheme:dark)').matches;"
-        "document.documentElement.dataset.theme=s||(d?'dark':'light');"
+        "const theme=s||window.__axiomAutoTheme()||(d?'dark':'light');"
+        "document.documentElement.dataset.theme=theme;"
+        "const m=document.querySelector('meta[name=\"theme-color\"]');"
+        "if(m)m.setAttribute('content',theme==='dark'?'#101111':'#f4f4f1');"
         "})()"
     )
 
+
+def create_app() -> FastHTML:
     app = FastHTML(
-        title="Axiom Intelligence",
         htmlkw={"lang": "en"},
         pico=False,
         surreal=False,
         htmx=False,
+        # Per-page tags (title, description, canonical, OG/Twitter, JSON-LD)
+        # come from seo.page_meta() in each route — never duplicate them here.
         hdrs=[
-            Meta(name="description", content=SITE_DESCRIPTION),
-            Meta(name="author", content="Axiom Intelligence Inc."),
-            Meta(name="robots", content="index, follow"),
-            Meta(name="theme-color", content="#0a0a0a"),
-            Link(rel="canonical", href=SITE_URL),
-            Meta(property="og:title", content=SITE_TITLE),
-            Meta(property="og:description", content=SITE_DESCRIPTION),
-            Meta(property="og:type", content="website"),
-            Meta(property="og:url", content=SITE_URL),
-            Meta(property="og:site_name", content="Axiom Intelligence"),
-            Meta(property="og:locale", content="en_US"),
-            Meta(property="og:image", content=f"{SITE_URL}/media/sun.png"),
-            Meta(property="og:image:alt", content="Axiom Intelligence logo"),
-            Meta(name="twitter:card", content="summary_large_image"),
-            Meta(name="twitter:title", content=SITE_TITLE),
-            Meta(name="twitter:description", content="Many businesses. One intelligence."),
-            Meta(name="twitter:image", content=f"{SITE_URL}/media/sun.png"),
+            Meta(charset="utf-8"),
+            Meta(name="viewport", content="width=device-width, initial-scale=1"),
+            Meta(name="theme-color", content="#f4f4f1"),
             Link(rel="icon", type="image/png", href="/media/mini_sun.png"),
             Link(rel="apple-touch-icon", href="/media/sun.png"),
+            Link(rel="preload", href="/media/mini_sun.png", as_="image"),
             Link(rel="preconnect", href="https://fonts.googleapis.com"),
             Link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=""),
             Link(
@@ -58,12 +57,12 @@ def create_app() -> FastHTML:
                 rel="stylesheet",
             ),
             Link(rel="stylesheet", href="/static/styles.css"),
-            theme_init_script,
+            _theme_init_script(),
         ],
     )
 
     app.state.name = "axiom-website"
-    app.state.version = "0.1.0"
+    app.state.version = __version__
 
-    setup_routes(app)
+    setup_home_routes(app)
     return app

@@ -7,6 +7,7 @@ from starlette.applications import Starlette
 from starlette.routing import Mount
 from starlette.staticfiles import StaticFiles
 
+from axiom import __version__
 from axiom.lifecycle import lifespan
 from backend_service.app import create_app as create_backend_app
 from website.app import create_app as create_website_app
@@ -27,5 +28,5 @@ app = Starlette(
     lifespan=lifespan,
 )
 app.state.name = "axiom-intelligence"
-app.state.version = "0.1.0"
+app.state.version = __version__
 app.state.description = "Axiom Intelligence — autonomous agentic factory"

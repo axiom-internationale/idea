@@ -1,81 +1,122 @@
 """Connect / contact section."""
 
-from fasthtml.common import A, Article, B, Br, Div, Em, H2, P, Section, Span, Strong
+from fasthtml.common import H2, A, Article, B, Br, Div, Em, P, Section, Span, Strong
 
-from website.components.icons import ARROW_SVG
-from website.components.topline import card_topline
+from data_service import get_section
 from website.components.eyebrow import eyebrow
+from website.components.icons import ARROW_SVG
 from website.components.section_divider import section_divider
+from website.components.topline import card_topline
+
+CONNECT = get_section("connect")
+CONNECT_CARDS = {card["key"]: card for card in CONNECT["cards"]}
 
 
 def _cta():
+    d = CONNECT["cta"]
     return Article(
-        eyebrow("Get in touch"),
-        H2("Let's", Br(), Em("build."), cls="section-h2", id="connect-title"),
+        eyebrow(d["eyebrow"]),
+        H2(d["title"][0], Br(), Em(d["title"][1]), cls="section-h2", id="connect-title"),
         P(
-            "Interested in what Axiom Intelligence is building? Have an idea worth exploring? "
-            "We're always looking for the next opportunity.",
+            d["body"],
             cls="intro-sm",
         ),
-        A("Start a conversation ", ARROW_SVG, cls="button button--primary", href="mailto:hello@axiomintelligence.xyz"),
-        cls="card card--dark card--cta", data_depth="3", data_reveal="",
+        A(f"{d['button']['label']} ", ARROW_SVG, cls="button button--primary", href=d["button"]["href"]),
+        cls="card card--dark card--cta",
+        data_depth="3",
+        data_reveal="",
     )
 
 
 def _website():
+    d = CONNECT_CARDS["web"]
     return Article(
-        card_topline("Website", "↗"),
-        Div(Strong("axiomintelligence.xyz"), Span("Visit our main site"), cls="web-link"),
+        card_topline(*d["topline"]),
+        Div(Strong(d["label"][0]), Span(d["label"][1]), cls="web-link"),
         A(
-            cls="card-overlay-link", href="https://www.axiomintelligence.xyz",
-            target="_blank", rel="noreferrer", aria_label="Visit axiomintelligence.xyz",
+            cls="card-overlay-link",
+            href=d["href"],
+            target="_blank",
+            rel="noreferrer",
+            aria_label=f"Visit {d['label'][0]}",
         ),
-        cls="card card--glass card--web", data_depth="4", data_reveal="",
+        cls="card card--glass card--web",
+        data_depth="4",
+        data_reveal="",
     )
 
 
 def _email():
+    d = CONNECT_CARDS["contact"]
     return Article(
-        card_topline("Email", "✉"),
-        Div(Strong("Say hello"), Span("hello@axiomintelligence.xyz"), cls="card-label card-label--inverse"),
-        cls="card card--sun card--contact", data_depth="5", data_reveal="",
+        card_topline(*d["topline"]),
+        Div(Strong(d["label"][0]), Span(d["label"][1]), cls="card-label card-label--inverse"),
+        A(
+            cls="card-overlay-link",
+            href=d["href"],
+            aria_label=f"Email {d['label'][1]}",
+        ),
+        cls="card card--sun card--contact",
+        data_depth="5",
+        data_reveal="",
     )
 
 
 def _social():
+    d = CONNECT_CARDS["social"]
     return Article(
-        card_topline("Social", "@"),
+        card_topline(*d["topline"]),
         Div(
-            A("Twitter / X ", Span("↗"), href="#", cls="social-pill"),
-            A("LinkedIn ", Span("↗"), href="#", cls="social-pill"),
-            A("GitHub ", Span("↗"), href="#", cls="social-pill"),
+            # TODO: wire real profile URLs — placeholders are non-interactive
+            # spans until then so keyboard users don't hit dead links.
+            *[
+                Span(pill + " ", Span("↗"), cls="social-pill", aria_disabled="true", title=d["note"])
+                for pill in d["pills"]
+            ],
             cls="social-links",
         ),
-        cls="card card--violet card--social", data_depth="4", data_reveal="",
+        cls="card card--violet card--social",
+        data_depth="4",
+        data_reveal="",
     )
 
 
+def _office(office):
+    text = f" {office['city']} " if "tag" in office else f" {office['city']}"
+    children = [B(office["code"]), text]
+    if "tag" in office:
+        children.append(Em(office["tag"]))
+    return Span(*children, cls="loc-office")
+
+
 def _location():
+    d = CONNECT_CARDS["location"]
     return Article(
-        card_topline("Location", "◉"),
-        Strong("Remote-first.", cls="loc-headline"),
+        card_topline(*d["topline"]),
+        Strong(d["headline"], cls="loc-headline"),
         Div(
-            Span(B("BH"), " Bhiwadi ", Em("HQ"), cls="loc-office"),
-            Span(B("LA"), " Los Angeles", cls="loc-office"),
-            Span(B("NY"), " New York", cls="loc-office"),
-            Span(B("SD"), " San Diego", cls="loc-office"),
+            *[_office(office) for office in d["offices"]],
             cls="loc-offices",
         ),
-        cls="card card--teal card--loc", data_depth="5", data_reveal="",
+        cls="card card--teal card--loc",
+        data_depth="5",
+        data_reveal="",
     )
 
 
 def connect_section():
     return Section(
-        section_divider("Connect"),
+        section_divider(CONNECT["divider"]),
         Div(
-            _cta(), _website(), _email(), _social(), _location(),
-            cls="bento bento--connect", data_bento="",
+            _cta(),
+            _website(),
+            _email(),
+            _social(),
+            _location(),
+            cls="bento bento--connect",
+            data_bento="",
         ),
-        cls="section", id="connect", aria_labelledby="connect-title",
+        cls="section",
+        id="connect",
+        aria_labelledby="connect-title",
     )

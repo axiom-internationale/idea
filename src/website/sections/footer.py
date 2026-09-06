@@ -2,23 +2,40 @@
 
 from fasthtml.common import A, Div, Footer, Img, Span
 
+from data_service import get_section
+
+FOOTER = get_section("footer")
+
 
 def footer_section():
     return Footer(
         Div(
-            Img(cls="footer-logo", src="/media/mini_sun.png", alt="Axiom Intelligence logo", width="32", height="32"),
-            Span("Axiom Intelligence", cls="footer-name"),
+            Img(
+                cls="footer-logo",
+                src="/media/mini_sun.png",
+                alt=FOOTER["logo_alt"],
+                width="32",
+                height="32",
+                loading="lazy",
+            ),
+            Span(FOOTER["brand"], cls="footer-name"),
             cls="footer-brand",
         ),
         Span(
-            Span("Bhiwadi — Los Angeles — New York — San Diego", cls="footer-locations--full"),
-            Span("BH — LA — NY — SD", cls="footer-locations--short"),
+            Span(FOOTER["locations_full"], cls="footer-locations--full"),
+            Span(FOOTER["locations_short"], cls="footer-locations--short"),
             cls="footer-locations",
         ),
-        Span("Built to build what's next.", cls="footer-tagline"),
+        Span(FOOTER["tagline"], cls="footer-tagline"),
         Div(
-            Span("© 2026 Axiom Intelligence Inc."),
-            A("axiomintelligence.xyz ", Span("↗"), href="https://www.axiomintelligence.xyz", target="_blank", rel="noreferrer"),
+            Span(FOOTER["copyright"]),
+            A(
+                f"{FOOTER['site_link']['label']} ",
+                Span(FOOTER["site_link"]["glyph"]),
+                href=FOOTER["site_link"]["href"],
+                target="_blank",
+                rel="noreferrer",
+            ),
             cls="footer-meta",
         ),
         cls="footer",

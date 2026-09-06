@@ -1,71 +1,88 @@
 """DNA / origin section."""
 
-from fasthtml.common import Article, Br, Div, Em, H2, P, Section, Span, Strong
+from fasthtml.common import H2, Article, Br, Div, Em, P, Section, Span, Strong
 
-from website.components.topline import card_topline
+from data_service import get_section
 from website.components.eyebrow import eyebrow
 from website.components.section_divider import section_divider
+from website.components.topline import card_topline
+
+DNA = get_section("dna")
+DNA_CARDS = {card["key"]: card for card in DNA["cards"]}
 
 
 def _story():
+    d = DNA["story"]
     return Article(
-        eyebrow("The origin"),
-        H2("Born from", Br(), Em("a question."), cls="section-h2", id="dna-title"),
-        P(
-            "What if one person could build and run many profitable companies—not by hiring "
-            "hundreds, but by directing an intelligent system that does the work?",
-            cls="intro-sm",
-        ),
-        P(
-            "That question became Axiom Intelligence: a factory where AI agents operate as "
-            "a unified workforce under human direction.",
-            cls="intro-sm",
-        ),
-        cls="card card--pearl card--story", data_depth="3", data_reveal="",
+        eyebrow(d["eyebrow"]),
+        H2(d["title"][0], Br(), Em(d["title"][1]), cls="section-h2", id="dna-title"),
+        *[P(paragraph, cls="intro-sm") for paragraph in d["body"]],
+        cls="card card--pearl card--story",
+        data_depth="3",
+        data_reveal="",
     )
 
 
 def _year():
+    d = DNA_CARDS["year"]
     return Article(
-        card_topline("Founded", "⎁"),
-        Strong("2026", cls="year-num"),
-        Span("Axiom Intelligence Inc.", cls="command-note"),
-        cls="card card--dark card--year", data_depth="4", data_reveal="",
+        card_topline(*d["topline"]),
+        Strong(d["value"], cls="year-num"),
+        Span(d["note"], cls="command-note"),
+        cls="card card--dark card--year",
+        data_depth="4",
+        data_reveal="",
     )
 
 
 def _different():
+    d = DNA_CARDS["different"]
     return Article(
-        card_topline("No overhead", "⎁"),
-        Div(Strong("Zero employees.", Br(), "Pure execution."), cls="card-label"),
-        cls="card card--rose card--different", data_depth="5", data_reveal="",
+        card_topline(*d["topline"]),
+        Div(Strong(d["label"][0], Br(), d["label"][1]), cls="card-label"),
+        cls="card card--rose card--different",
+        data_depth="5",
+        data_reveal="",
     )
 
 
 def _values():
+    d = DNA_CARDS["values"]
     return Article(
-        card_topline("Core values", "03"),
-        Div(Span("Speed"), Span("Focus"), Span("Compounding"), cls="vals-list", aria_hidden="true"),
-        Div(Strong("Move fast, stay sharp, stack gains."), cls="card-label"),
-        cls="card card--lime card--vals", data_depth="4", data_reveal="",
+        card_topline(*d["topline"]),
+        Div(*[Span(chip) for chip in d["chips"]], cls="vals-list", aria_hidden="true"),
+        Div(Strong(d["label"][0]), cls="card-label"),
+        cls="card card--lime card--vals",
+        data_depth="4",
+        data_reveal="",
     )
 
 
 def _principle():
+    d = DNA_CARDS["principle"]
     return Article(
-        card_topline("Axiom", "01"),
-        Strong("Revenue", Br(), "is truth.", cls="principle-text"),
-        Div(Span("The only metric that matters."), cls="card-label"),
-        cls="card card--amber card--principle", data_depth="5", data_reveal="",
+        card_topline(*d["topline"]),
+        Strong(d["heading"][0], Br(), d["heading"][1], cls="principle-text"),
+        Div(Span(d["note"]), cls="card-label"),
+        cls="card card--amber card--principle",
+        data_depth="5",
+        data_reveal="",
     )
 
 
 def dna_section():
     return Section(
-        section_divider("The DNA"),
+        section_divider(DNA["divider"]),
         Div(
-            _story(), _year(), _different(), _values(), _principle(),
-            cls="bento bento--dna", data_bento="",
+            _story(),
+            _year(),
+            _different(),
+            _values(),
+            _principle(),
+            cls="bento bento--dna",
+            data_bento="",
         ),
-        cls="section", id="dna", aria_labelledby="dna-title",
+        cls="section",
+        id="dna",
+        aria_labelledby="dna-title",
     )

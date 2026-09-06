@@ -1,157 +1,221 @@
 """Hero bento grid section."""
 
 from fasthtml.common import (
-    A, Article, B, Br, Button, Div, Em, H1, H2, I, P, Section, Small, Span, Strong,
+    H1,
+    H2,
+    A,
+    Article,
+    B,
+    Br,
+    Button,
+    Div,
+    Em,
+    I,
+    P,
+    Section,
+    Span,
+    Strong,
 )
 
+from data_service import get_section
+from website.components.agent_row import agent_row
+from website.components.eyebrow import eyebrow
 from website.components.icons import ARROW_SVG
 from website.components.topline import card_topline
-from website.components.eyebrow import eyebrow
-from website.components.agent_row import agent_row
+
+HERO = get_section("hero")
+CARDS = {card["key"]: card for card in HERO["cards"]}
+
+
+def _topline(left, right):
+    return card_topline(left, Span("Live", cls="status") if right == "Live" else right)
+
+
+def _label_pair(label, inverse=False):
+    cls = "card-label card-label--inverse" if inverse else "card-label"
+    return Div(Strong(label[0]), Span(label[1]), cls=cls)
 
 
 def _manifesto():
+    d = HERO["manifesto"]
     return Article(
-        eyebrow("A personalized agentic factory"),
-        H1("Many businesses.", Br(), Em("One intelligence."), id="hero-title"),
+        eyebrow(d["eyebrow"]),
+        H1(d["title"][0], Br(), Em(d["title"][1]), id="hero-title"),
         P(
-            "Axiom Intelligence is a self-directed organization that turns ideas into "
-            "enduring, profitable companies—with one human at the helm.",
+            d["intro"],
             cls="intro",
         ),
         Div(
             Button(
-                "Read the factory brief", ARROW_SVG,
-                cls="button button--primary", type="button", data_open_brief="",
+                d["primary_button"]["label"],
+                ARROW_SVG,
+                cls="button button--primary",
+                type="button",
+                data_open_brief="",
             ),
-            A("Explore the system ", Span("↓"), cls="text-link", href="#machine"),
+            *[A(f"{link['label']} ", Span(link["glyph"]), cls="text-link", href=link["href"]) for link in d["links"]],
             cls="hero-actions",
         ),
-        cls="card card--manifesto", data_depth="3",
+        cls="card card--manifesto",
+        data_depth="3",
     )
 
 
 def _status():
+    d = CARDS["status"]
     return Article(
-        card_topline("Workforce status", "24 / 7"),
+        _topline(*d["topline"]),
         Div(
             Span(cls="pulse", aria_hidden="true"),
-            Span("Agentic workforce ", B("active")),
+            Span(d["note"][0], B(d["note"][1])),
             cls="hero-note",
         ),
-        P("One system.", Br(), Strong("Always in motion."), cls="status-copy"),
-        cls="card card--status-card", data_depth="6",
+        P(d["copy"][0], Br(), Strong(d["copy"][1]), cls="status-copy"),
+        cls="card card--status-card",
+        data_depth="6",
     )
 
 
 def _sun():
+    d = CARDS["sun"]
     return Article(
-        card_topline("01 / Origin", "⎁"),
+        _topline(*d["topline"]),
         Div(
-            Span(cls="orbit orbit--one"), Span(cls="orbit orbit--two"), Span(cls="orbit orbit--three"),
+            Span(cls="orbit orbit--one"),
+            Span(cls="orbit orbit--two"),
+            Span(cls="orbit orbit--three"),
             Span(I(), cls="solar-core"),
-            Span(cls="satellite satellite--one"), Span(cls="satellite satellite--two"),
-            cls="solar-system", aria_hidden="true",
+            Span(cls="satellite satellite--one"),
+            Span(cls="satellite satellite--two"),
+            cls="solar-system",
+            aria_hidden="true",
         ),
-        Div(Strong("Founding Partner"), Span("The only human in the system"), cls="card-label card-label--inverse"),
-        cls="card card--sun card--large", data_depth="14",
+        _label_pair(d["label"], inverse=True),
+        cls="card card--sun card--large",
+        data_depth="14",
     )
 
 
 def _orchestrator():
+    d = CARDS["orchestrator"]
     return Article(
-        card_topline("02 / Direction", Span("Live", cls="status")),
-        agent_row("GS", "General Secretary", "Orchestrator & manager"),
+        _topline(*d["topline"]),
+        agent_row(*d["agent"]),
         Div(I(), I(), I(), I(), cls="signal-lines", aria_hidden="true"),
-        cls="card card--glass card--orchestrator", data_depth="8",
+        cls="card card--glass card--orchestrator",
+        data_depth="8",
     )
 
 
 def _think():
+    d = CARDS["think"]
     return Article(
-        card_topline("03 / Intelligence", "11"),
-        Div(H2("Think", Br(), "Tank"), P("One shared C-suite, across every company.")),
-        Div(Span("CE"), Span("CF"), Span("CT"), Span("CM"), cls="stacked-initials", aria_hidden="true"),
-        cls="card card--lime card--think", data_depth="6",
+        _topline(*d["topline"]),
+        Div(H2(d["heading"][0], Br(), d["heading"][1]), P(d["text"])),
+        Div(*[Span(initial) for initial in d["initials"]], cls="stacked-initials", aria_hidden="true"),
+        cls="card card--lime card--think",
+        data_depth="6",
     )
 
 
 def _verticals():
+    d = CARDS["verticals"]
     return Article(
-        card_topline("04 / Expansion", "∞"),
+        _topline(*d["topline"]),
         Div(I(), I(), I(), I(), I(), cls="vertical-icon", aria_hidden="true"),
-        Div(Strong("Company Verticals"), Span("Parallel by design"), cls="card-label card-label--inverse"),
-        cls="card card--violet card--verticals", data_depth="10",
+        _label_pair(d["label"], inverse=True),
+        cls="card card--violet card--verticals",
+        data_depth="10",
     )
 
 
 def _metrics():
+    d = CARDS["metrics"]
     return Article(
-        card_topline("Operating principle", Span("↗", cls="metric-glyph")),
-        Strong("Profitability", Br(), "first."),
+        card_topline(d["topline"][0], Span(d["topline"][1], cls="metric-glyph")),
+        Strong(d["heading"][0], Br(), d["heading"][1]),
         Div(I(), cls="metric-line", aria_hidden="true"),
-        Span("Decisions measured", Br(), "against real revenue.", cls="metric-caption"),
-        cls="card card--dark card--metrics", data_depth="4",
+        Span(d["caption"][0], Br(), d["caption"][1], cls="metric-caption"),
+        cls="card card--dark card--metrics",
+        data_depth="4",
     )
 
 
 def _gates():
+    d = CARDS["gates"]
     return Article(
-        card_topline("Safe to scale", "●"),
+        _topline(*d["topline"]),
         Div(Span(), Span(), Span(), cls="gate-grid", aria_hidden="true"),
-        Div(
-            Strong("Human approval, when it matters."),
-            Span("Clear gates for money, legal & irreversible moves."),
-            cls="card-label",
-        ),
-        cls="card card--pearl card--gates", data_depth="7",
+        _label_pair(d["label"]),
+        cls="card card--pearl card--gates",
+        data_depth="7",
     )
 
 
 def _async():
+    d = CARDS["async"]
     return Article(
-        card_topline("Operating rhythm", "↗"),
+        _topline(*d["topline"]),
         Div(I(), I(), I(), cls="async-mark", aria_hidden="true"),
-        Div(Strong("Async by default."), Span("Focus compounds when work never waits."), cls="card-label"),
-        cls="card card--async", data_depth="5",
+        _label_pair(d["label"]),
+        cls="card card--async",
+        data_depth="5",
     )
 
 
 def _command():
+    d = CARDS["command"]
     return Article(
-        card_topline("Control layer", "01"),
-        P("The human gives direction.", Br(), Strong("The factory does the work.")),
-        Span("Final approval for the moves that matter.", cls="command-note"),
-        cls="card card--command", data_depth="4",
+        _topline(*d["topline"]),
+        P(d["text"][0], Br(), Strong(d["text"][1])),
+        Span(d["note"], cls="command-note"),
+        cls="card card--command",
+        data_depth="4",
     )
 
 
 def _memory():
+    d = CARDS["memory"]
     return Article(
-        card_topline("Memory", "⎁"),
+        _topline(*d["topline"]),
         Div(I(), I(), I(), I(), cls="memory-mark", aria_hidden="true"),
-        Div(Strong("Local-first."), Span("Readable, durable, yours."), cls="card-label"),
-        cls="card card--memory", data_depth="7",
+        _label_pair(d["label"]),
+        cls="card card--memory",
+        data_depth="7",
     )
 
 
 def _parallel():
+    d = CARDS["parallel"]
     return Article(
-        card_topline("Scale", "n"),
-        P(Strong("One C-suite."), Br(), "Every company."),
+        _topline(*d["topline"]),
+        P(Strong(d["text"][0]), Br(), d["text"][1]),
         Div(I(), I(), I(), I(), I(), cls="parallel-bars", aria_hidden="true"),
-        Span("Built to operate in parallel."),
-        cls="card card--parallel", data_depth="5",
+        Span(d["note"]),
+        cls="card card--parallel",
+        data_depth="5",
     )
 
 
 def hero_section():
     return Section(
         Div(
-            _manifesto(), _status(), _sun(), _orchestrator(),
-            _think(), _verticals(), _metrics(), _gates(),
-            _async(), _command(), _memory(), _parallel(),
-            cls="bento bento--hero", data_bento="",
+            _manifesto(),
+            _status(),
+            _sun(),
+            _orchestrator(),
+            _think(),
+            _verticals(),
+            _metrics(),
+            _gates(),
+            _async(),
+            _command(),
+            _memory(),
+            _parallel(),
+            cls="bento bento--hero",
+            data_bento="",
         ),
-        cls="hero", id="top", aria_labelledby="hero-title",
+        cls="hero",
+        id="top",
+        aria_labelledby="hero-title",
     )

@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 
 from starlette.applications import Starlette
 
-from backend_service.state import mark_ready, mark_not_ready
+from backend_service.state import mark_not_ready, mark_ready
 
 log = logging.getLogger("axiom")
 

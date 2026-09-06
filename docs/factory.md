@@ -1,7 +1,7 @@
 # Axiom Intelligence Inc.
 
 
-![](./media/sun.png)
+![](../src/website/media/sun.png)
 
 ```
 Sun (Logo of the company)
