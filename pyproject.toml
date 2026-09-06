@@ -5,7 +5,7 @@ description = "Axiom Intelligence — autonomous agentic factory"
 requires-python = ">=3.12"
 dependencies = [
     "python-fasthtml>=0.12.0",
-    "fastapi>=0.115.0",
+    "fastapi[standard]>=0.115.0",
     "starlette>=0.40.0",
     "uvicorn[standard]>=0.30.0",
     "gunicorn>=22.0.0",
@@ -39,3 +39,6 @@ known-first-party = ["axiom"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+[tool.fastapi]
+entrypoint = "axiom.app:axiom_app"

@@ -5,14 +5,14 @@ SHELL := powershell.exe
 
 # ── Development ──────────────────────────────────────────────
 dev:
-	uv run uvicorn axiom.app:app --reload --port 8000
+	uv run uvicorn axiom.app:axiom_app --reload --port 4000
 
 dev-gunicorn:
-	uv run gunicorn axiom.app:app -c server_config/multiprocessing.py --reload
+	uv run gunicorn axiom.app:axiom_app -c server_config/multiprocessing.py --reload
 
 # ── Production ───────────────────────────────────────────────
 prod:
-	$$env:AXIOM_ENV='production'; uv run gunicorn axiom.app:app -c server_config/multiprocessing.py
+	$$env:AXIOM_ENV='production'; uv run gunicorn axiom.app:axiom_app -c server_config/multiprocessing.py
 
 # ── Code quality ─────────────────────────────────────────────
 format:

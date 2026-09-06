@@ -12,6 +12,6 @@ COPY server_config ./server_config
 
 RUN pip install --no-cache-dir .
 
-EXPOSE 8000
+EXPOSE 4000
 
-CMD ["gunicorn", "axiom.app:app", "-c", "server_config/multiprocessing.py"]
+CMD ["gunicorn", "axiom.app:axiom_app", "-c", "server_config/multiprocessing.py"]
