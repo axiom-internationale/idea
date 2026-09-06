@@ -1,0 +1,321 @@
+{
+  "_meta": {
+    "page": "/dfy",
+    "description": "All text content of the DFY (Done For You) page, extracted from src/website/sections/dfy.py. Single source of truth for copy — no tables, no schema."
+  },
+  "contact": {
+    "email": "hello@axiomintelligence.xyz",
+    "site_url": "https://www.axiomintelligence.xyz",
+    "site_name": "axiomintelligence.xyz"
+  },
+  "nav": {
+    "brand": "Axiom Intelligence",
+    "wordmark": ["Axiom", "Intelligence"],
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "status": "Live",
+    "menu": [
+      {"label": "Home", "sub": "The agentic factory", "href": "/"},
+      {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"}
+    ],
+    "theme_toggle_labels": {
+      "to_dark": "Switch to dark mode",
+      "to_light": "Switch to light mode"
+    }
+  },
+  "hero": {
+    "id": "top",
+    "manifesto": {
+      "eyebrow": "Full-stack AI services for local business",
+      "title": ["Your business.", "Done for you."],
+      "intro": "Website, SEO, ads, automations, dashboards, AI agents—everything your business needs to grow, delivered and managed by an intelligent workforce.",
+      "primary_button": {
+        "label": "Get started",
+        "href": "mailto:hello@axiomintelligence.xyz"
+      },
+      "links": [
+        {"label": "See services", "glyph": "↓", "href": "#dfy-services"}
+      ]
+    },
+    "cards": [
+      {
+        "key": "ai",
+        "topline": ["Delivery engine", "○"],
+        "label": ["AI-Powered", "Agentic delivery, 24/7"]
+      },
+      {
+        "key": "scount",
+        "topline": ["Service stack", "Live"],
+        "stats": [["40+", "Services"], ["∞", "Capacity"]]
+      },
+      {
+        "key": "ind",
+        "topline": ["Industries", "40+"],
+        "label": ["Domain-first.", "Built for your industry."]
+      },
+      {
+        "key": "always",
+        "topline": ["Uptime", "∞"],
+        "headline": "Always on.",
+        "label": ["No weekends.", "Your digital ops never sleep."]
+      },
+      {
+        "key": "speed",
+        "topline": ["Velocity", "↗"],
+        "heading": ["10x faster.", "1/10th cost."],
+        "note": "AI agents replace entire agency teams."
+      },
+      {
+        "key": "web",
+        "topline": ["Service", "01"],
+        "label": ["Websites", "Built, hosted & maintained."]
+      },
+      {
+        "key": "seo",
+        "topline": ["Service", "02"],
+        "label": ["SEO & Ads", "Found by every customer nearby."]
+      },
+      {
+        "key": "auto",
+        "topline": ["Service", "03"],
+        "label": ["Automations", "Intake, follow-ups & workflows."]
+      }
+    ]
+  },
+  "mission": {
+    "id": "dfy-mission",
+    "divider": "The mission",
+    "main": {
+      "eyebrow": "The mission",
+      "title": ["Agentic McKinsey", "for main street."],
+      "body": [
+        "Fortune 500 companies hire McKinsey. Main street businesses get nothing. We're changing that—deploying AI agents that deliver the same caliber of strategy, ops, and growth consulting at a fraction of the cost.",
+        "Every business deserves a world-class digital partner. Ours just happens to run 24/7 and never sends an invoice by the hour."
+      ]
+    },
+    "cards": [
+      {
+        "key": "consult",
+        "topline": ["Model", "○"],
+        "label": ["Agentic consulting", "AI agents replace analyst teams—research, strategy, execution."]
+      },
+      {
+        "key": "access",
+        "topline": ["Access", "↗"],
+        "heading": "Democratized.",
+        "label": ["No retainers.", "Enterprise strategy, local pricing."]
+      },
+      {
+        "key": "playbook",
+        "topline": ["Playbook", "01"],
+        "label": ["Fortune 500 tactics", "Applied to your local market."]
+      },
+      {
+        "key": "scale",
+        "topline": ["Scale", "∞"],
+        "heading": ["One system.", "Every vertical."],
+        "note": "Same AI infrastructure, tailored playbooks—law, health, finance & beyond."
+      }
+    ]
+  },
+  "services": {
+    "id": "dfy-services",
+    "divider": "The services",
+    "main": {
+      "eyebrow": "What you get",
+      "title": ["Everything.", "One partner."],
+      "body": "Stop juggling freelancers, agencies, and SaaS tools. One relationship, one AI-powered team, every digital service your business needs."
+    },
+    "cards": [
+      {
+        "key": "web",
+        "num": 1,
+        "glyph": "○",
+        "title": "Web & Marketing",
+        "desc": "Website, hosting, SEO, paid ads, social media, reputation."
+      },
+      {
+        "key": "agents",
+        "num": 2,
+        "glyph": "○",
+        "title": "AI Agents",
+        "desc": "Receptionist, chatbot, scheduler, follow-up & screening."
+      },
+      {
+        "key": "ops",
+        "num": 3,
+        "glyph": "↻",
+        "title": "Automation & Ops",
+        "desc": "CRM, invoicing, onboarding workflows, staff scheduling."
+      },
+      {
+        "key": "growth",
+        "num": 4,
+        "glyph": "↗",
+        "title": "Intelligence & Growth",
+        "desc": "Dashboards, analytics, competitor intel, loyalty, strategy."
+      }
+    ]
+  },
+  "domains": {
+    "id": "dfy-domains",
+    "divider": "Industries",
+    "main": {
+      "eyebrow": "Who we serve",
+      "title": ["Built for", "main street."],
+      "body": "Every industry gets a tailored playbook—same infrastructure, different expertise. We go deep so the results speak your language."
+    },
+    "cards": [
+      {
+        "key": "legal",
+        "num": 1,
+        "title": "Legal",
+        "examples": "Law firms, attorneys, notaries."
+      },
+      {
+        "key": "health",
+        "num": 2,
+        "title": "Healthcare",
+        "examples": "Clinics, dental, veterinary, optometry."
+      },
+      {
+        "key": "finance",
+        "num": 3,
+        "title": "Financial",
+        "examples": "Accounting, tax, insurance, mortgage brokers."
+      },
+      {
+        "key": "home",
+        "num": 4,
+        "title": "Home & More",
+        "examples": "Plumbing, HVAC, roofing, salons, fitness & 30+ more."
+      }
+    ]
+  },
+  "process": {
+    "id": "dfy-process",
+    "divider": "The process",
+    "main": {
+      "eyebrow": "How it works",
+      "title": ["From onboarding", "to growth."],
+      "body": "A simple, repeatable process. We learn your business, build your digital stack, launch everything, and optimize continuously."
+    },
+    "steps": [
+      {
+        "key": "onboard",
+        "num": 1,
+        "glyph": "○",
+        "title": "Onboard",
+        "desc": "We learn your business, goals & competitors."
+      },
+      {
+        "key": "build",
+        "num": 2,
+        "glyph": "○",
+        "title": "Build",
+        "desc": "Website, SEO, ads, automations—shipped fast."
+      },
+      {
+        "key": "launch",
+        "num": 3,
+        "glyph": "○",
+        "title": "Launch",
+        "desc": "Go live with everything running in parallel."
+      },
+      {
+        "key": "optimize",
+        "num": 4,
+        "glyph": "↻",
+        "title": "Optimize",
+        "desc": "AI agents monitor, improve & report weekly."
+      },
+      {
+        "key": "scale",
+        "num": 5,
+        "glyph": "↗",
+        "title": "Scale",
+        "desc": "Add services, expand locations, grow revenue."
+      }
+    ]
+  },
+  "evolve": {
+    "id": "dfy-evolve",
+    "divider": "The loop",
+    "main": {
+      "eyebrow": "Self-evolving loops",
+      "title": ["Always learning.", "Always improving."],
+      "body": [
+        "Most agencies deliver once and disappear. Our AI agents run continuous research loops—studying your market, competitors, and customers—then automatically adjust your strategy, content, and campaigns.",
+        "Every week your business gets smarter. Every month the gap between you and your competitors widens."
+      ]
+    },
+    "cards": [
+      {
+        "key": "research",
+        "topline": ["Research", "↻"],
+        "label": ["Market intel", "Competitors, trends, pricing—scanned daily."]
+      },
+      {
+        "key": "learn",
+        "topline": ["Learn", "○"],
+        "label": ["Pattern recognition", "What's working, what's not—detected automatically."]
+      },
+      {
+        "key": "adapt",
+        "topline": ["Adapt", "↗"],
+        "label": ["Strategy shifts", "Ads, SEO, content—retuned without asking."]
+      },
+      {
+        "key": "compound",
+        "topline": ["Compound", "↗"],
+        "heading": ["Week 1: baseline.", "Week 12: unrecognizable."],
+        "note": "Small gains stack. AI never forgets what works."
+      }
+    ]
+  },
+  "cta": {
+    "id": "dfy-connect",
+    "divider": "Connect",
+    "main": {
+      "eyebrow": "Get started",
+      "title": ["Ready to go", "hands-free?"],
+      "body": "Tell us about your business. We’ll build a custom proposal—services, timeline, and pricing tailored to your industry.",
+      "button": {"label": "Start a conversation", "href": "mailto:hello@axiomintelligence.xyz"}
+    },
+    "cards": [
+      {
+        "key": "email",
+        "topline": ["Email", "✉"],
+        "label": ["Say hello", "hello@axiomintelligence.xyz"],
+        "href": "mailto:hello@axiomintelligence.xyz"
+      },
+      {
+        "key": "powered",
+        "topline": ["Powered by", "○"],
+        "label": ["Axiom Intelligence", "The agentic factory behind DFY."],
+        "href": "/"
+      },
+      {
+        "key": "stat",
+        "topline": ["By the numbers", "↗"],
+        "stats": [["40+", "Services"], ["40+", "Industries"], ["24/7", "Uptime"]]
+      },
+      {
+        "key": "home",
+        "topline": ["Axiom Intelligence", "↗"],
+        "label": ["Explore the factory", "The system behind the services."],
+        "href": "/"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "Axiom Intelligence",
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "tagline": "Built to build what's next.",
+    "copyright": "© 2026 Axiom Intelligence Inc.",
+    "site_link": {"label": "axiomintelligence.xyz", "glyph": "↗", "href": "https://www.axiomintelligence.xyz"}
+  }
+}

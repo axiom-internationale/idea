@@ -1,0 +1,426 @@
+{
+  "_meta": {
+    "page": "/",
+    "description": "All text content of the homepage, extracted from src/website/sections/*. Single source of truth for copy — no tables, no schema."
+  },
+  "contact": {
+    "email": "hello@axiomintelligence.xyz",
+    "site_url": "https://www.axiomintelligence.xyz",
+    "site_name": "axiomintelligence.xyz"
+  },
+  "nav": {
+    "brand": "Axiom Intelligence",
+    "wordmark": ["Axiom", "Intelligence"],
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "status": "Live",
+    "menu": [
+      {"label": "Home", "sub": "The agentic factory", "href": "/"},
+      {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"}
+    ],
+    "theme_toggle_labels": {
+      "to_dark": "Switch to dark mode",
+      "to_light": "Switch to light mode"
+    }
+  },
+  "hero": {
+    "id": "top",
+    "manifesto": {
+      "eyebrow": "A personalized agentic factory",
+      "title": ["Many businesses.", "One intelligence."],
+      "intro": "Axiom Intelligence is a self-directed organization that turns ideas into enduring, profitable companies—with one human at the helm.",
+      "primary_button": {
+        "label": "Read the factory brief",
+        "action": "open_brief_dialog"
+      },
+      "links": [
+        {"label": "Explore the system", "glyph": "↓", "href": "#machine"},
+        {"label": "DFY — Done for you", "glyph": "→", "href": "/dfy"}
+      ]
+    },
+    "cards": [
+      {
+        "key": "status",
+        "topline": ["Workforce status", "24 / 7"],
+        "note": ["Agentic workforce ", "active"],
+        "copy": ["One system.", "Always in motion."]
+      },
+      {
+        "key": "sun",
+        "topline": ["01 / Origin", "○"],
+        "label": ["Founding Partner", "The only human in the system"]
+      },
+      {
+        "key": "orchestrator",
+        "topline": ["02 / Direction", "Live"],
+        "agent": ["GS", "General Secretary", "Orchestrator & manager"]
+      },
+      {
+        "key": "think",
+        "topline": ["03 / Intelligence", "11"],
+        "heading": ["Think", "Tank"],
+        "text": "One shared C-suite, across every company.",
+        "initials": ["CE", "CF", "CT", "CM"]
+      },
+      {
+        "key": "verticals",
+        "topline": ["04 / Expansion", "∞"],
+        "label": ["Company Verticals", "Parallel by design"]
+      },
+      {
+        "key": "metrics",
+        "topline": ["Operating principle", "↗"],
+        "heading": ["Profitability", "first."],
+        "caption": ["Decisions measured", "against real revenue."]
+      },
+      {
+        "key": "gates",
+        "topline": ["Safe to scale", "●"],
+        "label": ["Human approval, when it matters.", "Clear gates for money, legal & irreversible moves."]
+      },
+      {
+        "key": "async",
+        "topline": ["Operating rhythm", "↗"],
+        "label": ["Async by default.", "Focus compounds when work never waits."]
+      },
+      {
+        "key": "command",
+        "topline": ["Control layer", "01"],
+        "text": ["The human gives direction.", "The factory does the work."],
+        "note": "Final approval for the moves that matter."
+      },
+      {
+        "key": "memory",
+        "topline": ["Memory", "○"],
+        "label": ["Local-first.", "Readable, durable, yours."]
+      },
+      {
+        "key": "parallel",
+        "topline": ["Scale", "n"],
+        "text": ["One C-suite.", "Every company."],
+        "note": "Built to operate in parallel."
+      }
+    ]
+  },
+  "machine": {
+    "id": "machine",
+    "divider": "How it works",
+    "pipeline": {
+      "eyebrow": "The process",
+      "title": ["From spark", "to scale."],
+      "body": "Every idea enters the same machine: research, build, launch, optimize. The factory handles each stage autonomously—from market analysis to revenue.",
+      "flow": ["Idea", "Research", "Build", "Launch", "Revenue"]
+    },
+    "cards": [
+      {
+        "key": "research",
+        "topline": ["Step 01", "○"],
+        "label": ["Research", "Deep market analysis before market entry."]
+      },
+      {
+        "key": "build",
+        "topline": ["Step 02", "○"],
+        "label": ["Build", "Ship products, not pitch decks."]
+      },
+      {
+        "key": "launch",
+        "topline": ["Step 03", "○"],
+        "glyph": "↗",
+        "label": ["Launch", "Go-to-market at machine speed."]
+      },
+      {
+        "key": "optimize",
+        "topline": ["Step 04", "↻"],
+        "heading": ["Optimize.", "Compound."],
+        "note": "Every cycle, the system gets sharper."
+      },
+      {
+        "key": "always",
+        "topline": ["Uptime", "∞"],
+        "headline": "Always on.",
+        "label": ["No weekends. No holidays.", "The factory never sleeps."]
+      },
+      {
+        "key": "stats",
+        "topline": ["Factory output", "Live"],
+        "stats": [["24/7", "Active"], ["∞", "Potential"], ["1", "Human"]]
+      },
+      {
+        "key": "loop",
+        "topline": ["The flywheel", "↻"],
+        "label": ["Learn. Improve. Repeat.", "Compounding intelligence across every company."]
+      },
+      {
+        "key": "speed",
+        "topline": ["Velocity", "↗"],
+        "heading": ["10x speed.", "1/10th cost."],
+        "note": "When agents work, capital stays lean."
+      }
+    ]
+  },
+  "pillars": {
+    "id": "pillars",
+    "divider": "The pillars",
+    "main": {
+      "eyebrow": "Operating principles",
+      "title": ["Four pillars.", "One system."],
+      "body": "Every decision, every process, every agent in the factory operates under four non-negotiable principles."
+    },
+    "cards": [
+      {
+        "key": "self",
+        "topline": ["Pillar 01", "↻"],
+        "title": ["Self-", "improving."],
+        "text": "Every cycle makes the system smarter. Intelligence compounds."
+      },
+      {
+        "key": "profit",
+        "topline": ["Pillar 02", "↗"],
+        "title": ["Profitable."],
+        "text": "Revenue is truth. Every decision measured against real returns."
+      },
+      {
+        "key": "stable",
+        "topline": ["Pillar 03", "∞"],
+        "title": ["Stable."],
+        "text": "24/7 uptime. No burnout, no turnover. Mechanical reliability."
+      },
+      {
+        "key": "autonomous",
+        "topline": ["Pillar 04", "○"],
+        "title": ["Autonomous."],
+        "text": "The factory runs itself. Agents decide, execute, and coordinate."
+      }
+    ]
+  },
+  "think_tank": {
+    "id": "think-tank",
+    "divider": "The think tank",
+    "gs": {
+      "eyebrow": "Central command",
+      "title": ["One brain.", "Many arms."],
+      "body": "The General Secretary orchestrates every agent, every company, every decision. It delegates, monitors, and ensures the factory stays aligned.",
+      "agent": ["GS", "General Secretary", "Chief orchestrator"]
+    },
+    "agents": [
+      {
+        "label": "CEO",
+        "color": "sun",
+        "initials": "CE",
+        "title": "Chief Executive",
+        "desc": "Strategy, positioning & growth direction."
+      },
+      {
+        "label": "CFO",
+        "color": "amber",
+        "initials": "CF",
+        "title": "Chief Financial",
+        "desc": "Revenue tracking, budgets & financial modeling."
+      },
+      {
+        "label": "CTO",
+        "color": "indigo",
+        "initials": "CT",
+        "title": "Chief Technology",
+        "desc": "Architecture, development & infrastructure."
+      },
+      {
+        "label": "CMO",
+        "color": "lime",
+        "initials": "CM",
+        "title": "Chief Marketing",
+        "desc": "Brand, growth & customer acquisition."
+      }
+    ],
+    "count": {
+      "topline": ["Think tank", "Live"],
+      "stats": [["1", "GS"], ["4+", "Agents"], ["∞", "Scale"]]
+    }
+  },
+  "portfolio": {
+    "id": "portfolio",
+    "divider": "Portfolio",
+    "ventures": {
+      "eyebrow": "The ventures",
+      "title": ["Building in", "parallel."],
+      "body": "The factory doesn't build one company at a time. It runs multiple verticals simultaneously—each with its own strategy, each sharing the same intelligence."
+    },
+    "cards": [
+      {
+        "key": "ventures_1",
+        "topline": ["Vertical 01", "Live"],
+        "label": ["SaaS Tooling", "Software products that solve real workflow problems."]
+      },
+      {
+        "key": "ventures_2",
+        "topline": ["Vertical 02", "○"],
+        "label": ["AI Services", "Intelligent automation for businesses that need it."]
+      },
+      {
+        "key": "ventures_3",
+        "topline": ["Vertical 03", "○"],
+        "label": ["Digital Commerce", "Revenue-generating storefronts and marketplaces."]
+      }
+    ],
+    "stats": {
+      "topline": ["Pipeline", "↗"],
+      "heading": ["More", "coming."],
+      "note": "The factory identifies opportunities continuously."
+    }
+  },
+  "dna": {
+    "id": "dna",
+    "divider": "The DNA",
+    "story": {
+      "eyebrow": "The origin",
+      "title": ["Born from", "a question."],
+      "body": [
+        "What if one person could build and run many profitable companies—not by hiring hundreds, but by directing an intelligent system that does the work?",
+        "That question became Axiom Intelligence: a factory where AI agents operate as a unified workforce under human direction."
+      ]
+    },
+    "cards": [
+      {
+        "key": "year",
+        "topline": ["Founded", "○"],
+        "value": "2026",
+        "note": "Axiom Intelligence Inc."
+      },
+      {
+        "key": "different",
+        "topline": ["No overhead", "○"],
+        "label": ["Zero employees.", "Pure execution."]
+      },
+      {
+        "key": "values",
+        "topline": ["Core values", "03"],
+        "chips": ["Speed", "Focus", "Compounding"],
+        "label": ["Move fast, stay sharp, stack gains."]
+      },
+      {
+        "key": "principle",
+        "topline": ["Axiom", "01"],
+        "heading": ["Revenue", "is truth."],
+        "note": "The only metric that matters."
+      }
+    ]
+  },
+  "stack": {
+    "id": "stack",
+    "divider": "The stack",
+    "main": {
+      "eyebrow": "Infrastructure",
+      "title": ["Built on", "modern AI."],
+      "body": "The factory runs on frontier language models, custom orchestration, and persistent memory—designed for autonomous operation at scale."
+    },
+    "layers": [
+      {
+        "num": 1,
+        "glyph": "○",
+        "title": "AI Models",
+        "desc": "Frontier LLMs for reasoning, coding & analysis."
+      },
+      {
+        "num": 2,
+        "glyph": "○",
+        "title": "Persistent Memory",
+        "desc": "Local-first, durable knowledge across sessions."
+      },
+      {
+        "num": 3,
+        "glyph": "↻",
+        "title": "Orchestration",
+        "desc": "Multi-agent coordination and task delegation."
+      },
+      {
+        "num": 4,
+        "glyph": "∞",
+        "title": "Infrastructure",
+        "desc": "Cloud-native, auto-scaling, always available."
+      }
+    ]
+  },
+  "founder": {
+    "id": "founder",
+    "divider": "The founder",
+    "bio": {
+      "eyebrow": "The human at the helm",
+      "title": ["One founder.", "Infinite leverage."],
+      "body": [
+        "Axiom Intelligence was built on a conviction: one person with the right system can outperform entire organizations. Not by working harder—by directing smarter.",
+        "The founder sets the vision, approves the high-stakes decisions, and lets the factory handle everything else."
+      ]
+    },
+    "cards": [
+      {
+        "key": "role",
+        "topline": ["Role", "01"],
+        "heading": ["Vision &", "direction."],
+        "note": "Strategy, final approvals, and the decisions that shape everything."
+      },
+      {
+        "key": "philosophy",
+        "topline": ["Philosophy", "○"],
+        "label": ["Build systems, not teams.", "The right architecture beats the right hire every time."]
+      }
+    ]
+  },
+  "connect": {
+    "id": "connect",
+    "divider": "Connect",
+    "cta": {
+      "eyebrow": "Get in touch",
+      "title": ["Let's", "build."],
+      "body": "Interested in what Axiom Intelligence is building? Have an idea worth exploring? We're always looking for the next opportunity.",
+      "button": {"label": "Start a conversation", "href": "mailto:hello@axiomintelligence.xyz"}
+    },
+    "cards": [
+      {
+        "key": "web",
+        "topline": ["Website", "↗"],
+        "label": ["axiomintelligence.xyz", "Visit our main site"],
+        "href": "https://www.axiomintelligence.xyz"
+      },
+      {
+        "key": "contact",
+        "topline": ["Email", "✉"],
+        "label": ["Say hello", "hello@axiomintelligence.xyz"],
+        "href": "mailto:hello@axiomintelligence.xyz"
+      },
+      {
+        "key": "social",
+        "topline": ["Social", "@"],
+        "pills": ["Twitter / X", "LinkedIn", "GitHub"],
+        "note": "Coming soon"
+      },
+      {
+        "key": "location",
+        "topline": ["Location", "◉"],
+        "headline": "Remote-first.",
+        "offices": [
+          {"code": "BH", "city": "Bhiwadi", "tag": "HQ"},
+          {"code": "LA", "city": "Los Angeles"},
+          {"code": "NY", "city": "New York"},
+          {"code": "SD", "city": "San Diego"}
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "brand": "Axiom Intelligence",
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "tagline": "Built to build what's next.",
+    "copyright": "© 2026 Axiom Intelligence Inc.",
+    "site_link": {"label": "axiomintelligence.xyz", "glyph": "↗", "href": "https://www.axiomintelligence.xyz"}
+  },
+  "brief_dialog": {
+    "eyebrow": "The factory, in one line",
+    "title": "One human founder + one autonomous organization + many parallel businesses.",
+    "body": "The General Secretary directs a shared Think Tank, which in turn powers independent Company Verticals. The result: deliberate autonomy, real-world focus, and a system designed to compound.",
+    "confirm_button": "Understood",
+    "close_label": "Close factory brief"
+  }
+}
