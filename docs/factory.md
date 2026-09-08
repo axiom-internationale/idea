@@ -395,6 +395,33 @@ Regardless of role or position, every agent in the factory — from GS to the ne
 
 Every agent is **self-evolutionary**. They learn from their past mistakes, failed experiments, rejected proposals, and suboptimal outcomes. When something goes wrong, the agent analyzes what happened, documents the lesson, and adjusts its future behavior so the same mistake does not repeat. This applies at every level — a CV team agent learns from a failed feature launch, a TT member learns from a bad market call, and GS learns from a misrouted escalation. The factory gets smarter over time because its agents do.
 
+### Principle 10: Direct Improvement Plans — Every Agent Reports Up
+
+Every agent in the organization — from the newest CV team member to GS — has the right and responsibility to submit **improvement plans directly to the Founding Partner**. These plans focus on three dimensions:
+
+1. **Token Cost Optimization** — How to reduce token spend in their area without sacrificing output quality.
+2. **Organizational Profitability** — Ideas to increase revenue, reduce waste, or improve efficiency across the org.
+3. **Quality of Work** — Proposals to improve the quality, speed, or reliability of their own output or their team's.
+
+#### How It Works
+
+- Any agent submits a structured improvement plan to the Founding Partner at any time — no escalation chain needed.
+- GS compiles and tracks submitted plans in `_org/improvement-plans.md`.
+- The Founding Partner reviews plans in batches (similar to the decision queue).
+- Approved plans are implemented by the proposing agent (or their team), with support from TT if needed.
+
+#### The Improvement Plan Format
+
+| Field | Description |
+|-------|-------------|
+| **Agent** | Who is submitting |
+| **Area** | Token cost / Profitability / Quality |
+| **Current State** | What exists today |
+| **Proposed Change** | What they want to change |
+| **Expected Impact** | Quantified where possible (e.g., "~30% fewer tokens on weekly reports") |
+| **Trade-offs** | What could get worse |
+| **Implementation** | Steps to execute |
+
 ---
 
 ## 12. Complete Organizational Hierarchy
@@ -605,17 +632,28 @@ GS → Founding Partner
 
 The manager resolves it, or escalates upward only when needed.
 
+### Lane 3 — Improvement Plan Lane (Direct to Founder)
+
+Any agent can submit a structured **Improvement Plan** directly to the Founding Partner — bypassing the normal manager-first chain. These plans must focus on at least one of: **token cost optimization**, **organizational profitability**, or **quality of work** (see Principle 10 in Section 11 for the full format and process).
+
+```
+Any agent → Founding Partner (direct, structured plan)
+```
+
+This lane exists because the agents closest to the work often see optimization opportunities their managers don't. GS tracks all submitted plans in `_org/improvement-plans.md` for visibility, but the submission itself is direct.
+
 ### Summary Table
 
 | Channel | Flow |
 |---------|------|
 | Anyone → Founder | **Feedback** — always allowed, direct |
+| Anyone → Founder | **Improvement Plans** — structured plans on token cost, profitability, quality (direct, see Principle 10) |
 | CV agent → CPO → GS → Founder | **Improvements / queries / proposals** — manager first |
 | Founder ↔ GS | Primary routine channel: rough ideas in, refined plans + follow-ups out |
 | GS ↔ TT | GS orchestrates meetings and group discussions |
 | Anyone ↔ anyone | Sync-ups for stability and profitability — allowed freely |
 
-The day-to-day communication concentrates on GS as the main hub. But the org is never fully dependent on one node: feedback flows to the Founder from anywhere, and every vertical has a manager who can run it independently and escalate directly when required.
+The day-to-day communication concentrates on GS as the main hub. But the org is never fully dependent on one node: feedback flows to the Founder from anywhere, improvement plans can reach the Founder directly from any agent, and every vertical has a manager who can run it independently and escalate directly when required.
 
 ---
 
@@ -809,18 +847,38 @@ Running GS + 11 C-Suite officers + CPOs + teams with live synchronous group disc
 
 ## 21. Tech Stack
 
+### Token Optimization Strategy — Hybrid LLM Model
+
+The factory uses a **tiered LLM approach** to optimize token cost while maintaining quality where it matters most.
+
+| Tier | Engine | Use Cases | Rationale |
+|------|--------|-----------|-----------|
+| **Tier 1 — Premium** | **Grok Bot (xAI)** | GS orchestration, Think Tank discussions, strategic planning, customer-facing outputs, complex multi-step reasoning, red-gated decision analysis | High-stakes tasks where quality directly impacts revenue or risk |
+| **Tier 2 — Utility** | **Open-source / Free LLM APIs** (OpenCode, FreeLLMAPI, OmniRoute, etc.) | Internal drafts, routine research, data processing, template generation, repetitive workflows, status reports, first-pass analysis | Routine tasks where cost efficiency matters more than marginal quality gains |
+
+### Routing Rules
+
+- **Default to Tier 2** for all tasks. Escalate to Tier 1 only when the task is: customer-facing, financially material, legally sensitive, or requires complex multi-step reasoning.
+- **Any agent can request Tier 1** for a specific task with justification. The request is logged.
+- **GS and TT members** use Tier 1 by default for orchestration and strategic work.
+- **CV team agents** use Tier 2 by default for day-to-day operations, with Tier 1 available on-demand.
+- The tiered approach is reviewed monthly by CFO as part of cost analysis — if a Tier 2 engine's quality drops or a better free option emerges, the routing table is updated.
+
+### Infrastructure
+
 | Layer | Choice | Notes |
 |-------|--------|-------|
-| **Agent Engine** | **Grok Bot (xAI)** — the entire workforce runs on Grok only | One engine keeps prompts, costs, and behavior uniform |
-| **Multiplexer** | **Herdr** — many agent sessions running in parallel | Enables the entire agentic workforce to operate concurrently from one setup |
-| **Memory & State** | **File-based, local-first** (markdown/JSON in one workspace) | $0 cost, human-readable, git-versionable |
+| **Primary Engine (Tier 1)** | Grok Bot (xAI) | Orchestration, critical tasks, complex reasoning |
+| **Utility Engines (Tier 2)** | OpenCode, FreeLLMAPI, OmniRoute, etc. | Routine tasks, cost optimization — roster evolves as new options emerge |
+| **Multiplexer** | Flexible (Herdr or alternatives) | Not locked to any single multiplexer; chosen based on current needs |
+| **Memory & State** | File-based, local-first (markdown/JSON in one workspace) | $0 cost, human-readable, git-versionable |
 | **Web Presence** | www.axiomintelligence.xyz | Purchased |
 
 ### Workspace Layout (this IS the memory system)
 
 ```
 axiom-intelligence/
-├── _org/           ← org-wide: decisions.md (gate log), kpis.md, policies
+├── _org/           ← org-wide: decisions.md (gate log), kpis.md, policies, improvement-plans.md
 ├── gs/             ← GS's notes, meeting digests, follow-ups to Founder
 ├── tt/             ← one folder per C-Suite officer
 └── cvs/            ← one folder per company vertical
@@ -860,6 +918,8 @@ axiom-intelligence/
 | 6 | Profitability enforcement | Per-CV ledger, break-even contract at launch, loss alarm after 2 months, kill criteria, no revenue-free headcount. | GLM recommendation, Founder approved |
 | 7 | Communication default | **Async by default.** Synchronous only when genuinely faster. | GLM recommendation, Founder approved |
 | 8 | Business flow | ChatGPT's 10-stage flow + GLM's "Evolve" stage = 11 stages. | Founder decision |
+| 9 | Token optimization | **Hybrid LLM model**: Grok Bot (Tier 1) for orchestration & critical tasks; open-source/free APIs — OpenCode, FreeLLMAPI, OmniRoute (Tier 2) for routine work. Default to Tier 2, escalate to Tier 1 on justification. Herdr no longer mandatory. | Founder decision |
+| 10 | Direct improvement plans | **Any agent can submit improvement plans directly to Founder** (bypassing manager chain) covering token cost, org profitability, and quality of work. GS tracks in `_org/improvement-plans.md`. | Founder decision |
 
 ---
 

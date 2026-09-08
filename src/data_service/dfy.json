@@ -4,7 +4,7 @@
     "description": "All text content of the DFY (Done For You) page, extracted from src/website/sections/dfy.py. Single source of truth for copy — no tables, no schema."
   },
   "contact": {
-    "email": "hello@axiomintelligence.xyz",
+    "email": "axiom.intelligence.inc@gmail.com",
     "site_url": "https://axiomintelligence.xyz",
     "site_name": "axiomintelligence.xyz"
   },
@@ -32,7 +32,7 @@
       "intro": "Website, SEO, ads, automations, dashboards, AI agents—everything your business needs to grow, delivered and managed by an intelligent workforce.",
       "primary_button": {
         "label": "Get started",
-        "href": "mailto:hello@axiomintelligence.xyz"
+        "href": "mailto:axiom.intelligence.inc@gmail.com"
       },
       "links": [
         {"label": "See services", "glyph": "↓", "href": "#dfy-services"}
@@ -281,14 +281,14 @@
       "eyebrow": "Get started",
       "title": ["Ready to go", "hands-free?"],
       "body": "Tell us about your business. We’ll build a custom proposal—services, timeline, and pricing tailored to your industry.",
-      "button": {"label": "Start a conversation", "href": "mailto:hello@axiomintelligence.xyz"}
+      "button": {"label": "Start a conversation", "href": "mailto:axiom.intelligence.inc@gmail.com"}
     },
     "cards": [
       {
         "key": "email",
         "topline": ["Email", "✉"],
-        "label": ["Say hello", "hello@axiomintelligence.xyz"],
-        "href": "mailto:hello@axiomintelligence.xyz"
+        "label": ["Say hello", "axiom.intelligence.inc@gmail.com"],
+        "href": "mailto:axiom.intelligence.inc@gmail.com"
       },
       {
         "key": "powered",

@@ -67,10 +67,10 @@ def _social():
     return Article(
         card_topline(*d["topline"]),
         Div(
-            # TODO: wire real profile URLs — placeholders are non-interactive
-            # spans until then so keyboard users don't hit dead links.
             *[
-                Span(pill + " ", Span("↗"), cls="social-pill", aria_disabled="true", title=d["note"])
+                A(pill["label"] + " ", Span("↗"), cls="social-pill", href=pill["href"], target="_blank", rel="noopener noreferrer")
+                if pill.get("href")
+                else Span(pill["label"] + " ", Span("↗"), cls="social-pill", aria_disabled="true", title=d["note"])
                 for pill in d["pills"]
             ],
             cls="social-links",
