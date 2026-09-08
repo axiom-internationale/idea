@@ -5,7 +5,7 @@
   },
   "contact": {
     "email": "hello@axiomintelligence.xyz",
-    "site_url": "https://www.axiomintelligence.xyz",
+    "site_url": "https://axiomintelligence.xyz",
     "site_name": "axiomintelligence.xyz"
   },
   "nav": {
@@ -380,7 +380,7 @@
         "key": "web",
         "topline": ["Website", "↗"],
         "label": ["axiomintelligence.xyz", "Visit our main site"],
-        "href": "https://www.axiomintelligence.xyz"
+        "href": "https://axiomintelligence.xyz"
       },
       {
         "key": "contact",
@@ -414,7 +414,7 @@
     "locations_short": "BH — LA — NY — SD",
     "tagline": "Built to build what's next.",
     "copyright": "© 2026 Axiom Intelligence Inc.",
-    "site_link": {"label": "axiomintelligence.xyz", "glyph": "↗", "href": "https://www.axiomintelligence.xyz"}
+    "site_link": {"label": "axiomintelligence.xyz", "glyph": "↗", "href": "https://axiomintelligence.xyz"}
   },
   "brief_dialog": {
     "eyebrow": "The factory, in one line",
