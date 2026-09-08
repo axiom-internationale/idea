@@ -4,7 +4,7 @@
     "description": "All text content of the homepage, extracted from src/website/sections/*. Single source of truth for copy — no tables, no schema."
   },
   "contact": {
-    "email": "hello@axiomintelligence.xyz",
+    "email": "axiom.intelligence.inc@gmail.com",
     "site_url": "https://axiomintelligence.xyz",
     "site_name": "axiomintelligence.xyz"
   },
@@ -373,7 +373,7 @@
       "eyebrow": "Get in touch",
       "title": ["Let's", "build."],
       "body": "Interested in what Axiom Intelligence is building? Have an idea worth exploring? We're always looking for the next opportunity.",
-      "button": {"label": "Start a conversation", "href": "mailto:hello@axiomintelligence.xyz"}
+      "button": {"label": "Start a conversation", "href": "mailto:axiom.intelligence.inc@gmail.com"}
     },
     "cards": [
       {
@@ -385,13 +385,17 @@
       {
         "key": "contact",
         "topline": ["Email", "✉"],
-        "label": ["Say hello", "hello@axiomintelligence.xyz"],
-        "href": "mailto:hello@axiomintelligence.xyz"
+        "label": ["Say hello", "axiom.intelligence.inc@gmail.com"],
+        "href": "mailto:axiom.intelligence.inc@gmail.com"
       },
       {
         "key": "social",
         "topline": ["Social", "@"],
-        "pills": ["Twitter / X", "LinkedIn", "GitHub"],
+        "pills": [
+          {"label": "Twitter / X"},
+          {"label": "LinkedIn"},
+          {"label": "GitHub", "href": "https://github.com/axiom-internationale"}
+        ],
         "note": "Coming soon"
       },
       {
