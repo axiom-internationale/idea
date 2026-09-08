@@ -35,7 +35,7 @@ def test_hero_manifesto_copy():
 
 
 def test_key_copy_spot_checks():
-    assert get_section("contact")["email"] == "hello@axiomintelligence.xyz"
+    assert get_section("contact")["email"] == "axiom.intelligence.inc@gmail.com"
     assert get_section("machine")["pipeline"]["flow"] == ["Idea", "Research", "Build", "Launch", "Revenue"]
     assert len(get_section("think_tank")["agents"]) == 4
     assert len(get_section("stack")["layers"]) == 4
