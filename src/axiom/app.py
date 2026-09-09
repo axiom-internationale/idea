@@ -10,6 +10,7 @@ from starlette.staticfiles import StaticFiles
 from axiom import __version__
 from axiom.lifecycle import lifespan
 from backend_service.app import create_app as create_backend_app
+from dfy_service.app import create_app as create_docs_app
 from website.app import create_app as create_website_app
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
@@ -21,6 +22,7 @@ axiom_app = Starlette(
     debug=False,
     routes=[
         Mount("/api", app=create_backend_app()),
+        Mount("/dfy/docs", app=create_docs_app(), name="docs"),
         Mount("/static", app=StaticFiles(directory=str(_STATIC)), name="static"),
         Mount("/media", app=StaticFiles(directory=str(_MEDIA)), name="media"),
         Mount("/", app=create_website_app()),
