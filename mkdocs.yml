@@ -1,0 +1,55 @@
+site_name: Axiom Intelligence — Documentation
+site_description: Production reference for the personalized autonomous agentic factory.
+site_dir: _docs_site
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: README.md
+  - Charter: charter.md
+  - Organization: organization.md
+  - Operations: operations.md
+  - Business Lifecycle: business_lifecycle.md
+  - Infrastructure: infrastructure.md
+  - Markets & Products: markets.md
+  - Outreach Playbook: outreach_playbook.md
+  - Decision Log: decision_log.md
+  - Company Verticals:
+      - Home Service AI — Brief: cvs/home_service_ai/brief.md
+      - Home Service AI — Agents: cvs/home_service_ai/agents.md
+      - Home Service AI — Ledger: cvs/home_service_ai/ledger.md
+      - Law Firm AI — Brief: cvs/law_firm_ai/brief.md
+      - Law Firm AI — Agents: cvs/law_firm_ai/agents.md
+      - Law Firm AI — Ledger: cvs/law_firm_ai/ledger.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
