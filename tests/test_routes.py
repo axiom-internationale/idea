@@ -33,6 +33,10 @@ def test_law_page_seo_and_jsonld():
     assert '"name": "New York"' in html
     assert "data-law-intake" in html
     assert "Your firm" in html
+    assert "The company" in html
+    assert "The agentic factory" not in html
+    assert "All practice areas" in html
+    assert "Family and criminal come later" not in html
 
 
 def test_sitemap_includes_law():

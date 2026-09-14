@@ -16,7 +16,7 @@
     "locations_short": "BH — LA — NY — SD",
     "status": "Live",
     "menu": [
-      {"label": "Home", "sub": "The agentic factory", "href": "/"},
+      {"label": "Home", "sub": "The company", "href": "/"},
       {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"},
       {"label": "Law", "sub": "DFY for law firms", "href": "/dfy/law"}
     ],

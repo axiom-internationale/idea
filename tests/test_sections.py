@@ -124,6 +124,8 @@ def test_nav_menu_marks_active_page():
         assert 'href="/dfy/law"' in html
         assert html.count('aria-current="page"') == 1
         assert f'href="{href}"' in html
+        assert "The company" in html
+        assert "The agentic factory" not in html
         current = re.search(
             rf'href="{re.escape(href)}"[^>]*aria-current="page"|aria-current="page"[^>]*href="{re.escape(href)}"',
             html,

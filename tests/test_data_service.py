@@ -98,6 +98,10 @@ def test_nav_menu_in_both_pages():
         menu = get_section("nav", page=page)["menu"]
         assert [item["href"] for item in menu] == expected_hrefs
         assert [item["label"] for item in menu] == expected_labels
+        home = next(item for item in menu if item["href"] == "/")
+        assert home["sub"] == "The company"
+        assert "agent" not in home["sub"].lower()
+        assert "factory" not in home["sub"].lower()
 
 
 def test_dfy_law_page_loads_with_all_sections():
@@ -123,6 +127,15 @@ def test_dfy_law_copy_spot_checks():
     cta = get_section("cta", page="dfy_law")
     assert cta["form"]["action_email"] == "axiom.intelligence.inc@gmail.com"
     assert "firm" in cta["form"]["fields"]
+    hero_cards = {card["key"]: card for card in get_section("hero", page="dfy_law")["cards"]}
+    practices = {card["key"]: card for card in get_section("wedge", page="dfy_law")["cards"]}
+    assert "All practice areas" in hero_cards["practices"]["label"][0]
+    assert "family" in practices["practices"]["label"][0].lower()
+    assert "criminal" in practices["practices"]["label"][0].lower()
+    assert "later" not in practices["later"]["label"][0].lower()
+    wedge_body = " ".join(get_section("wedge", page="dfy_law")["main"]["body"]).lower()
+    assert "come later" not in wedge_body
+    assert "family" in wedge_body and "criminal" in wedge_body
 
 
 def test_no_banned_glyphs_in_dfy_law():
