@@ -99,10 +99,10 @@ def jsonld_law_service() -> Script:
         },
         "description": (
             "Done-for-you websites, Google Business Profile, reviews, intake, SEO, "
-            "and ads for small and mid-sized law firms in the NYC metro, across every practice."
+            "and ads for small and mid-sized US law firms, across every practice."
         ),
         "serviceType": "Done-for-you digital marketing and intake for law firms",
-        "areaServed": {"@type": "AdministrativeArea", "name": "New York metropolitan area"},
+        "areaServed": {"@type": "Country", "name": "US"},
         "audience": {"@type": "Audience", "audienceType": "Law firms"},
         "hasOfferCatalog": {
             "@type": "OfferCatalog",

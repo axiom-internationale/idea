@@ -139,7 +139,9 @@ def test_nav_menu_marks_active_page():
 def test_dfy_law_hero_is_founder_led():
     html = to_xml(dfy_law_hero_section())
     assert "Priyanshu" in html
-    assert "NYC metro" in html
+    assert "US firms" in html
+    assert "NYC" not in html
+    assert "metro" not in html.lower()
     assert "All practice areas" in html
     assert "agentic" not in html.lower()
     assert "factory" not in html.lower()

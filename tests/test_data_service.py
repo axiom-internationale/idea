@@ -1,5 +1,7 @@
 """data_service — homepage content index stays valid and complete."""
 
+import json
+
 from data_service import DFY_PATH, INDEX_PATH, LAW_PATH, get_section, load_index
 
 EXPECTED_SECTIONS = (
@@ -141,7 +143,8 @@ def test_dfy_law_copy_spot_checks():
     assert "come later" not in wedge_body
     assert "family" in wedge_body and "criminal" in wedge_body
     assert "employment" in wedge_body and "corporate" in wedge_body
-    assert "nyc metro" in wedge_body
+    assert "nyc" not in wedge_body
+    assert "metro" not in wedge_body
     assert get_section("cta", page="dfy_law")["form"]["fields"]["practice"]["options"] == [
         "Personal injury",
         "Immigration",
@@ -153,7 +156,7 @@ def test_dfy_law_copy_spot_checks():
     ]
 
 
-def test_dfy_law_copy_is_founder_led_nyc_metro():
+def test_dfy_law_copy_is_founder_led_and_geo_agnostic():
     raw = LAW_PATH.read_text(encoding="utf-8")
     for phrase in (
         "agentic",
@@ -174,9 +177,23 @@ def test_dfy_law_copy_is_founder_led_nyc_metro():
     assert hero["cards"][0]["key"] == "partner"
     assert "Priyanshu" in hero["cards"][0]["label"][0]
     assert "nyc" not in {card["key"] for card in hero["cards"]}
-    assert "NYC metro" in hero["cards"][4]["heading"][0]
-    assert hero["cards"][1]["stats"] == [["5–50", "Attorneys"], ["NYC", "Metro"]]
+    assert hero["cards"][4]["heading"][0] == "US firms."
+    assert hero["cards"][1]["stats"] == [["5–50", "Attorneys"], ["US", "Firms"]]
     assert "1–10" not in raw
+    page = {k: v for k, v in load_index("dfy_law").items() if k not in ("nav", "footer", "contact", "_meta")}
+    blob = json.dumps(page)
+    for phrase in (
+        "NYC",
+        "New York",
+        "borough",
+        "11372",
+        "Queens",
+        "Brooklyn",
+        "Manhattan",
+        "metro",
+    ):
+        assert phrase not in blob, f"geo-locked phrase still in dfy_law page copy: {phrase}"
+    assert get_section("cta", page="dfy_law")["form"]["fields"]["city"]["placeholder"] == "City or ZIP"
 
 
 def test_no_banned_glyphs_in_dfy_law():

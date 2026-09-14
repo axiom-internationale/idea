@@ -30,7 +30,7 @@
     "manifesto": {
       "eyebrow": "Done for you · Law firms",
       "title": ["Your firm.", "Done for you."],
-      "intro": "For small and mid-sized firms in the NYC metro, every practice. Priyanshu · Axiom Intelligence runs the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
+      "intro": "For small and mid-sized US firms, every practice. Priyanshu · Axiom Intelligence runs the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
       "primary_button": {
         "label": "Book a 20-min audit",
         "href": "#dfy-law-connect"
@@ -48,7 +48,7 @@
       {
         "key": "size",
         "topline": ["Fit", "Live"],
-        "stats": [["5–50", "Attorneys"], ["NYC", "Metro"]]
+        "stats": [["5–50", "Attorneys"], ["US", "Firms"]]
       },
       {
         "key": "practices",
@@ -64,7 +64,7 @@
       {
         "key": "reach",
         "topline": ["Market", "↗"],
-        "heading": ["NYC metro.", "Every practice."],
+        "heading": ["US firms.", "Every practice."],
         "note": "Small and mid-sized. Fast decisions."
       },
       {
@@ -89,9 +89,9 @@
     "divider": "The wedge",
     "main": {
       "eyebrow": "Who it's for",
-      "title": ["NYC metro.", "Every practice."],
+      "title": ["US firms.", "Every practice."],
       "body": [
-        "NYC metro, small and mid-sized firms, every practice—family, criminal, employment, corporate, PI, immigration, and the rest of the docket. Same stack, practice-specific pages.",
+        "Small and mid-sized US firms, every practice—family, criminal, employment, corporate, PI, immigration, and the rest of the docket. Same stack, practice-specific pages.",
         "3D accident modeling is a PI add-on, not the pitch. One founding partner delivers this—not an account team."
       ]
     },
@@ -240,7 +240,7 @@
           "placeholder": "Select practice",
           "options": ["Personal injury", "Immigration", "Family", "Criminal", "Employment", "Corporate", "Other"]
         },
-        "city": {"label": "City / ZIP", "placeholder": "Queens, NY 11372"},
+        "city": {"label": "City / ZIP", "placeholder": "City or ZIP"},
         "website": {"label": "Website", "placeholder": "https://"},
         "contact": {"label": "Phone / email", "placeholder": "phone or name@firm.com"},
         "meeting": {
