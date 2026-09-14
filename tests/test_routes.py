@@ -30,16 +30,28 @@ def test_law_page_seo_and_jsonld():
     assert "Done For You Law Firms" in html
     assert f'href="{SITE_URL}/dfy/law"' in html
     assert '"@type": "Service"' in html
-    assert '"name": "US"' in html
-    assert "NYC-first" not in html
-    assert "New York metro" not in html
-    assert "in-person in NYC" not in html.lower()
+    assert '"name": "New York metropolitan area"' in html
+    assert "NYC metro" in html
+    assert "Priyanshu" in html
     assert "data-law-intake" in html
     assert "Your firm" in html
     assert "The company" in html
     assert "The agentic factory" not in html
     assert "All practice areas" in html
     assert "Family and criminal come later" not in html
+    assert "Employment" in html
+    assert "Corporate" in html
+    for phrase in (
+        "agentic",
+        "factory",
+        "Think Tank",
+        "General Secretary",
+        "AI workforce",
+        "multi-agent",
+        "zero employees",
+        "autonomous organization",
+    ):
+        assert phrase.lower() not in html.lower()
 
 
 def test_sitemap_includes_law():

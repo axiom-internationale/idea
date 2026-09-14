@@ -132,31 +132,49 @@ def test_dfy_law_copy_spot_checks():
     hero_cards = {card["key"]: card for card in get_section("hero", page="dfy_law")["cards"]}
     practices = {card["key"]: card for card in get_section("wedge", page="dfy_law")["cards"]}
     assert "All practice areas" in hero_cards["practices"]["label"][0]
+    assert "employment" in hero_cards["practices"]["label"][1].lower()
+    assert "corporate" in hero_cards["practices"]["label"][1].lower()
     assert "family" in practices["practices"]["label"][0].lower()
     assert "criminal" in practices["practices"]["label"][0].lower()
     assert "later" not in practices["later"]["label"][0].lower()
     wedge_body = " ".join(get_section("wedge", page="dfy_law")["main"]["body"]).lower()
     assert "come later" not in wedge_body
     assert "family" in wedge_body and "criminal" in wedge_body
+    assert "employment" in wedge_body and "corporate" in wedge_body
+    assert "nyc metro" in wedge_body
+    assert get_section("cta", page="dfy_law")["form"]["fields"]["practice"]["options"] == [
+        "Personal injury",
+        "Immigration",
+        "Family",
+        "Criminal",
+        "Employment",
+        "Corporate",
+        "Other",
+    ]
 
 
-def test_dfy_law_copy_is_not_nyc_first():
+def test_dfy_law_copy_is_founder_led_nyc_metro():
     raw = LAW_PATH.read_text(encoding="utf-8")
     for phrase in (
-        "NYC-first",
-        "New York metro",
-        "in-person in NYC",
-        "In-person in NYC",
-        "NYC firms",
-        "NYC metro",
-        "Borough / city",
-        "Founding Partner in NYC",
-        "On the ground in New York",
+        "agentic",
+        "factory",
+        "Think Tank",
+        "General Secretary",
+        "AI workforce",
+        "multi-agent",
+        "zero employees",
+        "autonomous organization",
+        "agentic McKinsey",
+        "Family and criminal come later",
+        "PI + immigration",
     ):
-        assert phrase not in raw, f"geo-locked phrase still in dfy_law.json: {phrase}"
+        assert phrase not in raw, f"banned voice/positioning still in dfy_law.json: {phrase}"
     hero = get_section("hero", page="dfy_law")
     assert hero["cards"][0]["key"] == "partner"
+    assert "Priyanshu" in hero["cards"][0]["label"][0]
     assert "nyc" not in {card["key"] for card in hero["cards"]}
+    assert "NYC metro" in hero["cards"][4]["heading"][0]
+    assert hero["cards"][1]["stats"][1][0] == "NYC"
 
 
 def test_no_banned_glyphs_in_dfy_law():

@@ -526,13 +526,13 @@ def _email_card():
     )
 
 
-def _factory_card():
-    d = LAW_CTA_CARDS["factory"]
+def _dfy_page_card():
+    d = LAW_CTA_CARDS["dfy"]
     return Article(
         _topline(*d["topline"]),
         Div(Strong(d["label"][0]), Span(d["label"][1]), cls="card-label card-label--inverse"),
         A(cls="card-overlay-link", href=d["href"], aria_label="Visit the DFY page"),
-        cls="card card--violet card--dfy-law-factory",
+        cls="card card--violet card--dfy-law-dfy",
         data_depth="4",
         data_reveal="",
     )
@@ -545,7 +545,7 @@ def dfy_law_cta_section():
             _intake_form(),
             _meet_card(),
             _email_card(),
-            _factory_card(),
+            _dfy_page_card(),
             cls="bento bento--dfy-law-cta",
             data_bento="",
         ),

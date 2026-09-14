@@ -1594,7 +1594,7 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 
 .card--dfy-law-meet { grid-column: 5 / span 2; grid-row: 1; }
 .card--dfy-law-mail { grid-column: 5; grid-row: 2; }
-.card--dfy-law-factory { grid-column: 6; grid-row: 2; }
+.card--dfy-law-dfy { grid-column: 6; grid-row: 2; }
 
 .law-form {
   display: grid;
@@ -1882,7 +1882,7 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
   box-shadow: 0 0 12px rgba(232,229,255,.35), 15px 22px 0 3px rgba(232,229,255,.2);
   pointer-events: none;
 }
-.card--dfy-law-factory::before {
+.card--dfy-law-dfy::before {
   content: ""; position: absolute; top: -14px; left: -14px;
   width: 65px; height: 65px; border: 1.5px solid rgba(58,37,139,.08);
   border-radius: 50%; box-shadow: 0 0 0 12px rgba(58,37,139,.025); pointer-events: none;
@@ -2266,7 +2266,7 @@ html.js [data-reveal].revealed {
   .card--dfy-law-form { grid-column: 1 / span 4; grid-row: 1; }
   .card--dfy-law-meet { grid-column: 1 / span 2; grid-row: 2; }
   .card--dfy-law-mail { grid-column: 3; grid-row: 2; }
-  .card--dfy-law-factory { grid-column: 4; grid-row: 2; }
+  .card--dfy-law-dfy { grid-column: 4; grid-row: 2; }
 
   .section { padding-top: 28px; }
   .footer { margin-top: 28px; min-height: 140px; padding: 32px 0; }
@@ -2632,7 +2632,7 @@ html.js [data-reveal].revealed {
   .card--dfy-law-form { grid-column: 1 / -1; grid-row: 1; padding: 18px; }
   .card--dfy-law-meet { grid-column: 1 / -1; grid-row: 2; min-height: 120px; }
   .card--dfy-law-mail { grid-column: 1; grid-row: 3; }
-  .card--dfy-law-factory { grid-column: 2; grid-row: 3; }
+  .card--dfy-law-dfy { grid-column: 2; grid-row: 3; }
   .law-form { grid-template-columns: 1fr; }
 
   .section { padding-top: 24px; }

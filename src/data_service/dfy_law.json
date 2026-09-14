@@ -30,7 +30,7 @@
     "manifesto": {
       "eyebrow": "Done for you · Law firms",
       "title": ["Your firm.", "Done for you."],
-      "intro": "For 1–10 attorney US firms, every practice. We run the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
+      "intro": "For 1–10 attorney firms in the NYC metro, every practice. Priyanshu runs the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
       "primary_button": {
         "label": "Book a 20-min audit",
         "href": "#dfy-law-connect"
@@ -43,17 +43,17 @@
       {
         "key": "partner",
         "topline": ["Delivery", "○"],
-        "label": ["Partner-led.", "Human gate. Agentic delivery."]
+        "label": ["Priyanshu · Axiom Intelligence", "One founding partner. Human gate."]
       },
       {
         "key": "size",
         "topline": ["Fit", "Live"],
-        "stats": [["1–10", "Attorneys"], ["US", "Firms"]]
+        "stats": [["1–10", "Attorneys"], ["NYC", "Metro"]]
       },
       {
         "key": "practices",
         "topline": ["Practices", "01"],
-        "label": ["All practice areas.", "PI, immigration, family, criminal."]
+        "label": ["All practice areas.", "Family, criminal, employment, corporate."]
       },
       {
         "key": "audit",
@@ -64,8 +64,8 @@
       {
         "key": "reach",
         "topline": ["Market", "↗"],
-        "heading": ["US firms.", "Every practice."],
-        "note": "Small benches. Fast decisions."
+        "heading": ["NYC metro.", "Every practice."],
+        "note": "1–10 attorneys. Fast decisions."
       },
       {
         "key": "web",
@@ -89,28 +89,28 @@
     "divider": "The wedge",
     "main": {
       "eyebrow": "Who it's for",
-      "title": ["US firms.", "Every practice."],
+      "title": ["NYC metro.", "Every practice."],
       "body": [
-        "US law firms, 1–10 attorneys. Personal injury, immigration, family, criminal, and the rest of the docket—same stack, practice-specific pages.",
-        "3D accident modeling is a PI add-on, not the pitch. This is a commercial wedge, not a 40-industry catalog."
+        "NYC metro, 1–10 attorneys, every practice—family, criminal, employment, corporate, PI, immigration, and the rest of the docket. Same stack, practice-specific pages.",
+        "3D accident modeling is a PI add-on, not the pitch. One founding partner delivers this—not an account team."
       ]
     },
     "cards": [
       {
         "key": "ground",
         "topline": ["Delivery", "○"],
-        "label": ["Partner-led delivery.", "In person or a call—your choice."]
+        "label": ["Founder-led delivery.", "Priyanshu · Axiom Intelligence."]
       },
       {
         "key": "practices",
         "topline": ["Coverage", "01"],
         "heading": "All practice areas.",
-        "label": ["PI, immigration, family, criminal.", "Owner-operated. Process-heavy."]
+        "label": ["Family, criminal, employment, corporate.", "PI and immigration too."]
       },
       {
         "key": "later",
         "topline": ["Stack", "02"],
-        "label": ["Every practice you run.", "Same stack, different playbooks."]
+        "label": ["Same stack for every docket.", "Playbooks change. The partner doesn't."]
       },
       {
         "key": "addon",
@@ -238,9 +238,9 @@
         "practice": {
           "label": "Practice",
           "placeholder": "Select practice",
-          "options": ["Personal injury", "Immigration", "Family", "Criminal", "Other"]
+          "options": ["Personal injury", "Immigration", "Family", "Criminal", "Employment", "Corporate", "Other"]
         },
-        "city": {"label": "City / ZIP", "placeholder": "Austin, TX 78701"},
+        "city": {"label": "City / ZIP", "placeholder": "Queens, NY 11372"},
         "website": {"label": "Website", "placeholder": "https://"},
         "contact": {"label": "Phone / email", "placeholder": "phone or name@firm.com"},
         "meeting": {
@@ -266,7 +266,7 @@
         "href": "mailto:axiom.intelligence.inc@gmail.com"
       },
       {
-        "key": "factory",
+        "key": "dfy",
         "topline": ["DFY", "↗"],
         "label": ["All industries", "The broader done-for-you page."],
         "href": "/dfy"

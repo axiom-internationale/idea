@@ -136,6 +136,17 @@ def test_nav_menu_marks_active_page():
     assert "data-theme-auto" in default
 
 
+def test_dfy_law_hero_is_founder_led():
+    html = to_xml(dfy_law_hero_section())
+    assert "Priyanshu" in html
+    assert "NYC metro" in html
+    assert "All practice areas" in html
+    assert "agentic" not in html.lower()
+    assert "factory" not in html.lower()
+    assert "card--dfy-law-dfy" not in html
+    assert "card--dfy-law-partner" in html
+
+
 def test_dfy_legal_domain_links_to_law_page():
     html = to_xml(dfy_domains_section())
     assert 'href="/dfy/law"' in html
