@@ -1,0 +1,285 @@
+{
+  "_meta": {
+    "page": "/dfy/law",
+    "description": "All text content of the DFY Law Firms page. Single source of truth for copy — no tables, no schema."
+  },
+  "contact": {
+    "email": "axiom.intelligence.inc@gmail.com",
+    "site_url": "https://axiomintelligence.xyz",
+    "site_name": "axiomintelligence.xyz"
+  },
+  "nav": {
+    "brand": "Axiom Intelligence",
+    "wordmark": ["Axiom", "Intelligence"],
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "status": "Live",
+    "menu": [
+      {"label": "Home", "sub": "The agentic factory", "href": "/"},
+      {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"},
+      {"label": "Law", "sub": "DFY for law firms", "href": "/dfy/law"}
+    ],
+    "theme_toggle_labels": {
+      "to_dark": "Switch to dark mode",
+      "to_light": "Switch to light mode"
+    }
+  },
+  "hero": {
+    "id": "top",
+    "manifesto": {
+      "eyebrow": "Done for you · Law firms",
+      "title": ["Your firm.", "Done for you."],
+      "intro": "NYC-first for 1–10 attorney firms. We run the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
+      "primary_button": {
+        "label": "Book a 20-min audit",
+        "href": "#dfy-law-connect"
+      },
+      "links": [
+        {"label": "See packages", "glyph": "↓", "href": "#dfy-law-packages"}
+      ]
+    },
+    "cards": [
+      {
+        "key": "nyc",
+        "topline": ["New York", "○"],
+        "label": ["On the ground.", "Founding Partner in NYC."]
+      },
+      {
+        "key": "size",
+        "topline": ["Fit", "Live"],
+        "stats": [["1–10", "Attorneys"], ["NYC", "First"]]
+      },
+      {
+        "key": "practices",
+        "topline": ["Practices", "01"],
+        "label": ["PI + immigration.", "Family and criminal next."]
+      },
+      {
+        "key": "audit",
+        "topline": ["Offer", "20 min"],
+        "headline": "Intake-leak audit.",
+        "label": ["In-person in NYC", "when we can. Otherwise a call."]
+      },
+      {
+        "key": "metro",
+        "topline": ["Beachhead", "↗"],
+        "heading": ["NYC metro.", "Then the rest."],
+        "note": "US firms. Small benches. Fast decisions."
+      },
+      {
+        "key": "web",
+        "topline": ["Package", "01"],
+        "label": ["Presence", "Site, GBP, reviews, compliance."]
+      },
+      {
+        "key": "intake",
+        "topline": ["Package", "02"],
+        "label": ["Intake", "After-hours. Speed-to-lead."]
+      },
+      {
+        "key": "ads",
+        "topline": ["Package", "03"],
+        "label": ["Growth", "SEO + ads. Flat management."]
+      }
+    ]
+  },
+  "wedge": {
+    "id": "dfy-law-wedge",
+    "divider": "The wedge",
+    "main": {
+      "eyebrow": "Who it's for",
+      "title": ["NYC firms.", "First."],
+      "body": [
+        "US law firms, 1–10 attorneys. We start in New York metro—because the Founding Partner is on the ground there—and we start with personal injury and immigration.",
+        "Family and criminal come later. 3D accident modeling is a PI add-on, not the pitch. This is a commercial wedge, not a 40-industry catalog."
+      ]
+    },
+    "cards": [
+      {
+        "key": "ground",
+        "topline": ["Presence", "NY"],
+        "label": ["On the ground in New York.", "In-person intake audits when the calendar allows."]
+      },
+      {
+        "key": "practices",
+        "topline": ["Now", "01"],
+        "heading": "PI & immigration.",
+        "label": ["Highest volume first.", "Process-heavy. Owner-operated."]
+      },
+      {
+        "key": "later",
+        "topline": ["Next", "02"],
+        "label": ["Family & criminal later.", "Same stack, different playbooks."]
+      },
+      {
+        "key": "addon",
+        "topline": ["Add-on", "PI"],
+        "heading": ["3D modeling.", "Not the hero."],
+        "note": "Accident reconstruction sits on Presence for PI firms that need it."
+      }
+    ]
+  },
+  "packages": {
+    "id": "dfy-law-packages",
+    "divider": "The packages",
+    "main": {
+      "eyebrow": "What you buy",
+      "title": ["Three ways", "in."],
+      "body": "Fixed fees. Nested stack: Presence, then Intake, then Growth. You own the domain, the site, the ads accounts, and the data."
+    },
+    "cards": [
+      {
+        "key": "presence",
+        "num": 1,
+        "glyph": "○",
+        "title": "Presence",
+        "setup": ["$4,000", "Setup"],
+        "monthly": ["$2,500", "Per month"],
+        "term": "12-month term",
+        "includes": [
+          "Site, hosted and maintained",
+          "Google Business Profile",
+          "Review engine",
+          "2 practice pages / month",
+          "Attorney-ad compliance pass"
+        ]
+      },
+      {
+        "key": "intake",
+        "num": 2,
+        "glyph": "○",
+        "title": "Intake",
+        "setup": ["$7,500", "Setup"],
+        "monthly": ["$4,500", "Per month"],
+        "term": "Includes Presence",
+        "includes": [
+          "AI receptionist",
+          "After-hours coverage",
+          "Speed-to-lead",
+          "Follow-up sequences",
+          "Call tracking + CRM hook"
+        ]
+      },
+      {
+        "key": "growth",
+        "num": 3,
+        "glyph": "↗",
+        "title": "Growth",
+        "setup": ["$7,500", "Per month"],
+        "monthly": ["+ spend", "Client ads"],
+        "term": "Includes Intake · flat ad management, not a % of spend",
+        "includes": [
+          "SEO engine",
+          "Google Ads & LSA",
+          "Flat management fee",
+          "Weekly report"
+        ]
+      },
+      {
+        "key": "addon",
+        "num": 4,
+        "glyph": "○",
+        "title": "PI add-on",
+        "desc": "3D accident modeling for personal injury. Priced per matter—not the reason to call."
+      }
+    ]
+  },
+  "trust": {
+    "id": "dfy-law-trust",
+    "divider": "The terms",
+    "main": {
+      "eyebrow": "Ownership & limits",
+      "title": ["You own it.", "We operate it."],
+      "body": [
+        "Domain, website, ads accounts, and data stay in your name. We operate them. If we part ways, you keep the keys.",
+        "A licensed-attorney standard still applies: a human gates attorney advertising before it ships. We do not promise rankings, case volume, or silent retunes of ads and content."
+      ]
+    },
+    "cards": [
+      {
+        "key": "own",
+        "topline": ["Ownership", "○"],
+        "label": ["Your accounts.", "Domain, site, ads, data—yours."]
+      },
+      {
+        "key": "guarantees",
+        "topline": ["Limits", "○"],
+        "heading": "No guarantees.",
+        "label": ["No rankings.", "No case-volume promises."]
+      },
+      {
+        "key": "human",
+        "topline": ["Compliance", "01"],
+        "label": ["Human gate.", "Attorney advertising is reviewed before it ships."]
+      },
+      {
+        "key": "flat",
+        "topline": ["Ads", "↗"],
+        "heading": ["Flat fee.", "Not a cut of spend."],
+        "note": "Google Ads and LSA management is a fixed line—not a percent of budget."
+      }
+    ]
+  },
+  "cta": {
+    "id": "dfy-law-connect",
+    "divider": "Connect",
+    "main": {
+      "eyebrow": "20-minute audit",
+      "title": ["Where does", "intake leak?"],
+      "body": "Firm name, practice, borough, and how to reach you. We reply to book a 20-minute intake-leak audit—in-person in NYC when we can.",
+      "button": {"label": "Send audit request"},
+      "note": "Opens your email app with the details filled in."
+    },
+    "form": {
+      "action_email": "axiom.intelligence.inc@gmail.com",
+      "fields": {
+        "firm": {"label": "Firm name", "placeholder": "Chen & Ortiz LLP"},
+        "practice": {
+          "label": "Practice",
+          "placeholder": "Select practice",
+          "options": ["Personal injury", "Immigration", "Family", "Criminal", "Other"]
+        },
+        "city": {"label": "Borough / city", "placeholder": "Brooklyn, NY"},
+        "website": {"label": "Website", "placeholder": "https://"},
+        "contact": {"label": "Phone / email", "placeholder": "212… or name@firm.com"},
+        "meeting": {
+          "label": "How to meet",
+          "options": [
+            {"value": "In-person in NYC", "label": "In-person in NYC"},
+            {"value": "Phone or video call", "label": "Phone or video"}
+          ]
+        }
+      },
+      "subject_prefix": "Intake-leak audit"
+    },
+    "cards": [
+      {
+        "key": "meet",
+        "topline": ["NYC", "○"],
+        "label": ["In-person when possible.", "Otherwise a focused call."]
+      },
+      {
+        "key": "email",
+        "topline": ["Email", "✉"],
+        "label": ["Same inbox", "axiom.intelligence.inc@gmail.com"],
+        "href": "mailto:axiom.intelligence.inc@gmail.com"
+      },
+      {
+        "key": "factory",
+        "topline": ["DFY", "↗"],
+        "label": ["All industries", "The broader done-for-you page."],
+        "href": "/dfy"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "Axiom Intelligence",
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "tagline": "Built to build what's next.",
+    "copyright": "© 2026 Axiom Intelligence Inc.",
+    "site_link": {"label": "axiomintelligence.xyz", "glyph": "↗", "href": "https://axiomintelligence.xyz"}
+  }
+}

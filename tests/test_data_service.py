@@ -1,6 +1,6 @@
 """data_service — homepage content index stays valid and complete."""
 
-from data_service import DFY_PATH, INDEX_PATH, get_section, load_index
+from data_service import DFY_PATH, INDEX_PATH, LAW_PATH, get_section, load_index
 
 EXPECTED_SECTIONS = (
     "nav",
@@ -92,7 +92,39 @@ def test_unknown_page_raises_helpful_error():
 
 
 def test_nav_menu_in_both_pages():
-    for page in ("index", "dfy"):
+    expected_hrefs = ["/", "/dfy", "/dfy/law"]
+    expected_labels = ["Home", "DFY", "Law"]
+    for page in ("index", "dfy", "dfy_law"):
         menu = get_section("nav", page=page)["menu"]
-        assert [item["href"] for item in menu] == ["/", "/dfy"]
-        assert [item["label"] for item in menu] == ["Home", "DFY"]
+        assert [item["href"] for item in menu] == expected_hrefs
+        assert [item["label"] for item in menu] == expected_labels
+
+
+def test_dfy_law_page_loads_with_all_sections():
+    law = load_index("dfy_law")
+    assert law["_meta"]["page"] == "/dfy/law"
+    for name in ("nav", "hero", "wedge", "packages", "trust", "cta", "footer"):
+        assert isinstance(law[name], dict), f"missing law section {name}"
+
+
+def test_dfy_law_copy_spot_checks():
+    hero = get_section("hero", page="dfy_law")
+    assert hero["manifesto"]["title"] == ["Your firm.", "Done for you."]
+    assert hero["manifesto"]["primary_button"]["href"] == "#dfy-law-connect"
+    pkgs = {card["key"]: card for card in get_section("packages", page="dfy_law")["cards"]}
+    assert pkgs["presence"]["setup"][0] == "$4,000"
+    assert pkgs["presence"]["monthly"][0] == "$2,500"
+    assert pkgs["intake"]["setup"][0] == "$7,500"
+    assert pkgs["intake"]["monthly"][0] == "$4,500"
+    assert pkgs["growth"]["setup"][0] == "$7,500"
+    assert "flat" in pkgs["growth"]["term"].lower()
+    legal = get_section("domains", page="dfy")["cards"][0]
+    assert legal["href"] == "/dfy/law"
+    cta = get_section("cta", page="dfy_law")
+    assert cta["form"]["action_email"] == "axiom.intelligence.inc@gmail.com"
+    assert "firm" in cta["form"]["fields"]
+
+
+def test_no_banned_glyphs_in_dfy_law():
+    raw = LAW_PATH.read_text(encoding="utf-8")
+    assert "⎁" not in raw  # U+2381 renders as tofu on Windows

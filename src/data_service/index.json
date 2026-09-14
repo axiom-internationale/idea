@@ -17,7 +17,8 @@
     "status": "Live",
     "menu": [
       {"label": "Home", "sub": "The agentic factory", "href": "/"},
-      {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"}
+      {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"},
+      {"label": "Law", "sub": "DFY for law firms", "href": "/dfy/law"}
     ],
     "theme_toggle_labels": {
       "to_dark": "Switch to dark mode",

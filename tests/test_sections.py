@@ -15,6 +15,13 @@ from website.sections.dfy import (
     dfy_process_section,
     dfy_services_section,
 )
+from website.sections.dfy_law import (
+    dfy_law_cta_section,
+    dfy_law_hero_section,
+    dfy_law_packages_section,
+    dfy_law_trust_section,
+    dfy_law_wedge_section,
+)
 from website.sections.dna import dna_section
 from website.sections.founder import founder_section
 from website.sections.hero import hero_section
@@ -68,6 +75,11 @@ ALL_SECTIONS = (
     dfy_process_section,
     dfy_evolve_section,
     dfy_cta_section,
+    dfy_law_hero_section,
+    dfy_law_wedge_section,
+    dfy_law_packages_section,
+    dfy_law_trust_section,
+    dfy_law_cta_section,
 )
 
 # Glyphs known to render as tofu in common fonts (U+2381 broke toplines on Windows).
@@ -104,14 +116,42 @@ def test_no_dead_placeholder_links():
 
 
 def test_nav_menu_marks_active_page():
-    home = to_xml(nav_section(active="home"))
-    dfy = to_xml(nav_section(active="dfy"))
-    for html in (home, dfy):
+    cases = (("home", "/"), ("dfy", "/dfy"), ("law", "/dfy/law"))
+    for active, href in cases:
+        html = to_xml(nav_section(active=active))
         assert "menu-toggle" in html and "menu-drawer" in html
-        assert 'href="/"' in html and 'href="/dfy"' in html
+        assert 'href="/"' in html
+        assert 'href="/dfy/law"' in html
         assert html.count('aria-current="page"') == 1
-    assert home.index('aria-current="page"') < home.index('href="/dfy"')
-    assert dfy.index('aria-current="page"') > dfy.index('href="/"')
+        assert f'href="{href}"' in html
+        current = re.search(
+            rf'href="{re.escape(href)}"[^>]*aria-current="page"|aria-current="page"[^>]*href="{re.escape(href)}"',
+            html,
+        )
+        assert current
     default = to_xml(nav_section())
     assert default.count('aria-current="page"') == 1
-    assert "data-theme-auto" in home
+    assert "data-theme-auto" in default
+
+
+def test_dfy_legal_domain_links_to_law_page():
+    html = to_xml(dfy_domains_section())
+    assert 'href="/dfy/law"' in html
+    assert "card--dfy-dom-legal" in html
+
+
+def test_dfy_law_intake_collects_fields():
+    html = to_xml(dfy_law_cta_section())
+    assert "data-law-intake" in html
+    for name in ("firm", "practice", "city", "website", "contact", "meeting"):
+        assert f'name="{name}"' in html
+    assert "mailto:axiom.intelligence.inc@gmail.com" in html
+    assert "$4,000" not in html  # prices live in packages, not the form card
+
+
+def test_dfy_law_packages_render_prices():
+    html = to_xml(dfy_law_packages_section())
+    for price in ("$4,000", "$2,500", "$7,500", "$4,500"):
+        assert price in html
+    assert "12-month" in html
+    assert "flat" in html.lower()

@@ -20,13 +20,19 @@ def _menu_link(label, sub, href, is_active):
     )
 
 
-def _menu_link_for(item, active):
-    key = "home" if item["href"] == "/" else "dfy"
-    return _menu_link(item["label"], item["sub"], item["href"], active == key)
+_ACTIVE_HREF = {
+    "home": "/",
+    "dfy": "/dfy",
+    "law": "/dfy/law",
+}
+
+
+def _menu_link_for(item, active_href):
+    return _menu_link(item["label"], item["sub"], item["href"], item["href"] == active_href)
 
 
 def nav_section(active="home"):
-    active = active if active in ("home", "dfy") else None
+    active_href = _ACTIVE_HREF.get(active)
     return Nav(
         A(
             Img(
@@ -91,7 +97,7 @@ def nav_section(active="home"):
                 cls="menu-head",
             ),
             Nav(
-                *[_menu_link_for(item, active) for item in NAV["menu"]],
+                *[_menu_link_for(item, active_href) for item in NAV["menu"]],
                 Button(
                     Span("Follow day & night", cls="menu-link-title"),
                     Span("On — following day & night", cls="menu-link-sub", data_theme_auto_state=""),
