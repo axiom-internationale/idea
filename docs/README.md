@@ -20,7 +20,7 @@
 | CV | Status | Docs |
 |----|--------|------|
 | CV1 — Home Service AI | Pre-launch | [brief](cvs/home_service_ai/brief.md) · [agents](cvs/home_service_ai/agents.md) · [ledger](cvs/home_service_ai/ledger.md) |
-| CV2 — Law Firm AI | Pre-launch | [brief](cvs/law_firm_ai/brief.md) · [agents](cvs/law_firm_ai/agents.md) · [ledger](cvs/law_firm_ai/ledger.md) |
+| CV2 — Law Firm AI | Pre-launch | [brief](cvs/law_firm_ai/brief.md) · [gtm](cvs/law_firm_ai/gtm.md) · [report outline](cvs/law_firm_ai/report_outline.md) · [agents](cvs/law_firm_ai/agents.md) · [ledger](cvs/law_firm_ai/ledger.md) |
 
 ## How These Relate
 

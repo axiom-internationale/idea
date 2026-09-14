@@ -174,7 +174,8 @@ def test_dfy_law_copy_is_founder_led_nyc_metro():
     assert "Priyanshu" in hero["cards"][0]["label"][0]
     assert "nyc" not in {card["key"] for card in hero["cards"]}
     assert "NYC metro" in hero["cards"][4]["heading"][0]
-    assert hero["cards"][1]["stats"][1][0] == "NYC"
+    assert hero["cards"][1]["stats"] == [["5–50", "Attorneys"], ["NYC", "Metro"]]
+    assert "1–10" not in raw
 
 
 def test_no_banned_glyphs_in_dfy_law():

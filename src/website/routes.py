@@ -137,7 +137,7 @@ def setup_home_routes(app):
             *page_meta(
                 title="Done For You Law Firms — Intake, Sites & Ads",
                 description=(
-                    "Done-for-you sites, intake, and ads for 1–10 attorney law firms "
+                    "Done-for-you sites, intake, and ads for small and mid-sized law firms "
                     "in the NYC metro—every practice. Presence, Intake, and Growth "
                     "packages. Book a 20-minute intake-leak audit."
                 ),
