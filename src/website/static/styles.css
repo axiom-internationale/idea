@@ -1279,15 +1279,15 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
   grid-template-rows: minmax(200px, auto) minmax(200px, auto);
 }
 .card--dfy-mis-main {
-  grid-column: 1 / span 3; grid-row: 1 / span 2;
+  grid-column: 1 / span 2; grid-row: 1 / span 2;
   display: flex; flex-direction: column; padding: 24px;
   container-type: inline-size;
 }
 .card--dfy-mis-main .eyebrow { margin-bottom: 16px; }
-.card--dfy-mis-consult { grid-column: 4 / span 2; grid-row: 1; }
-.card--dfy-mis-access { grid-column: 6; grid-row: 1; }
-.card--dfy-mis-playbook { grid-column: 4; grid-row: 2; }
-.card--dfy-mis-scale { grid-column: 5 / span 2; grid-row: 2; padding: 16px 18px; }
+.card--dfy-mis-consult { grid-column: 3 / span 2; grid-row: 1; }
+.card--dfy-mis-access { grid-column: 5 / span 2; grid-row: 1; }
+.card--dfy-mis-playbook { grid-column: 3 / span 2; grid-row: 2; }
+.card--dfy-mis-scale { grid-column: 5 / span 2; grid-row: 2; }
 
 .solar-system--sm { width: 100px; top: 46%; }
 .solar-system--sm .orbit--one { inset: 14px; }
@@ -1314,24 +1314,6 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 .card--dfy-svc-agents { grid-column: 5 / span 2; grid-row: 1; }
 .card--dfy-svc-ops { grid-column: 3 / span 2; grid-row: 2; }
 .card--dfy-svc-growth { grid-column: 5 / span 2; grid-row: 2; }
-
-/* ==============================
-   BENTO — DFY MISSION
-   ============================== */
-.bento--dfy-mission {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-template-rows: minmax(200px, auto) minmax(200px, auto);
-}
-.card--dfy-mis-main {
-  grid-column: 1 / span 2; grid-row: 1 / span 2;
-  display: flex; flex-direction: column; padding: 24px;
-  container-type: inline-size;
-}
-.card--dfy-mis-main .eyebrow { margin-bottom: 16px; }
-.card--dfy-mis-consult { grid-column: 3 / span 2; grid-row: 1; }
-.card--dfy-mis-access { grid-column: 5 / span 2; grid-row: 1; }
-.card--dfy-mis-playbook { grid-column: 3 / span 2; grid-row: 2; }
-.card--dfy-mis-scale { grid-column: 5 / span 2; grid-row: 2; }
 
 /* ==============================
    BENTO — DFY DOMAINS
@@ -1369,26 +1351,6 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 .card--dfy-step-launch { grid-column: 6; grid-row: 1; }
 .card--dfy-step-optimize { grid-column: 4 / span 2; grid-row: 2; }
 .card--dfy-step-scale { grid-column: 6; grid-row: 2; }
-
-/* ==============================
-   BENTO — DFY EVOLVE
-   ============================== */
-.bento--dfy-evolve {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-template-rows: minmax(200px, auto) minmax(200px, auto);
-}
-.card--dfy-evo-main {
-  grid-column: 1 / span 2; grid-row: 1 / span 2;
-  display: flex; flex-direction: column; padding: 24px;
-  container-type: inline-size;
-}
-.card--dfy-evo-main .eyebrow { margin-bottom: 16px; }
-.card--dfy-evo-main .eyebrow > span { background: #b5e675; }
-.card--dfy-evo-main .section-h2 em { color: #b5e675; }
-.card--dfy-evo-research { grid-column: 3 / span 2; grid-row: 1; }
-.card--dfy-evo-learn { grid-column: 5 / span 2; grid-row: 1; }
-.card--dfy-evo-adapt { grid-column: 3 / span 2; grid-row: 2; }
-.card--dfy-evo-compound { grid-column: 5 / span 2; grid-row: 2; }
 
 /* ==============================
    BENTO — DFY EVOLVE
@@ -1750,50 +1712,6 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
   border-radius: 50%; box-shadow: 0 0 0 12px rgba(58,37,139,.025); pointer-events: none;
 }
 .card--dfy-mis-consult::after {
-  content: ""; position: absolute; bottom: -18px; right: -18px;
-  width: 85px; height: 85px; border: 1px solid rgba(255,255,255,.06);
-  border-radius: 50%; box-shadow: 0 0 0 22px rgba(255,255,255,.025); pointer-events: none;
-}
-.card--dfy-mis-access::before {
-  content: ""; position: absolute; top: 14px; right: 14px;
-  width: 5px; height: 5px; border-radius: 50%;
-  background: rgba(255,255,255,.55);
-  box-shadow: 0 0 12px rgba(255,255,255,.4), 15px 22px 0 3px rgba(255,255,255,.2);
-  pointer-events: none;
-}
-.card--dfy-mis-playbook::after {
-  content: ""; position: absolute; bottom: -20px; right: -20px;
-  width: 70px; height: 70px; border: 1px solid rgba(232,229,255,.15);
-  border-radius: 50%; pointer-events: none;
-}
-.card--dfy-mis-scale::after {
-  content: ""; position: absolute; bottom: -16px; right: -20px;
-  width: 75px; height: 75px; border: 1.5px solid rgba(13,51,32,.09);
-  border-radius: 50%; box-shadow: 0 0 0 14px rgba(13,51,32,.03); pointer-events: none;
-}
-.card--dfy-evo-research::after {
-  content: ""; position: absolute; top: -18px; right: -18px;
-  width: 80px; height: 80px; border: 1.5px solid rgba(12,46,46,.1);
-  border-radius: 50%; box-shadow: 0 0 0 16px rgba(12,46,46,.03); pointer-events: none;
-}
-.card--dfy-evo-learn::after {
-  content: ""; position: absolute; bottom: -16px; left: -16px;
-  width: 70px; height: 70px; border: 1px solid rgba(113,85,11,.1);
-  border-radius: 50%; pointer-events: none;
-}
-.card--dfy-evo-adapt::before {
-  content: ""; position: absolute; top: 14px; right: 14px;
-  width: 5px; height: 5px; border-radius: 50%;
-  background: rgba(232,229,255,.5);
-  box-shadow: 0 0 12px rgba(232,229,255,.35), 15px 22px 0 3px rgba(232,229,255,.2);
-  pointer-events: none;
-}
-.card--dfy-evo-compound::after {
-  content: ""; position: absolute; bottom: -20px; left: -20px;
-  width: 80px; height: 80px; border: 1px solid rgba(38,63,18,.08);
-  border-radius: 50%; pointer-events: none;
-}
-.card--dfy-mis-consult::after {
   content: ""; position: absolute; right: -28px; bottom: -32px;
   width: 105px; height: 105px; border: 1px solid rgba(181,230,117,.18);
   border-radius: 50%; box-shadow: 0 0 0 20px rgba(181,230,117,.035); pointer-events: none;
@@ -2121,13 +2039,13 @@ html.js [data-reveal].revealed {
   /* DFY Mission — tablet */
   .bento--dfy-mission {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: minmax(200px, auto) minmax(200px, auto) minmax(200px, auto);
+    grid-template-rows: minmax(200px, auto) minmax(200px, auto);
   }
   .card--dfy-mis-main { grid-column: 1 / span 2; grid-row: 1 / span 2; }
-  .card--dfy-mis-consult { grid-column: 3 / span 2; grid-row: 1; }
-  .card--dfy-mis-access { grid-column: 3; grid-row: 2; }
-  .card--dfy-mis-playbook { grid-column: 4; grid-row: 2; }
-  .card--dfy-mis-scale { grid-column: 1 / span 4; grid-row: 3; }
+  .card--dfy-mis-consult { grid-column: 3; grid-row: 1; }
+  .card--dfy-mis-access { grid-column: 4; grid-row: 1; }
+  .card--dfy-mis-playbook { grid-column: 3; grid-row: 2; }
+  .card--dfy-mis-scale { grid-column: 4; grid-row: 2; }
 
   /* DFY Services — tablet */
   .bento--dfy-services {
@@ -2139,17 +2057,6 @@ html.js [data-reveal].revealed {
   .card--dfy-svc-agents { grid-column: 4; grid-row: 1; }
   .card--dfy-svc-ops { grid-column: 3; grid-row: 2; }
   .card--dfy-svc-growth { grid-column: 4; grid-row: 2; }
-
-  /* DFY Mission — tablet */
-  .bento--dfy-mission {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: minmax(200px, auto) minmax(200px, auto);
-  }
-  .card--dfy-mis-main { grid-column: 1 / span 2; grid-row: 1 / span 2; }
-  .card--dfy-mis-consult { grid-column: 3; grid-row: 1; }
-  .card--dfy-mis-access { grid-column: 4; grid-row: 1; }
-  .card--dfy-mis-playbook { grid-column: 3; grid-row: 2; }
-  .card--dfy-mis-scale { grid-column: 4; grid-row: 2; }
 
   /* DFY Domains — tablet */
   .bento--dfy-domains {
@@ -2173,17 +2080,6 @@ html.js [data-reveal].revealed {
   .card--dfy-step-launch { grid-column: 3; grid-row: 2; }
   .card--dfy-step-optimize { grid-column: 4; grid-row: 2; }
   .card--dfy-step-scale { grid-column: 1 / span 4; grid-row: 3; }
-
-  /* DFY Evolve — tablet */
-  .bento--dfy-evolve {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: minmax(195px, auto) minmax(195px, auto);
-  }
-  .card--dfy-evo-main { grid-column: 1 / span 2; grid-row: 1 / span 2; }
-  .card--dfy-evo-research { grid-column: 3; grid-row: 1; }
-  .card--dfy-evo-learn { grid-column: 4; grid-row: 1; }
-  .card--dfy-evo-adapt { grid-column: 3; grid-row: 2; }
-  .card--dfy-evo-compound { grid-column: 4; grid-row: 2; }
 
   /* DFY Evolve — tablet */
   .bento--dfy-evolve {
@@ -2476,7 +2372,7 @@ html.js [data-reveal].revealed {
     grid-template-rows: auto repeat(2, minmax(150px, auto));
     gap: 8px;
   }
-  .card--dfy-mis-main { grid-column: 1 / -1; grid-row: 1; min-height: 280px; padding: 18px; }
+  .card--dfy-mis-main { grid-column: 1 / -1; grid-row: 1; min-height: 240px; padding: 18px; }
   .card--dfy-mis-consult { grid-column: 1; grid-row: 2; }
   .card--dfy-mis-access { grid-column: 2; grid-row: 2; }
   .card--dfy-mis-playbook { grid-column: 1; grid-row: 3; }
@@ -2493,18 +2389,6 @@ html.js [data-reveal].revealed {
   .card--dfy-svc-agents { grid-column: 2; grid-row: 2; }
   .card--dfy-svc-ops { grid-column: 1; grid-row: 3; }
   .card--dfy-svc-growth { grid-column: 2; grid-row: 3; }
-
-  /* DFY Mission — mobile */
-  .bento--dfy-mission {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto repeat(2, minmax(150px, auto));
-    gap: 8px;
-  }
-  .card--dfy-mis-main { grid-column: 1 / -1; grid-row: 1; min-height: 240px; padding: 18px; }
-  .card--dfy-mis-consult { grid-column: 1; grid-row: 2; }
-  .card--dfy-mis-access { grid-column: 2; grid-row: 2; }
-  .card--dfy-mis-playbook { grid-column: 1; grid-row: 3; }
-  .card--dfy-mis-scale { grid-column: 2; grid-row: 3; }
 
   /* DFY Domains — mobile */
   .bento--dfy-domains {
@@ -2530,18 +2414,6 @@ html.js [data-reveal].revealed {
   .card--dfy-step-launch { grid-column: 1; grid-row: 3; }
   .card--dfy-step-optimize { grid-column: 2; grid-row: 3; }
   .card--dfy-step-scale { grid-column: 1 / -1; grid-row: 4; min-height: 120px; }
-
-  /* DFY Evolve — mobile */
-  .bento--dfy-evolve {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto repeat(2, minmax(150px, auto));
-    gap: 8px;
-  }
-  .card--dfy-evo-main { grid-column: 1 / -1; grid-row: 1; min-height: 240px; padding: 18px; }
-  .card--dfy-evo-research { grid-column: 1; grid-row: 2; }
-  .card--dfy-evo-learn { grid-column: 2; grid-row: 2; }
-  .card--dfy-evo-adapt { grid-column: 1; grid-row: 3; }
-  .card--dfy-evo-compound { grid-column: 2; grid-row: 3; }
 
   /* DFY Evolve — mobile */
   .bento--dfy-evolve {
