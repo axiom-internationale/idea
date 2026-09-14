@@ -170,6 +170,7 @@ def test_dfy_law_copy_is_founder_led_nyc_metro():
     ):
         assert phrase not in raw, f"banned voice/positioning still in dfy_law.json: {phrase}"
     hero = get_section("hero", page="dfy_law")
+    assert "Priyanshu · Axiom Intelligence" in hero["manifesto"]["intro"]
     assert hero["cards"][0]["key"] == "partner"
     assert "Priyanshu" in hero["cards"][0]["label"][0]
     assert "nyc" not in {card["key"] for card in hero["cards"]}
