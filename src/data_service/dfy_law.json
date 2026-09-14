@@ -30,7 +30,7 @@
     "manifesto": {
       "eyebrow": "Done for you · Law firms",
       "title": ["Your firm.", "Done for you."],
-      "intro": "NYC-first for 1–10 attorney firms. We run the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
+      "intro": "For 1–10 attorney US firms, every practice. We run the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
       "primary_button": {
         "label": "Book a 20-min audit",
         "href": "#dfy-law-connect"
@@ -41,14 +41,14 @@
     },
     "cards": [
       {
-        "key": "nyc",
-        "topline": ["New York", "○"],
-        "label": ["On the ground.", "Founding Partner in NYC."]
+        "key": "partner",
+        "topline": ["Delivery", "○"],
+        "label": ["Partner-led.", "Human gate. Agentic delivery."]
       },
       {
         "key": "size",
         "topline": ["Fit", "Live"],
-        "stats": [["1–10", "Attorneys"], ["NYC", "First"]]
+        "stats": [["1–10", "Attorneys"], ["US", "Firms"]]
       },
       {
         "key": "practices",
@@ -59,13 +59,13 @@
         "key": "audit",
         "topline": ["Offer", "20 min"],
         "headline": "Intake-leak audit.",
-        "label": ["In-person in NYC", "when we can. Otherwise a call."]
+        "label": ["In person or a call.", "Twenty minutes on where intake leaks."]
       },
       {
-        "key": "metro",
-        "topline": ["Beachhead", "↗"],
-        "heading": ["NYC metro.", "Then the rest."],
-        "note": "US firms. Small benches. Fast decisions."
+        "key": "reach",
+        "topline": ["Market", "↗"],
+        "heading": ["US firms.", "Every practice."],
+        "note": "Small benches. Fast decisions."
       },
       {
         "key": "web",
@@ -89,17 +89,17 @@
     "divider": "The wedge",
     "main": {
       "eyebrow": "Who it's for",
-      "title": ["NYC firms.", "First."],
+      "title": ["US firms.", "Every practice."],
       "body": [
-        "US law firms, 1–10 attorneys. We start in New York metro—because the Founding Partner is on the ground there. Personal injury, immigration, family, criminal, and other practices.",
+        "US law firms, 1–10 attorneys. Personal injury, immigration, family, criminal, and the rest of the docket—same stack, practice-specific pages.",
         "3D accident modeling is a PI add-on, not the pitch. This is a commercial wedge, not a 40-industry catalog."
       ]
     },
     "cards": [
       {
         "key": "ground",
-        "topline": ["Presence", "NY"],
-        "label": ["On the ground in New York.", "In-person intake audits when the calendar allows."]
+        "topline": ["Delivery", "○"],
+        "label": ["Partner-led delivery.", "In person or a call—your choice."]
       },
       {
         "key": "practices",
@@ -227,7 +227,7 @@
     "main": {
       "eyebrow": "20-minute audit",
       "title": ["Where does", "intake leak?"],
-      "body": "Firm name, practice, borough, and how to reach you. We reply to book a 20-minute intake-leak audit—in-person in NYC when we can.",
+      "body": "Firm name, practice, city, and how to reach you. We reply to book a 20-minute intake-leak audit—in person or a call.",
       "button": {"label": "Send audit request"},
       "note": "Opens your email app with the details filled in."
     },
@@ -240,14 +240,14 @@
           "placeholder": "Select practice",
           "options": ["Personal injury", "Immigration", "Family", "Criminal", "Other"]
         },
-        "city": {"label": "Borough / city", "placeholder": "Brooklyn, NY"},
+        "city": {"label": "City / ZIP", "placeholder": "Austin, TX 78701"},
         "website": {"label": "Website", "placeholder": "https://"},
-        "contact": {"label": "Phone / email", "placeholder": "212… or name@firm.com"},
+        "contact": {"label": "Phone / email", "placeholder": "phone or name@firm.com"},
         "meeting": {
           "label": "How to meet",
           "options": [
-            {"value": "In-person in NYC", "label": "In-person in NYC"},
-            {"value": "Phone or video call", "label": "Phone or video"}
+            {"value": "In person", "label": "In person"},
+            {"value": "Call or video", "label": "Call or video"}
           ]
         }
       },
@@ -256,8 +256,8 @@
     "cards": [
       {
         "key": "meet",
-        "topline": ["NYC", "○"],
-        "label": ["In-person when possible.", "Otherwise a focused call."]
+        "topline": ["Meet", "○"],
+        "label": ["In person or a call.", "You choose how we meet."]
       },
       {
         "key": "email",

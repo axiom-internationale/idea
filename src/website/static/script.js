@@ -226,7 +226,7 @@ if (intake) {
       '',
       `Firm: ${data.get('firm') || ''}`,
       `Practice: ${data.get('practice') || ''}`,
-      `Borough / city: ${data.get('city') || ''}`,
+      `City / ZIP: ${data.get('city') || ''}`,
       `Website: ${data.get('website') || ''}`,
       `Phone / email: ${data.get('contact') || ''}`,
       `Meeting: ${data.get('meeting') || ''}`,

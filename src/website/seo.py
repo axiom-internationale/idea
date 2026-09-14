@@ -99,11 +99,10 @@ def jsonld_law_service() -> Script:
         },
         "description": (
             "Done-for-you websites, Google Business Profile, reviews, intake, SEO, "
-            "and ads for 1–10 attorney US law firms. NYC-first. Personal injury, "
-            "immigration, family, criminal, and other practices."
+            "and ads for 1–10 attorney US law firms across every practice."
         ),
         "serviceType": "Done-for-you digital marketing and intake for law firms",
-        "areaServed": {"@type": "AdministrativeArea", "name": "New York"},
+        "areaServed": {"@type": "Country", "name": "US"},
         "audience": {"@type": "Audience", "audienceType": "Law firms"},
         "hasOfferCatalog": {
             "@type": "OfferCatalog",

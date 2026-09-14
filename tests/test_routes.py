@@ -30,7 +30,10 @@ def test_law_page_seo_and_jsonld():
     assert "Done For You Law Firms" in html
     assert f'href="{SITE_URL}/dfy/law"' in html
     assert '"@type": "Service"' in html
-    assert '"name": "New York"' in html
+    assert '"name": "US"' in html
+    assert "NYC-first" not in html
+    assert "New York metro" not in html
+    assert "in-person in NYC" not in html.lower()
     assert "data-law-intake" in html
     assert "Your firm" in html
     assert "The company" in html

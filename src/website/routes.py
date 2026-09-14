@@ -135,11 +135,11 @@ def setup_home_routes(app):
     def dfy_law_page():
         return (
             *page_meta(
-                title="Done For You Law Firms — NYC Intake, Sites & Ads",
+                title="Done For You Law Firms — Intake, Sites & Ads",
                 description=(
-                    "Done-for-you digital ops for 1–10 attorney US law firms. "
-                    "NYC-first. Presence, Intake, and Growth packages. Book a "
-                    "20-minute intake-leak audit."
+                    "Done-for-you digital ops for 1–10 attorney US law firms, "
+                    "every practice. Presence, Intake, and Growth packages. "
+                    "Book a 20-minute intake-leak audit."
                 ),
                 path="/dfy/law",
             ),

@@ -1,4 +1,4 @@
-"""DFY Law Firms landing page — NYC-first commercial wedge."""
+"""DFY Law Firms landing page — US commercial wedge."""
 
 from fasthtml.common import (
     H1,
@@ -71,8 +71,8 @@ def _manifesto():
     )
 
 
-def _nyc_badge():
-    d = LAW_HERO_CARDS["nyc"]
+def _partner_badge():
+    d = LAW_HERO_CARDS["partner"]
     return Article(
         _topline(*d["topline"]),
         Div(
@@ -86,7 +86,7 @@ def _nyc_badge():
             aria_hidden="true",
         ),
         Div(Strong(d["label"][0]), Span(d["label"][1]), cls="card-label card-label--inverse"),
-        cls="card card--sun card--dfy-law-nyc",
+        cls="card card--sun card--dfy-law-partner",
         data_depth="14",
     )
 
@@ -121,13 +121,13 @@ def _audit_pulse():
     )
 
 
-def _metro_speed():
-    d = LAW_HERO_CARDS["metro"]
+def _reach_card():
+    d = LAW_HERO_CARDS["reach"]
     return Article(
         _topline(*d["topline"]),
         Strong(d["heading"][0], Br(), d["heading"][1], cls="speed-title"),
         Span(d["note"], cls="speed-note"),
-        cls="card card--mint card--dfy-law-metro",
+        cls="card card--mint card--dfy-law-reach",
         data_depth="4",
     )
 
@@ -155,11 +155,11 @@ def dfy_law_hero_section():
     return Section(
         Div(
             _manifesto(),
-            _nyc_badge(),
+            _partner_badge(),
             _size_stats(),
             _practices_badge(),
             _audit_pulse(),
-            _metro_speed(),
+            _reach_card(),
             _pkg_preview("web", "teal", "web"),
             _pkg_preview("intake", "amber", "lead"),
             _pkg_preview("ads", "rose", "ads"),
