@@ -2545,14 +2545,17 @@ html.js [data-reveal].revealed {
   /* DFY Law Trust — mobile */
   .bento--dfy-law-trust {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto repeat(2, minmax(150px, auto));
+    grid-template-rows: auto minmax(150px, auto) minmax(210px, auto);
     gap: 8px;
   }
   .card--dfy-law-trust-main { grid-column: 1 / -1; grid-row: 1; min-height: 240px; padding: 18px; }
   .card--dfy-law-trust-own { grid-column: 1; grid-row: 2; }
   .card--dfy-law-trust-guarantees { grid-column: 2; grid-row: 2; }
   .card--dfy-law-trust-human { grid-column: 1; grid-row: 3; }
-  .card--dfy-law-trust-flat { grid-column: 2; grid-row: 3; }
+  /* speed-title + speed-note collide in a 150px cell — same idea as .card--speed going full-width. */
+  .card--dfy-law-trust-flat { grid-column: 2; grid-row: 3; min-height: 210px; }
+  .card--dfy-law-trust-flat .speed-title { font-size: 18px; line-height: 1.05; }
+  .card--dfy-law-trust-flat .speed-note { font-size: 10px; }
 
   /* DFY Law CTA — mobile */
   .bento--dfy-law-cta {
