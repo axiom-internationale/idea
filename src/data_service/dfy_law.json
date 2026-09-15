@@ -1,0 +1,312 @@
+{
+  "_meta": {
+    "page": "/dfy/law",
+    "description": "All text content of the DFY Law Firms page. Single source of truth for copy — no tables, no schema."
+  },
+  "contact": {
+    "email": "axiom.intelligence.inc@gmail.com",
+    "site_url": "https://axiomintelligence.xyz",
+    "site_name": "axiomintelligence.xyz"
+  },
+  "nav": {
+    "brand": "Axiom Intelligence",
+    "wordmark": ["Axiom", "Intelligence"],
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "status": "Live",
+    "menu": [
+      {"label": "Home", "sub": "The company", "href": "/"},
+      {"label": "DFY", "sub": "Done-for-you services", "href": "/dfy"},
+      {"label": "Law", "sub": "DFY for law firms", "href": "/dfy/law"}
+    ],
+    "theme_toggle_labels": {
+      "to_dark": "Switch to dark mode",
+      "to_light": "Switch to light mode"
+    }
+  },
+  "hero": {
+    "id": "top",
+    "manifesto": {
+      "eyebrow": "Done for you · Law firms",
+      "title": ["Your firm.", "Done for you."],
+      "intro": "For law firms of any size, every practice. Priyanshu · Axiom Intelligence runs the site, intake system, ads, and a private firm knowledge system—so the front door stops leaking while you try cases.",
+      "primary_button": {
+        "label": "Book a 20-min audit",
+        "href": "#dfy-law-connect"
+      },
+      "links": [
+        {"label": "See packages", "glyph": "↓", "href": "#dfy-law-packages"}
+      ]
+    },
+    "cards": [
+      {
+        "key": "partner",
+        "topline": ["Delivery", "○"],
+        "label": ["Priyanshu · Axiom Intelligence", "One founding partner. Human gate."]
+      },
+      {
+        "key": "size",
+        "topline": ["Fit", "Live"],
+        "stats": [["Any", "Size"], ["Every", "Practice"]]
+      },
+      {
+        "key": "practices",
+        "topline": ["Practices", "01"],
+        "label": ["Every practice.", "PI, family, criminal—examples, not a filter."]
+      },
+      {
+        "key": "audit",
+        "topline": ["Offer", "20 min"],
+        "headline": "Intake-leak audit.",
+        "label": ["In person or a call.", "Twenty minutes on where intake leaks."]
+      },
+      {
+        "key": "reach",
+        "topline": ["Market", "↗"],
+        "heading": ["Any size.", "Every practice."],
+        "note": "Any firm. Fast decisions."
+      },
+      {
+        "key": "web",
+        "topline": ["Package", "01"],
+        "label": ["Presence", "Site, GBP, reviews, compliance."]
+      },
+      {
+        "key": "intake",
+        "topline": ["Package", "02"],
+        "label": ["Intake", "After-hours. Speed-to-lead."]
+      },
+      {
+        "key": "ads",
+        "topline": ["Package", "03"],
+        "label": ["Growth", "SEO, ads, ad creative studio."]
+      }
+    ]
+  },
+  "wedge": {
+    "id": "dfy-law-wedge",
+    "divider": "The wedge",
+    "main": {
+      "eyebrow": "Who it's for",
+      "title": ["Any size.", "Every practice."],
+      "body": [
+        "Law firms of any size, any practice. PI, family, criminal, employment, corporate, immigration—examples of dockets we serve, not a closed list. Same stack: presence, intake, growth, and a private firm knowledge system.",
+        "Quoted add-ons when you need them—multi-location, video FAQ, court demonstratives. One founding partner delivers this—not an account team."
+      ]
+    },
+    "cards": [
+      {
+        "key": "ground",
+        "topline": ["Delivery", "○"],
+        "label": ["Founder-led delivery.", "Priyanshu · Axiom Intelligence."]
+      },
+      {
+        "key": "practices",
+        "topline": ["Coverage", "01"],
+        "heading": "Every practice.",
+        "label": ["PI, family, criminal, employment, corporate.", "Examples of what we serve—not a filter."]
+      },
+      {
+        "key": "later",
+        "topline": ["Stack", "02"],
+        "label": ["Same stack for every docket.", "Playbooks change. The partner doesn't."]
+      },
+      {
+        "key": "addon",
+        "topline": ["Add-ons", "○"],
+        "heading": ["Quoted add-ons.", "When you need them."],
+        "note": "Multi-language, extra offices, video FAQ, court demonstratives, e-sign retainers, citation cleanup."
+      }
+    ]
+  },
+  "packages": {
+    "id": "dfy-law-packages",
+    "divider": "The packages",
+    "main": {
+      "eyebrow": "What you buy",
+      "title": ["Four ways", "in."],
+      "body": "Fixed fees. Nested stack: Presence, then Intake, then Growth. Intelligence is the firm knowledge layer—add it to any of the three. You own the domain, the site, the ads accounts, and the data."
+    },
+    "cards": [
+      {
+        "key": "presence",
+        "num": 1,
+        "glyph": "○",
+        "title": "Presence",
+        "setup": ["$4,000", "Setup"],
+        "monthly": ["$2,500", "Per month"],
+        "term": "12-month term",
+        "includes": [
+          "Site, hosted and maintained",
+          "Google Business Profile",
+          "Review engine",
+          "2 practice pages / month",
+          "Attorney-ad compliance pass"
+        ]
+      },
+      {
+        "key": "intake",
+        "num": 2,
+        "glyph": "○",
+        "title": "Intake",
+        "setup": ["$7,500", "Setup"],
+        "monthly": ["$4,500", "Per month"],
+        "term": "Includes Presence",
+        "includes": [
+          "Phone and chat intake",
+          "After-hours coverage",
+          "Speed-to-lead",
+          "Follow-up sequences",
+          "Call tracking + practice-mgmt hook"
+        ]
+      },
+      {
+        "key": "growth",
+        "num": 3,
+        "glyph": "↗",
+        "title": "Growth",
+        "setup": ["$7,500", "Per month"],
+        "monthly": ["+ spend", "Client ads"],
+        "term": "Includes Intake · flat ad management, not a % of spend",
+        "includes": [
+          "SEO engine",
+          "Google, Meta, and LSA ads",
+          "Ad creative studio — human gate before publish",
+          "Flat management fee",
+          "Weekly report"
+        ]
+      },
+      {
+        "key": "intelligence",
+        "num": 4,
+        "glyph": "○",
+        "title": "Intelligence",
+        "setup": ["$8,000", "Setup"],
+        "monthly": ["$5,000", "Per month"],
+        "term": "Add to any package · 12-month term",
+        "includes": [
+          "Private firm knowledge system — your docs, FAQs, playbooks",
+          "Staff Q&A over the firm's own files",
+          "Document assistant — drafts with attorney review",
+          "Website FAQ assistant (not legal advice)",
+          "Optional conflict-check assist"
+        ]
+      }
+    ]
+  },
+  "addons": {
+    "id": "dfy-law-addons",
+    "divider": "Quoted add-ons",
+    "main": {
+      "eyebrow": "Priced separately",
+      "title": ["When you", "need more."],
+      "body": "Quoted per matter, language, or location—not bundled into the four packages."
+    },
+    "items": [
+      "Multi-language sites and intake",
+      "Multi-location / extra offices",
+      "Video FAQ studio",
+      "3D / court demonstratives",
+      "E-sign retainer packets",
+      "Citation and reputation cleanup"
+    ]
+  },
+  "trust": {
+    "id": "dfy-law-trust",
+    "divider": "The terms",
+    "main": {
+      "eyebrow": "Ownership & limits",
+      "title": ["You own it.", "We operate it."],
+      "body": [
+        "Domain, website, ads accounts, and data stay in your name. We operate them. If we part ways, you keep the keys.",
+        "A licensed-attorney standard still applies: a human gates attorney advertising and anything that looks like legal advice to the public. We do not promise rankings, case volume, or silent retunes of ads and content."
+      ]
+    },
+    "cards": [
+      {
+        "key": "own",
+        "topline": ["Ownership", "○"],
+        "label": ["Your accounts.", "Domain, site, ads, data—yours."]
+      },
+      {
+        "key": "guarantees",
+        "topline": ["Limits", "○"],
+        "heading": "No guarantees.",
+        "label": ["No rankings.", "No case-volume promises."]
+      },
+      {
+        "key": "human",
+        "topline": ["Compliance", "01"],
+        "label": ["Human gate.", "Ads and public legal-looking copy are reviewed before they ship."]
+      },
+      {
+        "key": "flat",
+        "topline": ["Ads", "↗"],
+        "heading": ["Flat fee.", "Not a cut of spend."],
+        "note": "Google Ads and LSA management is a fixed line—not a percent of budget."
+      }
+    ]
+  },
+  "cta": {
+    "id": "dfy-law-connect",
+    "divider": "Connect",
+    "main": {
+      "eyebrow": "20-minute audit",
+      "title": ["Where does", "intake leak?"],
+      "body": "Firm name, practice, city, and how to reach you. We reply to book a 20-minute intake-leak audit—in person or a call.",
+      "button": {"label": "Send audit request"},
+      "note": "Opens your email app with the details filled in."
+    },
+    "form": {
+      "action_email": "axiom.intelligence.inc@gmail.com",
+      "fields": {
+        "firm": {"label": "Firm name", "placeholder": "Chen & Ortiz LLP"},
+        "practice": {
+          "label": "Practice",
+          "note": "Examples — pick closest, or Other",
+          "options": ["Personal injury", "Immigration", "Family", "Criminal", "Employment", "Corporate", "Other"]
+        },
+        "city": {"label": "City / ZIP", "placeholder": "City or ZIP"},
+        "website": {"label": "Website", "placeholder": "https://"},
+        "contact": {"label": "Phone / email", "placeholder": "phone or name@firm.com"},
+        "meeting": {
+          "label": "How to meet",
+          "options": [
+            {"value": "In person", "label": "In person"},
+            {"value": "Call or video", "label": "Call or video"}
+          ]
+        }
+      },
+      "subject_prefix": "Intake-leak audit"
+    },
+    "cards": [
+      {
+        "key": "meet",
+        "topline": ["Meet", "○"],
+        "label": ["In person or a call.", "You choose how we meet."]
+      },
+      {
+        "key": "email",
+        "topline": ["Email", "✉"],
+        "label": ["Same inbox", "axiom.intelligence.inc@gmail.com"],
+        "href": "mailto:axiom.intelligence.inc@gmail.com"
+      },
+      {
+        "key": "dfy",
+        "topline": ["DFY", "↗"],
+        "label": ["All industries", "The broader done-for-you page."],
+        "href": "/dfy"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "Axiom Intelligence",
+    "logo_alt": "Axiom Intelligence logo",
+    "locations_full": "Bhiwadi — Los Angeles — New York — San Diego",
+    "locations_short": "BH — LA — NY — SD",
+    "tagline": "Built to build what's next.",
+    "copyright": "© 2026 Axiom Intelligence Inc.",
+    "site_link": {"label": "axiomintelligence.xyz", "glyph": "↗", "href": "https://axiomintelligence.xyz"}
+  }
+}

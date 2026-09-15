@@ -212,3 +212,27 @@ if (supportsMotion && 'IntersectionObserver' in window) {
   // Reduced motion or no IntersectionObserver: show everything immediately.
   revealAll();
 }
+
+const intake = document.querySelector('[data-law-intake]');
+if (intake) {
+  intake.addEventListener('submit', (event) => {
+    const action = intake.getAttribute('action') || '';
+    if (!action.startsWith('mailto:')) return;
+    event.preventDefault();
+    const data = new FormData(intake);
+    const firm = String(data.get('firm') || '').trim() || 'a firm';
+    const body = [
+      'Intake-leak audit request',
+      '',
+      `Firm: ${data.get('firm') || ''}`,
+      `Practice: ${data.get('practice') || ''}`,
+      `City / ZIP: ${data.get('city') || ''}`,
+      `Website: ${data.get('website') || ''}`,
+      `Phone / email: ${data.get('contact') || ''}`,
+      `Meeting: ${data.get('meeting') || ''}`,
+    ].join('\n');
+    const to = action.slice('mailto:'.length).split('?')[0];
+    const href = `mailto:${to}?subject=${encodeURIComponent(`Intake-leak audit — ${firm}`)}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+  });
+}

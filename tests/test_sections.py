@@ -15,6 +15,14 @@ from website.sections.dfy import (
     dfy_process_section,
     dfy_services_section,
 )
+from website.sections.dfy_law import (
+    dfy_law_addons_section,
+    dfy_law_cta_section,
+    dfy_law_hero_section,
+    dfy_law_packages_section,
+    dfy_law_trust_section,
+    dfy_law_wedge_section,
+)
 from website.sections.dna import dna_section
 from website.sections.founder import founder_section
 from website.sections.hero import hero_section
@@ -68,6 +76,12 @@ ALL_SECTIONS = (
     dfy_process_section,
     dfy_evolve_section,
     dfy_cta_section,
+    dfy_law_hero_section,
+    dfy_law_wedge_section,
+    dfy_law_packages_section,
+    dfy_law_addons_section,
+    dfy_law_trust_section,
+    dfy_law_cta_section,
 )
 
 # Glyphs known to render as tofu in common fonts (U+2381 broke toplines on Windows).
@@ -97,6 +111,17 @@ def test_card_classes_have_css():
             assert f".{cls}" in css, f".{cls} used by {section.__name__} has no CSS rule"
 
 
+def test_law_practice_uses_dark_choice_pills():
+    html = to_xml(dfy_law_cta_section())
+    assert "<select" not in html.lower()
+    assert "law-choice" in html
+    assert 'name="practice"' in html
+    assert "Other" in html
+    css = CSS_PATH.read_text(encoding="utf-8")
+    assert ".law-choice" in css
+    assert "background: #2a2c2a" in css
+
+
 def test_no_dead_placeholder_links():
     for section in ALL_SECTIONS:
         html = to_xml(section())
@@ -104,14 +129,66 @@ def test_no_dead_placeholder_links():
 
 
 def test_nav_menu_marks_active_page():
-    home = to_xml(nav_section(active="home"))
-    dfy = to_xml(nav_section(active="dfy"))
-    for html in (home, dfy):
+    cases = (("home", "/"), ("dfy", "/dfy"), ("law", "/dfy/law"))
+    for active, href in cases:
+        html = to_xml(nav_section(active=active))
         assert "menu-toggle" in html and "menu-drawer" in html
-        assert 'href="/"' in html and 'href="/dfy"' in html
+        assert 'href="/"' in html
+        assert 'href="/dfy/law"' in html
         assert html.count('aria-current="page"') == 1
-    assert home.index('aria-current="page"') < home.index('href="/dfy"')
-    assert dfy.index('aria-current="page"') > dfy.index('href="/"')
+        assert f'href="{href}"' in html
+        assert "The company" in html
+        assert "The agentic factory" not in html
+        current = re.search(
+            rf'href="{re.escape(href)}"[^>]*aria-current="page"|aria-current="page"[^>]*href="{re.escape(href)}"',
+            html,
+        )
+        assert current
     default = to_xml(nav_section())
     assert default.count('aria-current="page"') == 1
-    assert "data-theme-auto" in home
+    assert "data-theme-auto" in default
+
+
+def test_dfy_law_hero_is_founder_led():
+    html = to_xml(dfy_law_hero_section())
+    assert "Priyanshu" in html
+    assert "Any size" in html
+    assert "Every practice" in html
+    assert "NYC" not in html
+    assert "metro" not in html.lower()
+    assert "5–50" not in html
+    assert "1–10" not in html
+    assert "small and mid" not in html.lower()
+    assert "agentic" not in html.lower()
+    assert "factory" not in html.lower()
+    assert "card--dfy-law-dfy" not in html
+    assert "card--dfy-law-partner" in html
+
+
+def test_dfy_legal_domain_links_to_law_page():
+    html = to_xml(dfy_domains_section())
+    assert 'href="/dfy/law"' in html
+    assert "card--dfy-dom-legal" in html
+
+
+def test_dfy_law_intake_collects_fields():
+    html = to_xml(dfy_law_cta_section())
+    assert "data-law-intake" in html
+    for name in ("firm", "practice", "city", "website", "contact", "meeting"):
+        assert f'name="{name}"' in html
+    assert "mailto:axiom.intelligence.inc@gmail.com" in html
+    assert "$4,000" not in html  # prices live in packages, not the form card
+
+
+def test_dfy_law_packages_render_prices():
+    html = to_xml(dfy_law_packages_section())
+    for price in ("$4,000", "$2,500", "$7,500", "$4,500", "$8,000", "$5,000"):
+        assert price in html
+    assert "Intelligence" in html
+    assert "firm knowledge system" in html.lower()
+    assert "12-month" in html
+    assert "flat" in html.lower()
+    assert "agentic" not in html.lower()
+    addons = to_xml(dfy_law_addons_section())
+    assert "Video FAQ studio" in addons
+    assert "court demonstratives" in addons.lower()

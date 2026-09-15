@@ -1,9 +1,9 @@
 """data_service — site content as plain JSON.
 
 Instead of managing tables and schema migrations, page copy lives in one
-JSON file per page (``index.json`` for ``/``, ``dfy.json`` for ``/dfy``).
-Sections are keyed by their page anchor id; use :func:`get_section` to
-fetch one.
+JSON file per page (``index.json`` for ``/``, ``dfy.json`` for ``/dfy``,
+``dfy_law.json`` for ``/dfy/law``). Sections are keyed by their page
+anchor id; use :func:`get_section` to fetch one.
 """
 
 from __future__ import annotations
@@ -15,9 +15,10 @@ from pathlib import Path
 DATA_DIR = Path(__file__).resolve().parent
 INDEX_PATH = DATA_DIR / "index.json"
 DFY_PATH = DATA_DIR / "dfy.json"
+LAW_PATH = DATA_DIR / "dfy_law.json"
 
 #: Page name → content file. Add new pages here as they are extracted.
-PAGE_FILES = {"index": INDEX_PATH, "dfy": DFY_PATH}
+PAGE_FILES = {"index": INDEX_PATH, "dfy": DFY_PATH, "dfy_law": LAW_PATH}
 
 
 def _load_page_file(page: str) -> dict:
@@ -30,7 +31,7 @@ def _load_page_file(page: str) -> dict:
 
 @cache
 def load_index(page: str = "index") -> dict:
-    """Load and cache the full content index for one page (``index``/``dfy``)."""
+    """Load and cache the full content index for one page (``index``/``dfy``/``dfy_law``)."""
     return _load_page_file(page)
 
 
@@ -47,4 +48,4 @@ def get_section(name: str, page: str = "index") -> dict:
     return index[name]
 
 
-__all__ = ["DFY_PATH", "INDEX_PATH", "PAGE_FILES", "get_section", "load_index"]
+__all__ = ["DFY_PATH", "INDEX_PATH", "LAW_PATH", "PAGE_FILES", "get_section", "load_index"]

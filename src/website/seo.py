@@ -87,6 +87,70 @@ def jsonld_organization() -> Script:
     return Script(NotStr(json.dumps(data, indent=2)), type="application/ld+json")
 
 
+def jsonld_law_service() -> Script:
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Done For You (DFY) — Law Firms",
+        "provider": {
+            "@type": "Organization",
+            "name": "Axiom Intelligence",
+            "url": SITE_URL,
+        },
+        "description": (
+            "Done-for-you websites, intake system, ads, and a private firm knowledge "
+            "system for law firms of any size, across every practice."
+        ),
+        "serviceType": "Done-for-you digital operations for law firms",
+        "areaServed": {"@type": "Country", "name": "US"},
+        "audience": {"@type": "Audience", "audienceType": "Law firms"},
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "DFY Law packages",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Presence",
+                    "description": (
+                        "Site, Google Business Profile, reviews, two practice pages "
+                        "per month, and an attorney-ad compliance pass. "
+                        "$4,000 setup, $2,500 per month, 12-month term."
+                    ),
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Intake",
+                    "description": (
+                        "Presence plus phone and chat intake, after-hours coverage, "
+                        "speed-to-lead, follow-up, call tracking, and a practice-mgmt hook. "
+                        "$7,500 setup, $4,500 per month."
+                    ),
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Growth",
+                    "description": (
+                        "Intake plus SEO, Google/Meta/LSA ads, and an ad creative studio "
+                        "with a human gate before publish. Flat management (not a percent "
+                        "of spend) and a weekly report. $7,500 per month plus client ad spend."
+                    ),
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Intelligence",
+                    "description": (
+                        "Private firm knowledge system over the firm's own docs, FAQs, "
+                        "and playbooks; document assistant with attorney review; website "
+                        "FAQ assistant (not legal advice); optional conflict-check assist. "
+                        "$8,000 setup, $5,000 per month."
+                    ),
+                },
+            ],
+        },
+    }
+    return Script(NotStr(json.dumps(data, indent=2)), type="application/ld+json")
+
+
 def jsonld_service() -> Script:
     data = {
         "@context": "https://schema.org",

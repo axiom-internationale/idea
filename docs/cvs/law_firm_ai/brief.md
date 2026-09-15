@@ -5,6 +5,8 @@
 > **Created:** 2026-09-08
 > **CPO:** TBD
 
+**GTM lock (2026-09-14, page size 2026-09-15):** ZIP-by-ZIP enumeration of *all* law firms, then profile, then McKinsey-style diagnostic. Public `/dfy/law` sells **any firm size** and every practice (lists are examples). 5–50 attorneys stays a docs/outbound ICP, not page copy. Client-facing copy is founding-partner voice. See [gtm.md](gtm.md) and [report_outline.md](report_outline.md).
+
 ---
 
 ## What This Business Is

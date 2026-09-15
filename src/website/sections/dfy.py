@@ -370,9 +370,21 @@ def _dom_main():
 
 def _dom_card(card, color, depth, slug, inverse=False):
     label_cls = "card-label card-label--inverse" if inverse else "card-label"
-    return Article(
-        card_topline(f"Domain 0{card['num']}", "○"),
+    href = card.get("href")
+    children = [
+        card_topline(f"Domain 0{card['num']}", "↗" if href else "○"),
         Div(Strong(card["title"]), Span(card["examples"]), cls=label_cls),
+    ]
+    if href:
+        children.append(
+            A(
+                cls="card-overlay-link",
+                href=href,
+                aria_label=card.get("aria_label", card["title"]),
+            )
+        )
+    return Article(
+        *children,
         cls=f"card card--{color} card--dfy-dom-{slug}",
         data_depth=str(depth),
         data_reveal="",

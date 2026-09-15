@@ -14,6 +14,14 @@ from website.sections.dfy import (
     dfy_process_section,
     dfy_services_section,
 )
+from website.sections.dfy_law import (
+    dfy_law_addons_section,
+    dfy_law_cta_section,
+    dfy_law_hero_section,
+    dfy_law_packages_section,
+    dfy_law_trust_section,
+    dfy_law_wedge_section,
+)
 from website.sections.dna import dna_section
 from website.sections.footer import footer_section
 from website.sections.founder import founder_section
@@ -24,7 +32,7 @@ from website.sections.pillars import pillars_section
 from website.sections.portfolio import portfolio_section
 from website.sections.stack import stack_section
 from website.sections.think_tank import think_tank_section
-from website.seo import SITE_URL, jsonld_organization, jsonld_service, page_meta
+from website.seo import SITE_URL, jsonld_law_service, jsonld_organization, jsonld_service, page_meta
 
 ROBOTS_TXT = f"""User-agent: *
 Allow: /
@@ -44,6 +52,11 @@ SITEMAP_XML = f"""<?xml version="1.0" encoding="UTF-8"?>
     <loc>{SITE_URL}/dfy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>{SITE_URL}/dfy/law</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>
 """
@@ -113,6 +126,36 @@ def setup_home_routes(app):
                 dfy_process_section(),
                 dfy_evolve_section(),
                 dfy_cta_section(),
+                footer_section(),
+                cls="shell",
+            ),
+            Script(src="/static/script.js", defer=True),
+        )
+
+    @app.get("/dfy/law")
+    def dfy_law_page():
+        return (
+            *page_meta(
+                title="Done For You Law Firms — Intake, Sites & Ads",
+                description=(
+                    "Done-for-you sites, intake, ads, and a private firm knowledge "
+                    "system for law firms of any size, every practice. Presence, "
+                    "Intake, Growth, and Intelligence packages. "
+                    "Book a 20-minute intake-leak audit."
+                ),
+                path="/dfy/law",
+            ),
+            jsonld_law_service(),
+            Div(cls="ambient ambient--one", aria_hidden="true"),
+            Div(cls="ambient ambient--two", aria_hidden="true"),
+            Main(
+                nav_section(active="law"),
+                dfy_law_hero_section(),
+                dfy_law_wedge_section(),
+                dfy_law_packages_section(),
+                dfy_law_addons_section(),
+                dfy_law_trust_section(),
+                dfy_law_cta_section(),
                 footer_section(),
                 cls="shell",
             ),
