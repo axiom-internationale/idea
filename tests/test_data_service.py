@@ -37,7 +37,7 @@ def test_hero_manifesto_copy():
 
 
 def test_key_copy_spot_checks():
-    assert get_section("contact")["email"] == "axiom.intelligence.inc@gmail.com"
+    assert get_section("contact")["email"] == "priyanshu.sharma@axiomintelligence.xyz"
     assert get_section("machine")["pipeline"]["flow"] == ["Idea", "Research", "Build", "Launch", "Revenue"]
     assert len(get_section("think_tank")["agents"]) == 4
     assert len(get_section("stack")["layers"]) == 4
@@ -130,7 +130,7 @@ def test_dfy_law_copy_spot_checks():
     legal = get_section("domains", page="dfy")["cards"][0]
     assert legal["href"] == "/dfy/law"
     cta = get_section("cta", page="dfy_law")
-    assert cta["form"]["action_email"] == "axiom.intelligence.inc@gmail.com"
+    assert cta["form"]["action_email"] == "priyanshu.sharma@axiomintelligence.xyz"
     assert "firm" in cta["form"]["fields"]
     assert cta["form"]["fields"]["city"]["label"] == "City / ZIP"
     assert [opt["value"] for opt in cta["form"]["fields"]["meeting"]["options"]] == ["In person", "Call or video"]
@@ -178,9 +178,12 @@ def test_dfy_law_copy_is_founder_led_and_geo_agnostic():
     ):
         assert phrase not in raw, f"banned voice/positioning still in dfy_law.json: {phrase}"
     hero = get_section("hero", page="dfy_law")
-    assert "Priyanshu · Axiom Intelligence" in hero["manifesto"]["intro"]
+    assert "Axiom Intelligence runs the site" in hero["manifesto"]["intro"]
+    assert "Priyanshu" not in hero["manifesto"]["intro"]
     assert hero["cards"][0]["key"] == "partner"
-    assert "Priyanshu" in hero["cards"][0]["label"][0]
+    assert hero["cards"][0]["label"] == ["Axiom Intelligence", "One founding partner. Human gate."]
+    wedge_delivery = next(card for card in get_section("wedge", page="dfy_law")["cards"] if card["key"] == "ground")
+    assert wedge_delivery["label"] == ["Founder-led delivery.", "One founding partner."]
     assert "nyc" not in {card["key"] for card in hero["cards"]}
     assert hero["cards"][4]["heading"] == ["Any size.", "Every practice."]
     assert hero["cards"][1]["stats"] == [["Any", "Size"], ["Every", "Practice"]]
@@ -205,6 +208,19 @@ def test_dfy_law_copy_is_founder_led_and_geo_agnostic():
     ):
         assert phrase not in blob, f"locked ICP/geo phrase still in dfy_law page copy: {phrase}"
     assert get_section("cta", page="dfy_law")["form"]["fields"]["city"]["placeholder"] == "City or ZIP"
+    voice = blob.replace("priyanshu.sharma@axiomintelligence.xyz", "")
+    assert "Priyanshu" not in voice
+    assert "priyanshu" not in voice.lower()
+
+
+def test_website_pages_use_public_contact_email():
+    public = "priyanshu.sharma@axiomintelligence.xyz"
+    for page, path in (("index", INDEX_PATH), ("dfy", DFY_PATH), ("dfy_law", LAW_PATH)):
+        raw = path.read_text(encoding="utf-8")
+        assert "axiom.intelligence.inc@gmail.com" not in raw
+        assert "hello@axiomintelligence.xyz" not in raw
+        assert get_section("contact", page=page)["email"] == public
+        assert public in raw
 
 
 def test_no_banned_glyphs_in_dfy_law():

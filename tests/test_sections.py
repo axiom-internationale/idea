@@ -147,11 +147,15 @@ def test_nav_menu_marks_active_page():
     default = to_xml(nav_section())
     assert default.count('aria-current="page"') == 1
     assert "data-theme-auto" in default
+    assert "mailto:priyanshu.sharma@axiomintelligence.xyz" in default
+    assert "axiom.intelligence.inc@gmail.com" not in default
 
 
 def test_dfy_law_hero_is_founder_led():
     html = to_xml(dfy_law_hero_section())
-    assert "Priyanshu" in html
+    assert "Axiom Intelligence" in html
+    assert "One founding partner" in html
+    assert "Priyanshu" not in html
     assert "Any size" in html
     assert "Every practice" in html
     assert "NYC" not in html
@@ -176,7 +180,7 @@ def test_dfy_law_intake_collects_fields():
     assert "data-law-intake" in html
     for name in ("firm", "practice", "city", "website", "contact", "meeting"):
         assert f'name="{name}"' in html
-    assert "mailto:axiom.intelligence.inc@gmail.com" in html
+    assert "mailto:priyanshu.sharma@axiomintelligence.xyz" in html
     assert "$4,000" not in html  # prices live in packages, not the form card
 
 
