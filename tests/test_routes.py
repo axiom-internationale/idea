@@ -35,7 +35,11 @@ def test_law_page_seo_and_jsonld():
     assert "11372" not in html
     assert "Queens" not in html
     assert "metropolitan" not in html
-    assert "Priyanshu" in html
+    assert "One founding partner" in html
+    assert "Founder-led delivery" in html
+    assert "Priyanshu ·" not in html
+    assert "mailto:priyanshu.sharma@axiomintelligence.xyz" in html
+    assert "axiom.intelligence.inc@gmail.com" not in html
     assert "data-law-intake" in html
     assert "Your firm" in html
     assert "The company" in html
@@ -60,6 +64,15 @@ def test_law_page_seo_and_jsonld():
         "autonomous organization",
     ):
         assert phrase.lower() not in html.lower()
+
+
+def test_public_pages_use_current_contact_email():
+    client = _client()
+    for path in ("/", "/dfy", "/dfy/law"):
+        html = client.get(path).text
+        assert "mailto:priyanshu.sharma@axiomintelligence.xyz" in html
+        assert "axiom.intelligence.inc@gmail.com" not in html
+        assert "hello@axiomintelligence.xyz" not in html
 
 
 def test_sitemap_includes_law():

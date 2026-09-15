@@ -4,7 +4,7 @@
     "description": "All text content of the DFY Law Firms page. Single source of truth for copy — no tables, no schema."
   },
   "contact": {
-    "email": "axiom.intelligence.inc@gmail.com",
+    "email": "priyanshu.sharma@axiomintelligence.xyz",
     "site_url": "https://axiomintelligence.xyz",
     "site_name": "axiomintelligence.xyz"
   },
@@ -30,7 +30,7 @@
     "manifesto": {
       "eyebrow": "Done for you · Law firms",
       "title": ["Your firm.", "Done for you."],
-      "intro": "For law firms of any size, every practice. Priyanshu · Axiom Intelligence runs the site, intake system, ads, and a private firm knowledge system—so the front door stops leaking while you try cases.",
+      "intro": "For law firms of any size, every practice. Axiom Intelligence runs the site, intake system, ads, and a private firm knowledge system—so the front door stops leaking while you try cases.",
       "primary_button": {
         "label": "Book a 20-min audit",
         "href": "#dfy-law-connect"
@@ -43,7 +43,7 @@
       {
         "key": "partner",
         "topline": ["Delivery", "○"],
-        "label": ["Priyanshu · Axiom Intelligence", "One founding partner. Human gate."]
+        "label": ["Axiom Intelligence", "One founding partner. Human gate."]
       },
       {
         "key": "size",
@@ -99,7 +99,7 @@
       {
         "key": "ground",
         "topline": ["Delivery", "○"],
-        "label": ["Founder-led delivery.", "Priyanshu · Axiom Intelligence."]
+        "label": ["Founder-led delivery.", "One founding partner."]
       },
       {
         "key": "practices",
@@ -259,7 +259,7 @@
       "note": "Opens your email app with the details filled in."
     },
     "form": {
-      "action_email": "axiom.intelligence.inc@gmail.com",
+      "action_email": "priyanshu.sharma@axiomintelligence.xyz",
       "fields": {
         "firm": {"label": "Firm name", "placeholder": "Chen & Ortiz LLP"},
         "practice": {
@@ -289,8 +289,8 @@
       {
         "key": "email",
         "topline": ["Email", "✉"],
-        "label": ["Same inbox", "axiom.intelligence.inc@gmail.com"],
-        "href": "mailto:axiom.intelligence.inc@gmail.com"
+        "label": ["Same inbox", "priyanshu.sharma@axiomintelligence.xyz"],
+        "href": "mailto:priyanshu.sharma@axiomintelligence.xyz"
       },
       {
         "key": "dfy",

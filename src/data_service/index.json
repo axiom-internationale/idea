@@ -4,7 +4,7 @@
     "description": "All text content of the homepage, extracted from src/website/sections/*. Single source of truth for copy — no tables, no schema."
   },
   "contact": {
-    "email": "axiom.intelligence.inc@gmail.com",
+    "email": "priyanshu.sharma@axiomintelligence.xyz",
     "site_url": "https://axiomintelligence.xyz",
     "site_name": "axiomintelligence.xyz"
   },
@@ -374,7 +374,7 @@
       "eyebrow": "Get in touch",
       "title": ["Let's", "build."],
       "body": "Interested in what Axiom Intelligence is building? Have an idea worth exploring? We're always looking for the next opportunity.",
-      "button": {"label": "Start a conversation", "href": "mailto:axiom.intelligence.inc@gmail.com"}
+      "button": {"label": "Start a conversation", "href": "mailto:priyanshu.sharma@axiomintelligence.xyz"}
     },
     "cards": [
       {
@@ -386,8 +386,8 @@
       {
         "key": "contact",
         "topline": ["Email", "✉"],
-        "label": ["Say hello", "axiom.intelligence.inc@gmail.com"],
-        "href": "mailto:axiom.intelligence.inc@gmail.com"
+        "label": ["Say hello", "priyanshu.sharma@axiomintelligence.xyz"],
+        "href": "mailto:priyanshu.sharma@axiomintelligence.xyz"
       },
       {
         "key": "social",

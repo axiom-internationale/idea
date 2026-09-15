@@ -79,7 +79,7 @@ def jsonld_organization() -> Script:
         ],
         "contactPoint": {
             "@type": "ContactPoint",
-            "email": "hello@axiomintelligence.xyz",
+            "email": "priyanshu.sharma@axiomintelligence.xyz",
             "contactType": "customer service",
         },
         "sameAs": [],
