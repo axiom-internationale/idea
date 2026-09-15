@@ -1547,6 +1547,20 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 .law-field input[type="text"]::placeholder { color: rgba(242,241,235,.38); }
 .law-field input[type="text"]:focus,
 .law-field select:focus { outline: 2px solid var(--lime); outline-offset: 2px; }
+/* Form card is always dark (`card--dark`) in both themes. Lock the native
+   picker to that card so light-theme `color-scheme: light` cannot paint a
+   white option list over `#f2f1eb` text. */
+.law-field select {
+  color-scheme: dark;
+  background-color: #2a2c2a;
+}
+.law-field select option,
+.law-field select optgroup {
+  background-color: #212422;
+  color: #f2f1eb;
+}
+.law-field select option:disabled { color: rgba(242,241,235,.45); }
+.law-field select option:checked { background-color: #323533; color: #f2f1eb; }
 .law-choices { display: flex; flex-wrap: wrap; gap: 8px; }
 .law-choice {
   display: inline-flex; align-items: center; gap: 8px;

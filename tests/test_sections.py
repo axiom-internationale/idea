@@ -109,6 +109,13 @@ def test_card_classes_have_css():
             assert f".{cls}" in css, f".{cls} used by {section.__name__} has no CSS rule"
 
 
+def test_law_practice_select_has_dark_option_styles():
+    css = CSS_PATH.read_text(encoding="utf-8")
+    assert ".law-field select option" in css
+    assert "color-scheme: dark" in css
+    assert re.search(r"\.law-field select option[^{]*\{[^}]*background-color:\s*#212422", css)
+
+
 def test_no_dead_placeholder_links():
     for section in ALL_SECTIONS:
         html = to_xml(section())
@@ -139,10 +146,13 @@ def test_nav_menu_marks_active_page():
 def test_dfy_law_hero_is_founder_led():
     html = to_xml(dfy_law_hero_section())
     assert "Priyanshu" in html
-    assert "US firms" in html
+    assert "Any size" in html
+    assert "Every practice" in html
     assert "NYC" not in html
     assert "metro" not in html.lower()
-    assert "All practice areas" in html
+    assert "5–50" not in html
+    assert "1–10" not in html
+    assert "small and mid" not in html.lower()
     assert "agentic" not in html.lower()
     assert "factory" not in html.lower()
     assert "card--dfy-law-dfy" not in html

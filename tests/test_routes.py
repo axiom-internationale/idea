@@ -40,7 +40,11 @@ def test_law_page_seo_and_jsonld():
     assert "Your firm" in html
     assert "The company" in html
     assert "The agentic factory" not in html
-    assert "All practice areas" in html
+    assert "Every practice" in html
+    assert "any size" in html.lower()
+    assert "5–50" not in html
+    assert "1–10" not in html
+    assert "small and mid" not in html.lower()
     assert "Family and criminal come later" not in html
     assert "Employment" in html
     assert "Corporate" in html

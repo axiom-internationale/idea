@@ -30,7 +30,7 @@
     "manifesto": {
       "eyebrow": "Done for you · Law firms",
       "title": ["Your firm.", "Done for you."],
-      "intro": "For small and mid-sized US firms, every practice. Priyanshu · Axiom Intelligence runs the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
+      "intro": "For law firms of any size, every practice. Priyanshu · Axiom Intelligence runs the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
       "primary_button": {
         "label": "Book a 20-min audit",
         "href": "#dfy-law-connect"
@@ -48,12 +48,12 @@
       {
         "key": "size",
         "topline": ["Fit", "Live"],
-        "stats": [["5–50", "Attorneys"], ["US", "Firms"]]
+        "stats": [["Any", "Size"], ["Every", "Practice"]]
       },
       {
         "key": "practices",
         "topline": ["Practices", "01"],
-        "label": ["All practice areas.", "Family, criminal, employment, corporate."]
+        "label": ["Every practice.", "PI, family, criminal—examples, not a filter."]
       },
       {
         "key": "audit",
@@ -64,8 +64,8 @@
       {
         "key": "reach",
         "topline": ["Market", "↗"],
-        "heading": ["US firms.", "Every practice."],
-        "note": "Small and mid-sized. Fast decisions."
+        "heading": ["Any size.", "Every practice."],
+        "note": "Any firm. Fast decisions."
       },
       {
         "key": "web",
@@ -89,9 +89,9 @@
     "divider": "The wedge",
     "main": {
       "eyebrow": "Who it's for",
-      "title": ["US firms.", "Every practice."],
+      "title": ["Any size.", "Every practice."],
       "body": [
-        "Small and mid-sized US firms, every practice—family, criminal, employment, corporate, PI, immigration, and the rest of the docket. Same stack, practice-specific pages.",
+        "Law firms of any size, any practice. PI, family, criminal, employment, corporate, immigration—examples of dockets we serve, not a closed list. Same stack, practice-specific pages.",
         "3D accident modeling is a PI add-on, not the pitch. One founding partner delivers this—not an account team."
       ]
     },
@@ -104,8 +104,8 @@
       {
         "key": "practices",
         "topline": ["Coverage", "01"],
-        "heading": "All practice areas.",
-        "label": ["Family, criminal, employment, corporate.", "PI and immigration too."]
+        "heading": "Every practice.",
+        "label": ["PI, family, criminal, employment, corporate.", "Examples of what we serve—not a filter."]
       },
       {
         "key": "later",

@@ -99,7 +99,7 @@ def jsonld_law_service() -> Script:
         },
         "description": (
             "Done-for-you websites, Google Business Profile, reviews, intake, SEO, "
-            "and ads for small and mid-sized US law firms, across every practice."
+            "and ads for law firms of any size, across every practice."
         ),
         "serviceType": "Done-for-you digital marketing and intake for law firms",
         "areaServed": {"@type": "Country", "name": "US"},

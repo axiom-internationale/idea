@@ -133,9 +133,9 @@ def test_dfy_law_copy_spot_checks():
     assert [opt["value"] for opt in cta["form"]["fields"]["meeting"]["options"]] == ["In person", "Call or video"]
     hero_cards = {card["key"]: card for card in get_section("hero", page="dfy_law")["cards"]}
     practices = {card["key"]: card for card in get_section("wedge", page="dfy_law")["cards"]}
-    assert "All practice areas" in hero_cards["practices"]["label"][0]
-    assert "employment" in hero_cards["practices"]["label"][1].lower()
-    assert "corporate" in hero_cards["practices"]["label"][1].lower()
+    assert "Every practice" in hero_cards["practices"]["label"][0]
+    assert "employment" in practices["practices"]["label"][0].lower()
+    assert "corporate" in practices["practices"]["label"][0].lower()
     assert "family" in practices["practices"]["label"][0].lower()
     assert "criminal" in practices["practices"]["label"][0].lower()
     assert "later" not in practices["later"]["label"][0].lower()
@@ -143,6 +143,7 @@ def test_dfy_law_copy_spot_checks():
     assert "come later" not in wedge_body
     assert "family" in wedge_body and "criminal" in wedge_body
     assert "employment" in wedge_body and "corporate" in wedge_body
+    assert "example" in wedge_body
     assert "nyc" not in wedge_body
     assert "metro" not in wedge_body
     assert get_section("cta", page="dfy_law")["form"]["fields"]["practice"]["options"] == [
@@ -177,9 +178,9 @@ def test_dfy_law_copy_is_founder_led_and_geo_agnostic():
     assert hero["cards"][0]["key"] == "partner"
     assert "Priyanshu" in hero["cards"][0]["label"][0]
     assert "nyc" not in {card["key"] for card in hero["cards"]}
-    assert hero["cards"][4]["heading"][0] == "US firms."
-    assert hero["cards"][1]["stats"] == [["5–50", "Attorneys"], ["US", "Firms"]]
-    assert "1–10" not in raw
+    assert hero["cards"][4]["heading"] == ["Any size.", "Every practice."]
+    assert hero["cards"][1]["stats"] == [["Any", "Size"], ["Every", "Practice"]]
+    assert "any size" in hero["manifesto"]["intro"].lower()
     page = {k: v for k, v in load_index("dfy_law").items() if k not in ("nav", "footer", "contact", "_meta")}
     blob = json.dumps(page)
     for phrase in (
@@ -191,8 +192,14 @@ def test_dfy_law_copy_is_founder_led_and_geo_agnostic():
         "Brooklyn",
         "Manhattan",
         "metro",
+        "1–10",
+        "1-10",
+        "5–50",
+        "5-50",
+        "small and mid",
+        "solo",
     ):
-        assert phrase not in blob, f"geo-locked phrase still in dfy_law page copy: {phrase}"
+        assert phrase not in blob, f"locked ICP/geo phrase still in dfy_law page copy: {phrase}"
     assert get_section("cta", page="dfy_law")["form"]["fields"]["city"]["placeholder"] == "City or ZIP"
 
 

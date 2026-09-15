@@ -10,11 +10,11 @@ Locked 2026-09-14 by the Founding Partner. Does not replace [brief.md](brief.md)
 
 | Surface | What it is | Size / geo / practice |
 |---------|------------|------------------------|
-| **Public page** (`/dfy/law`) | Presence / Intake / Growth packages, intake-leak audit CTA | Small and mid-sized firms; **geo-agnostic** (no city/borough/ZIP on the page); **every practice** |
+| **Public page** (`/dfy/law`) | Presence / Intake / Growth packages, intake-leak audit CTA | **Any firm size**; **geo-agnostic** (no city/borough/ZIP on the page); **every practice** (lists are examples, not a closed set) |
 | **Docs ICP** ([brief.md](brief.md)) | DFY AI consulting ladder (Stage 1 audit $12K–$18K → BI → build → retainer) | **5–50 attorneys**, $2M–$25M; practice list in the brief is a beachhead, not a filter |
 | **This GTM** | How we find firms | ZIP/pincode by ZIP → enumerate **all** law firms in that ZIP → profile each → McKinsey-style diagnostic |
 
-Do **not** invent a 1–10 attorney lock on the page. Docs say 5–50. “1–10 preferred” is a sequencing preference inside a ZIP, not public copy.
+Do **not** put a firm-size lock on the page (not 1–10, not 5–50, not “small and mid,” not solo-only). Docs may still sequence 5–50 internally. Public copy is **any size**. “1–10 preferred” is a sequencing preference inside a ZIP, not public copy.
 
 PI / immigration / family in [brief.md](brief.md) are **outbound order**, not page positioning. The page and reports welcome every practice (family, criminal, employment, corporate, PI, immigration, and the rest of the docket).
 
