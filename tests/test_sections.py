@@ -16,6 +16,7 @@ from website.sections.dfy import (
     dfy_services_section,
 )
 from website.sections.dfy_law import (
+    dfy_law_addons_section,
     dfy_law_cta_section,
     dfy_law_hero_section,
     dfy_law_packages_section,
@@ -78,6 +79,7 @@ ALL_SECTIONS = (
     dfy_law_hero_section,
     dfy_law_wedge_section,
     dfy_law_packages_section,
+    dfy_law_addons_section,
     dfy_law_trust_section,
     dfy_law_cta_section,
 )
@@ -109,11 +111,15 @@ def test_card_classes_have_css():
             assert f".{cls}" in css, f".{cls} used by {section.__name__} has no CSS rule"
 
 
-def test_law_practice_select_has_dark_option_styles():
+def test_law_practice_uses_dark_choice_pills():
+    html = to_xml(dfy_law_cta_section())
+    assert "<select" not in html.lower()
+    assert "law-choice" in html
+    assert 'name="practice"' in html
+    assert "Other" in html
     css = CSS_PATH.read_text(encoding="utf-8")
-    assert ".law-field select option" in css
-    assert "color-scheme: dark" in css
-    assert re.search(r"\.law-field select option[^{]*\{[^}]*background-color:\s*#212422", css)
+    assert ".law-choice" in css
+    assert "background: #2a2c2a" in css
 
 
 def test_no_dead_placeholder_links():
@@ -176,7 +182,13 @@ def test_dfy_law_intake_collects_fields():
 
 def test_dfy_law_packages_render_prices():
     html = to_xml(dfy_law_packages_section())
-    for price in ("$4,000", "$2,500", "$7,500", "$4,500"):
+    for price in ("$4,000", "$2,500", "$7,500", "$4,500", "$8,000", "$5,000"):
         assert price in html
+    assert "Intelligence" in html
+    assert "firm knowledge system" in html.lower()
     assert "12-month" in html
     assert "flat" in html.lower()
+    assert "agentic" not in html.lower()
+    addons = to_xml(dfy_law_addons_section())
+    assert "Video FAQ studio" in addons
+    assert "court demonstratives" in addons.lower()

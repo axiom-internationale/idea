@@ -15,6 +15,7 @@ from website.sections.dfy import (
     dfy_services_section,
 )
 from website.sections.dfy_law import (
+    dfy_law_addons_section,
     dfy_law_cta_section,
     dfy_law_hero_section,
     dfy_law_packages_section,
@@ -137,8 +138,9 @@ def setup_home_routes(app):
             *page_meta(
                 title="Done For You Law Firms — Intake, Sites & Ads",
                 description=(
-                    "Done-for-you sites, intake, and ads for law firms of any size, "
-                    "every practice. Presence, Intake, and Growth packages. "
+                    "Done-for-you sites, intake, ads, and a private firm knowledge "
+                    "system for law firms of any size, every practice. Presence, "
+                    "Intake, Growth, and Intelligence packages. "
                     "Book a 20-minute intake-leak audit."
                 ),
                 path="/dfy/law",
@@ -151,6 +153,7 @@ def setup_home_routes(app):
                 dfy_law_hero_section(),
                 dfy_law_wedge_section(),
                 dfy_law_packages_section(),
+                dfy_law_addons_section(),
                 dfy_law_trust_section(),
                 dfy_law_cta_section(),
                 footer_section(),

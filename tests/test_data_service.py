@@ -109,7 +109,7 @@ def test_nav_menu_in_both_pages():
 def test_dfy_law_page_loads_with_all_sections():
     law = load_index("dfy_law")
     assert law["_meta"]["page"] == "/dfy/law"
-    for name in ("nav", "hero", "wedge", "packages", "trust", "cta", "footer"):
+    for name in ("nav", "hero", "wedge", "packages", "addons", "trust", "cta", "footer"):
         assert isinstance(law[name], dict), f"missing law section {name}"
 
 
@@ -123,7 +123,10 @@ def test_dfy_law_copy_spot_checks():
     assert pkgs["intake"]["setup"][0] == "$7,500"
     assert pkgs["intake"]["monthly"][0] == "$4,500"
     assert pkgs["growth"]["setup"][0] == "$7,500"
+    assert pkgs["intelligence"]["setup"][0] == "$8,000"
+    assert pkgs["intelligence"]["monthly"][0] == "$5,000"
     assert "flat" in pkgs["growth"]["term"].lower()
+    assert "knowledge" in " ".join(pkgs["intelligence"]["includes"]).lower()
     legal = get_section("domains", page="dfy")["cards"][0]
     assert legal["href"] == "/dfy/law"
     cta = get_section("cta", page="dfy_law")
@@ -171,6 +174,7 @@ def test_dfy_law_copy_is_founder_led_and_geo_agnostic():
         "agentic McKinsey",
         "Family and criminal come later",
         "PI + immigration",
+        "RAG",
     ):
         assert phrase not in raw, f"banned voice/positioning still in dfy_law.json: {phrase}"
     hero = get_section("hero", page="dfy_law")

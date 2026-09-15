@@ -10,7 +10,7 @@ Locked 2026-09-14 by the Founding Partner. Does not replace [brief.md](brief.md)
 
 | Surface | What it is | Size / geo / practice |
 |---------|------------|------------------------|
-| **Public page** (`/dfy/law`) | Presence / Intake / Growth packages, intake-leak audit CTA | **Any firm size**; **geo-agnostic** (no city/borough/ZIP on the page); **every practice** (lists are examples, not a closed set) |
+| **Public page** (`/dfy/law`) | Presence / Intake / Growth / Intelligence packages, quoted add-ons, intake-leak audit CTA | **Any firm size**; **geo-agnostic**; **every practice** (lists are examples, not a closed set) |
 | **Docs ICP** ([brief.md](brief.md)) | DFY AI consulting ladder (Stage 1 audit $12K–$18K → BI → build → retainer) | **5–50 attorneys**, $2M–$25M; practice list in the brief is a beachhead, not a filter |
 | **This GTM** | How we find firms | ZIP/pincode by ZIP → enumerate **all** law firms in that ZIP → profile each → McKinsey-style diagnostic |
 

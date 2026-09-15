@@ -1466,24 +1466,47 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
 .card--dfy-law-pkg-main .section-h2 em { color: #b5e675; }
 .card--dfy-law-pkg-presence,
 .card--dfy-law-pkg-intake,
-.card--dfy-law-pkg-growth { display: flex; flex-direction: column; padding: 18px 20px 20px; }
+.card--dfy-law-pkg-growth,
+.card--dfy-law-pkg-intelligence { display: flex; flex-direction: column; padding: 18px 20px 20px; }
 .card--dfy-law-pkg-presence { grid-column: 3 / span 2; grid-row: 1; }
 .card--dfy-law-pkg-intake { grid-column: 5 / span 2; grid-row: 1; }
 .card--dfy-law-pkg-growth { grid-column: 3 / span 2; grid-row: 2; }
-.card--dfy-law-pkg-addon { grid-column: 5 / span 2; grid-row: 2; }
+.card--dfy-law-pkg-intelligence { grid-column: 5 / span 2; grid-row: 2; }
 .card--dfy-law-pkg-presence .stat-grid,
 .card--dfy-law-pkg-intake .stat-grid,
-.card--dfy-law-pkg-growth .stat-grid { margin-top: 14px; gap: 18px; }
+.card--dfy-law-pkg-growth .stat-grid,
+.card--dfy-law-pkg-intelligence .stat-grid { margin-top: 14px; gap: 18px; }
 .card--dfy-law-pkg-presence .stat-val,
 .card--dfy-law-pkg-intake .stat-val,
-.card--dfy-law-pkg-growth .stat-val { color: inherit; font-size: 28px; }
+.card--dfy-law-pkg-growth .stat-val,
+.card--dfy-law-pkg-intelligence .stat-val { color: inherit; font-size: 28px; }
 .card--dfy-law-pkg-presence .stat-label,
 .card--dfy-law-pkg-intake .stat-label,
-.card--dfy-law-pkg-growth .stat-label { color: inherit; opacity: .7; }
+.card--dfy-law-pkg-growth .stat-label,
+.card--dfy-law-pkg-intelligence .stat-label { color: inherit; opacity: .7; }
 .pkg-term { margin-top: 8px; font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: .01em; line-height: 1.4; opacity: .78; }
 .pkg-list { display: grid; gap: 5px; margin: 14px 0 0; padding: 0; list-style: none; }
 .pkg-list li { position: relative; padding-left: 14px; font-size: 13px; font-weight: 600; letter-spacing: -.02em; line-height: 1.4; }
 .pkg-list li::before { position: absolute; left: 0; content: "○"; font-family: "DM Mono", monospace; font-size: 10px; opacity: .7; }
+.pkg-list--split { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+
+/* ==============================
+   BENTO — DFY LAW ADD-ONS
+   ============================== */
+.bento--dfy-law-addons {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: minmax(200px, auto) minmax(200px, auto);
+}
+.card--dfy-law-addons-main {
+  grid-column: 1 / span 2; grid-row: 1 / span 2;
+  display: flex; flex-direction: column; padding: 24px;
+  container-type: inline-size;
+}
+.card--dfy-law-addons-main .eyebrow { margin-bottom: 16px; }
+.card--dfy-law-addons-list {
+  grid-column: 3 / span 4; grid-row: 1 / span 2;
+  padding: 22px 24px;
+}
 
 /* ==============================
    BENTO — DFY LAW TRUST
@@ -1537,35 +1560,25 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
   font-family: "DM Mono", monospace; font-size: 11px;
   letter-spacing: .04em; text-transform: uppercase;
 }
-.law-field input[type="text"],
-.law-field select {
+.law-field input[type="text"] {
   width: 100%; min-height: 42px; padding: 0 14px;
   border: 1px solid rgba(255,255,255,.16); border-radius: 12px;
   background: rgba(255,255,255,.06); color: #f2f1eb;
   font: inherit; font-size: 14px; font-weight: 600; letter-spacing: -.02em;
 }
 .law-field input[type="text"]::placeholder { color: rgba(242,241,235,.38); }
-.law-field input[type="text"]:focus,
-.law-field select:focus { outline: 2px solid var(--lime); outline-offset: 2px; }
-/* Form card is always dark (`card--dark`) in both themes. Lock the native
-   picker to that card so light-theme `color-scheme: light` cannot paint a
-   white option list over `#f2f1eb` text. */
-.law-field select {
-  color-scheme: dark;
-  background-color: #2a2c2a;
+.law-field input[type="text"]:focus { outline: 2px solid var(--lime); outline-offset: 2px; }
+.law-field-hint {
+  margin: 0;
+  color: rgba(242,241,235,.55);
+  font-family: "DM Mono", monospace; font-size: 11px; line-height: 1.4;
 }
-.law-field select option,
-.law-field select optgroup {
-  background-color: #212422;
-  color: #f2f1eb;
-}
-.law-field select option:disabled { color: rgba(242,241,235,.45); }
-.law-field select option:checked { background-color: #323533; color: #f2f1eb; }
 .law-choices { display: flex; flex-wrap: wrap; gap: 8px; }
 .law-choice {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 8px 14px; cursor: pointer;
   border: 1px solid rgba(255,255,255,.16); border-radius: 99px;
+  background: #2a2c2a; color: #f2f1eb;
   font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: .02em;
 }
 .law-choice:has(input:checked) { border-color: var(--lime); background: rgba(201,231,108,.12); }
@@ -1735,6 +1748,16 @@ h1 em, .section-h2 em { color: var(--orange); font-style: normal; }
   content: ""; position: absolute; bottom: -16px; left: -16px;
   width: 70px; height: 70px; border: 1.5px solid rgba(13,51,32,.09);
   border-radius: 50%; box-shadow: 0 0 0 14px rgba(13,51,32,.03); pointer-events: none;
+}
+.card--dfy-law-pkg-intelligence::after {
+  content: ""; position: absolute; bottom: -18px; right: -18px;
+  width: 80px; height: 80px; border: 1px solid rgba(59,16,40,.08);
+  border-radius: 50%; box-shadow: 0 0 0 14px rgba(59,16,40,.03); pointer-events: none;
+}
+.card--dfy-law-addons-list::after {
+  content: ""; position: absolute; bottom: -20px; right: -20px;
+  width: 85px; height: 85px; border: 1.5px solid rgba(12,46,46,.08);
+  border-radius: 50%; box-shadow: 0 0 0 16px rgba(12,46,46,.03); pointer-events: none;
 }
 .card--dfy-law-trust-own::after {
   content: ""; position: absolute; top: -18px; right: -18px;
@@ -2088,7 +2111,16 @@ html.js [data-reveal].revealed {
   .card--dfy-law-pkg-presence { grid-column: 3 / span 2; grid-row: 1; }
   .card--dfy-law-pkg-intake { grid-column: 3 / span 2; grid-row: 2; }
   .card--dfy-law-pkg-growth { grid-column: 1 / span 2; grid-row: 3; }
-  .card--dfy-law-pkg-addon { grid-column: 3 / span 2; grid-row: 3; }
+  .card--dfy-law-pkg-intelligence { grid-column: 3 / span 2; grid-row: 3; }
+
+  /* DFY Law Add-ons — tablet */
+  .bento--dfy-law-addons {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: minmax(200px, auto);
+  }
+  .card--dfy-law-addons-main { grid-column: 1 / span 2; grid-row: 1; }
+  .card--dfy-law-addons-list { grid-column: 3 / span 2; grid-row: 1; }
+  .pkg-list--split { grid-template-columns: 1fr; }
 
   /* DFY Law Trust — tablet */
   .bento--dfy-law-trust {
@@ -2427,7 +2459,17 @@ html.js [data-reveal].revealed {
   .card--dfy-law-pkg-presence { grid-column: 1 / -1; grid-row: 2; }
   .card--dfy-law-pkg-intake { grid-column: 1 / -1; grid-row: 3; }
   .card--dfy-law-pkg-growth { grid-column: 1 / -1; grid-row: 4; }
-  .card--dfy-law-pkg-addon { grid-column: 1 / -1; grid-row: 5; min-height: 120px; }
+  .card--dfy-law-pkg-intelligence { grid-column: 1 / -1; grid-row: 5; }
+
+  /* DFY Law Add-ons — mobile */
+  .bento--dfy-law-addons {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 8px;
+  }
+  .card--dfy-law-addons-main { grid-column: 1 / -1; grid-row: 1; min-height: 200px; padding: 18px; }
+  .card--dfy-law-addons-list { grid-column: 1 / -1; grid-row: 2; padding: 18px; }
+  .pkg-list--split { grid-template-columns: 1fr; }
 
   /* DFY Law Trust — mobile */
   .bento--dfy-law-trust {

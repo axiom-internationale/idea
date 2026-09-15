@@ -14,10 +14,8 @@ from fasthtml.common import (
     Input,
     Label,
     Li,
-    Option,
     P,
     Section,
-    Select,
     Span,
     Strong,
     Ul,
@@ -36,6 +34,7 @@ LAW_WEDGE = get_section("wedge", page="dfy_law")
 LAW_WEDGE_CARDS = {card["key"]: card for card in LAW_WEDGE["cards"]}
 LAW_PACKAGES = get_section("packages", page="dfy_law")
 LAW_PKG = {card["key"]: card for card in LAW_PACKAGES["cards"]}
+LAW_ADDONS = get_section("addons", page="dfy_law")
 LAW_TRUST = get_section("trust", page="dfy_law")
 LAW_TRUST_CARDS = {card["key"]: card for card in LAW_TRUST["cards"]}
 LAW_CTA = get_section("cta", page="dfy_law")
@@ -288,16 +287,6 @@ def _pkg_card(card, color, depth, slug):
     )
 
 
-def _pkg_addon(card):
-    return Article(
-        card_topline(f"Package 0{card['num']}", card["glyph"]),
-        Div(Strong(card["title"]), Span(card["desc"]), cls="card-label"),
-        cls="card card--rose card--dfy-law-pkg-addon",
-        data_depth="4",
-        data_reveal="",
-    )
-
-
 def dfy_law_packages_section():
     return Section(
         section_divider(LAW_PACKAGES["divider"]),
@@ -306,13 +295,50 @@ def dfy_law_packages_section():
             _pkg_card(LAW_PKG["presence"], "teal", 5, "presence"),
             _pkg_card(LAW_PKG["intake"], "violet", 4, "intake"),
             _pkg_card(LAW_PKG["growth"], "mint", 5, "growth"),
-            _pkg_addon(LAW_PKG["addon"]),
+            _pkg_card(LAW_PKG["intelligence"], "rose", 4, "intelligence"),
             cls="bento bento--dfy-law-packages",
             data_bento="",
         ),
         cls="section",
         id="dfy-law-packages",
         aria_labelledby="dfy-law-packages-title",
+    )
+
+
+def _addons_main():
+    d = LAW_ADDONS["main"]
+    return Article(
+        eyebrow(d["eyebrow"]),
+        H2(d["title"][0], Br(), Em(d["title"][1]), cls="section-h2", id="dfy-law-addons-title"),
+        P(d["body"], cls="intro-sm"),
+        cls="card card--dark card--dfy-law-addons-main",
+        data_depth="3",
+        data_reveal="",
+    )
+
+
+def _addons_list():
+    return Article(
+        card_topline("Quoted", "○"),
+        Ul(*[Li(item) for item in LAW_ADDONS["items"]], cls="pkg-list pkg-list--split"),
+        cls="card card--pearl card--dfy-law-addons-list",
+        data_depth="4",
+        data_reveal="",
+    )
+
+
+def dfy_law_addons_section():
+    return Section(
+        section_divider(LAW_ADDONS["divider"]),
+        Div(
+            _addons_main(),
+            _addons_list(),
+            cls="bento bento--dfy-law-addons",
+            data_bento="",
+        ),
+        cls="section",
+        id="dfy-law-addons",
+        aria_labelledby="dfy-law-addons-title",
     )
 
 
@@ -411,6 +437,31 @@ def _field(name, label, wide=False, **input_kwargs):
     )
 
 
+def _choice_group(name, label, options, *, note=None, checked_index=None):
+    return Div(
+        Span(label, cls="law-field-label"),
+        *([] if not note else [P(note, cls="law-field-hint")]),
+        Div(
+            *[
+                Label(
+                    Input(
+                        type="radio",
+                        name=name,
+                        value=opt if isinstance(opt, str) else opt["value"],
+                        checked=checked_index is not None and i == checked_index,
+                        required=True,
+                    ),
+                    Span(opt if isinstance(opt, str) else opt["label"]),
+                    cls="law-choice",
+                )
+                for i, opt in enumerate(options)
+            ],
+            cls="law-choices",
+        ),
+        cls="law-field law-field--wide",
+    )
+
+
 def _intake_form():
     d = LAW_CTA["main"]
     form = LAW_CTA["form"]
@@ -431,18 +482,6 @@ def _intake_form():
                 autocomplete="organization",
                 placeholder=fields["firm"]["placeholder"],
             ),
-            Label(
-                Span(practice["label"]),
-                Select(
-                    Option(practice["placeholder"], value="", disabled=True, selected=True),
-                    *[Option(opt, value=opt) for opt in practice["options"]],
-                    id="law-practice",
-                    name="practice",
-                    required=True,
-                ),
-                cls="law-field",
-                fr="law-practice",
-            ),
             _field(
                 "city",
                 fields["city"]["label"],
@@ -450,6 +489,12 @@ def _intake_form():
                 required=True,
                 autocomplete="address-level2",
                 placeholder=fields["city"]["placeholder"],
+            ),
+            _choice_group(
+                "practice",
+                practice["label"],
+                practice["options"],
+                note=practice.get("note"),
             ),
             _field(
                 "website",
@@ -468,26 +513,11 @@ def _intake_form():
                 placeholder=fields["contact"]["placeholder"],
                 wide=True,
             ),
-            Div(
-                Span(meeting["label"], cls="law-field-label"),
-                Div(
-                    *[
-                        Label(
-                            Input(
-                                type="radio",
-                                name="meeting",
-                                value=opt["value"],
-                                checked=i == 0,
-                                required=True,
-                            ),
-                            Span(opt["label"]),
-                            cls="law-choice",
-                        )
-                        for i, opt in enumerate(meeting["options"])
-                    ],
-                    cls="law-choices",
-                ),
-                cls="law-field law-field--wide",
+            _choice_group(
+                "meeting",
+                meeting["label"],
+                meeting["options"],
+                checked_index=0,
             ),
             Button(f"{d['button']['label']} ", ARROW_SVG, cls="button button--primary", type="submit"),
             P(d["note"], cls="law-form-note"),

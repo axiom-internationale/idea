@@ -30,7 +30,7 @@
     "manifesto": {
       "eyebrow": "Done for you · Law firms",
       "title": ["Your firm.", "Done for you."],
-      "intro": "For law firms of any size, every practice. Priyanshu · Axiom Intelligence runs the site, Google profile, reviews, intake, and ads—so the front door stops leaking while you try cases.",
+      "intro": "For law firms of any size, every practice. Priyanshu · Axiom Intelligence runs the site, intake system, ads, and a private firm knowledge system—so the front door stops leaking while you try cases.",
       "primary_button": {
         "label": "Book a 20-min audit",
         "href": "#dfy-law-connect"
@@ -80,7 +80,7 @@
       {
         "key": "ads",
         "topline": ["Package", "03"],
-        "label": ["Growth", "SEO + ads. Flat management."]
+        "label": ["Growth", "SEO, ads, ad creative studio."]
       }
     ]
   },
@@ -91,8 +91,8 @@
       "eyebrow": "Who it's for",
       "title": ["Any size.", "Every practice."],
       "body": [
-        "Law firms of any size, any practice. PI, family, criminal, employment, corporate, immigration—examples of dockets we serve, not a closed list. Same stack, practice-specific pages.",
-        "3D accident modeling is a PI add-on, not the pitch. One founding partner delivers this—not an account team."
+        "Law firms of any size, any practice. PI, family, criminal, employment, corporate, immigration—examples of dockets we serve, not a closed list. Same stack: presence, intake, growth, and a private firm knowledge system.",
+        "Quoted add-ons when you need them—multi-location, video FAQ, court demonstratives. One founding partner delivers this—not an account team."
       ]
     },
     "cards": [
@@ -114,9 +114,9 @@
       },
       {
         "key": "addon",
-        "topline": ["Add-on", "PI"],
-        "heading": ["3D modeling.", "Not the hero."],
-        "note": "Accident reconstruction sits on Presence for PI firms that need it."
+        "topline": ["Add-ons", "○"],
+        "heading": ["Quoted add-ons.", "When you need them."],
+        "note": "Multi-language, extra offices, video FAQ, court demonstratives, e-sign retainers, citation cleanup."
       }
     ]
   },
@@ -125,8 +125,8 @@
     "divider": "The packages",
     "main": {
       "eyebrow": "What you buy",
-      "title": ["Three ways", "in."],
-      "body": "Fixed fees. Nested stack: Presence, then Intake, then Growth. You own the domain, the site, the ads accounts, and the data."
+      "title": ["Four ways", "in."],
+      "body": "Fixed fees. Nested stack: Presence, then Intake, then Growth. Intelligence is the firm knowledge layer—add it to any of the three. You own the domain, the site, the ads accounts, and the data."
     },
     "cards": [
       {
@@ -154,11 +154,11 @@
         "monthly": ["$4,500", "Per month"],
         "term": "Includes Presence",
         "includes": [
-          "AI receptionist",
+          "Phone and chat intake",
           "After-hours coverage",
           "Speed-to-lead",
           "Follow-up sequences",
-          "Call tracking + CRM hook"
+          "Call tracking + practice-mgmt hook"
         ]
       },
       {
@@ -171,18 +171,45 @@
         "term": "Includes Intake · flat ad management, not a % of spend",
         "includes": [
           "SEO engine",
-          "Google Ads & LSA",
+          "Google, Meta, and LSA ads",
+          "Ad creative studio — human gate before publish",
           "Flat management fee",
           "Weekly report"
         ]
       },
       {
-        "key": "addon",
+        "key": "intelligence",
         "num": 4,
         "glyph": "○",
-        "title": "PI add-on",
-        "desc": "3D accident modeling for personal injury. Priced per matter—not the reason to call."
+        "title": "Intelligence",
+        "setup": ["$8,000", "Setup"],
+        "monthly": ["$5,000", "Per month"],
+        "term": "Add to any package · 12-month term",
+        "includes": [
+          "Private firm knowledge system — your docs, FAQs, playbooks",
+          "Staff Q&A over the firm's own files",
+          "Document assistant — drafts with attorney review",
+          "Website FAQ assistant (not legal advice)",
+          "Optional conflict-check assist"
+        ]
       }
+    ]
+  },
+  "addons": {
+    "id": "dfy-law-addons",
+    "divider": "Quoted add-ons",
+    "main": {
+      "eyebrow": "Priced separately",
+      "title": ["When you", "need more."],
+      "body": "Quoted per matter, language, or location—not bundled into the four packages."
+    },
+    "items": [
+      "Multi-language sites and intake",
+      "Multi-location / extra offices",
+      "Video FAQ studio",
+      "3D / court demonstratives",
+      "E-sign retainer packets",
+      "Citation and reputation cleanup"
     ]
   },
   "trust": {
@@ -193,7 +220,7 @@
       "title": ["You own it.", "We operate it."],
       "body": [
         "Domain, website, ads accounts, and data stay in your name. We operate them. If we part ways, you keep the keys.",
-        "A licensed-attorney standard still applies: a human gates attorney advertising before it ships. We do not promise rankings, case volume, or silent retunes of ads and content."
+        "A licensed-attorney standard still applies: a human gates attorney advertising and anything that looks like legal advice to the public. We do not promise rankings, case volume, or silent retunes of ads and content."
       ]
     },
     "cards": [
@@ -211,7 +238,7 @@
       {
         "key": "human",
         "topline": ["Compliance", "01"],
-        "label": ["Human gate.", "Attorney advertising is reviewed before it ships."]
+        "label": ["Human gate.", "Ads and public legal-looking copy are reviewed before they ship."]
       },
       {
         "key": "flat",
@@ -237,7 +264,7 @@
         "firm": {"label": "Firm name", "placeholder": "Chen & Ortiz LLP"},
         "practice": {
           "label": "Practice",
-          "placeholder": "Select practice",
+          "note": "Examples — pick closest, or Other",
           "options": ["Personal injury", "Immigration", "Family", "Criminal", "Employment", "Corporate", "Other"]
         },
         "city": {"label": "City / ZIP", "placeholder": "City or ZIP"},
