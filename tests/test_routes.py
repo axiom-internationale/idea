@@ -79,3 +79,22 @@ def test_sitemap_includes_law():
     response = _client().get("/sitemap.xml")
     assert response.status_code == 200
     assert f"{SITE_URL}/dfy/law" in response.text
+
+
+def test_robots_and_sitemap_use_apex_not_www():
+    assert SITE_URL == "https://axiomintelligence.xyz"
+    assert "www." not in SITE_URL
+
+    client = _client()
+    robots = client.get("/robots.txt")
+    sitemap = client.get("/sitemap.xml")
+    home = client.get("/")
+
+    assert robots.status_code == 200
+    assert sitemap.status_code == 200
+    assert "Sitemap: https://axiomintelligence.xyz/sitemap.xml" in robots.text
+    assert "www.axiomintelligence.xyz" not in robots.text
+    assert "<loc>https://axiomintelligence.xyz/</loc>" in sitemap.text
+    assert "www.axiomintelligence.xyz" not in sitemap.text
+    assert 'rel="canonical" href="https://axiomintelligence.xyz"' in home.text
+    assert "www.axiomintelligence.xyz" not in home.text
