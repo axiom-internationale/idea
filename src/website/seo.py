@@ -4,7 +4,7 @@ import json
 
 from fasthtml.common import Link, Meta, NotStr, Script, Title
 
-SITE_URL = "https://www.axiomintelligence.xyz"
+SITE_URL = "https://axiomintelligence.xyz"
 SITE_NAME = "Axiom Intelligence"
 
 
