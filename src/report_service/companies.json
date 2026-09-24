@@ -1,0 +1,82 @@
+[
+  {
+    "firm_name": "Chen & Ortiz LLP",
+    "practice_area": "Personal injury",
+    "city_state": "Jackson Heights, NY",
+    "zip_code": "11372",
+    "problems": [
+      {
+        "headline": "After-hours calls are not answered the same day.",
+        "evidence": "GBP hours end early evening; no after-hours line or chat on the site."
+      },
+      {
+        "headline": "You do not promise a same-day callback; nearby PI firms do.",
+        "evidence": "No speed-to-lead claim on site; local competitors advertise faster response."
+      },
+      {
+        "headline": "Buying ads now would pour leads into the same gap.",
+        "evidence": "No clear LSA or ads running — fix intake before spending on demand."
+      }
+    ]
+  },
+  {
+    "firm_name": "Goldberg & Associates",
+    "practice_area": "Family law",
+    "city_state": "Brooklyn, NY",
+    "zip_code": "11201",
+    "problems": [
+      {
+        "headline": "No online intake form — every lead requires a phone call.",
+        "evidence": "Website has no contact form or chat; only a phone number listed."
+      },
+      {
+        "headline": "Google Business Profile has no reviews in the last 6 months.",
+        "evidence": "Last review is from January; competitors have 10+ recent reviews."
+      },
+      {
+        "headline": "Practice area pages are thin and don’t target local keywords.",
+        "evidence": "Service pages under 200 words; no mention of Brooklyn or surrounding areas."
+      }
+    ]
+  },
+  {
+    "firm_name": "Martinez Law Group",
+    "practice_area": "Immigration",
+    "city_state": "Los Angeles, CA",
+    "zip_code": "90012",
+    "problems": [
+      {
+        "headline": "Website is not available in Spanish despite a bilingual market.",
+        "evidence": "No language toggle; competitors offer full Spanish-language sites."
+      },
+      {
+        "headline": "No FAQ or resource section to capture informational search traffic.",
+        "evidence": "Zero blog posts or guides; missing common immigration-question keywords."
+      },
+      {
+        "headline": "Consultation booking requires email back-and-forth, not self-service.",
+        "evidence": "No calendar widget; contact page says ‘we will get back to you.’"
+      }
+    ]
+  },
+  {
+    "firm_name": "Park & Sullivan PLLC",
+    "practice_area": "Estate planning",
+    "city_state": "Austin, TX",
+    "zip_code": "78701",
+    "problems": [
+      {
+        "headline": "No trust or will pricing transparency — visitors leave to compare.",
+        "evidence": "Competitors list starting prices; your site says ‘call for a quote.’"
+      },
+      {
+        "headline": "GBP category is ‘Lawyer’ instead of ‘Estate planning attorney.’",
+        "evidence": "Generic category hurts ranking for estate-specific searches."
+      },
+      {
+        "headline": "Site loads in 6+ seconds on mobile — half of visitors bounce.",
+        "evidence": "PageSpeed score 38; unoptimized images and render-blocking scripts."
+      }
+    ]
+  }
+]

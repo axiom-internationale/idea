@@ -1,4 +1,4 @@
-.PHONY: dev dev-gunicorn prod format lint check fix clean
+.PHONY: dev dev-gunicorn prod format lint check fix report clean
 
 SHELL := powershell.exe
 .SHELLFLAGS := -NoProfile -Command
@@ -27,6 +27,10 @@ check: lint
 fix:
 	uv run ruff check --fix src/
 	uv run ruff format src/
+
+# ── Report ───────────────────────────────────────────────────
+report:
+	uv run python src/report_service/generate_report.py src/report_service/companies.json
 
 # ── Cleanup ──────────────────────────────────────────────────
 clean:
