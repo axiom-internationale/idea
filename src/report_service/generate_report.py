@@ -21,8 +21,8 @@ from pathlib import Path
 SERVICE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SERVICE_DIR.parent.parent
 TEMPLATE_PATH = SERVICE_DIR / "report_template.typ"
-ICLOUD_LAW_DIR = Path.home() / "iCloudDrive" / "Axiom" / "Law"
 OUTPUT_DIR = SERVICE_DIR / "output"
+GDRIVE_FOLDER_BASE = ["Axiom", "Law"]
 
 
 def current_report_date() -> str:
@@ -30,10 +30,10 @@ def current_report_date() -> str:
     return datetime.now().strftime("%B %Y").upper()
 
 
-def batch_output_dir() -> Path:
-    """iCloudDrive/Axiom/Law/YYYY-MM-DD/HH/ — one folder per bulk run."""
+def batch_folder_parts() -> list[str]:
+    """['Axiom', 'Law', '2026-09-21', '14'] — one folder per bulk run."""
     now = datetime.now()
-    return ICLOUD_LAW_DIR / now.strftime("%Y-%m-%d") / now.strftime("%H")
+    return GDRIVE_FOLDER_BASE + [now.strftime("%Y-%m-%d"), now.strftime("%H")]
 
 
 def sanitize_filename(name: str) -> str:
@@ -231,16 +231,41 @@ if __name__ == "__main__":
     else:
         companies = SAMPLE_COMPANIES
 
-    dest = batch_output_dir()
-    dest.mkdir(parents=True, exist_ok=True)
+    # Generate PDFs locally first
+    local_dir = OUTPUT_DIR
+    local_dir.mkdir(parents=True, exist_ok=True)
 
-    # Save the input manifest alongside the PDFs
-    manifest_path = dest / "companies.json"
+    manifest_path = local_dir / "companies.json"
     manifest_path.write_text(
         json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"Saved {manifest_path.name} → {dest}")
 
-    print(f"Generating {len(companies)} report(s) → {dest}")
-    paths = generate_all(companies, output_dir=dest, max_workers=min(len(companies), 8))
-    print(f"\nDone — {len(paths)} PDF(s) + companies.json in {dest}")
+    print(f"Generating {len(companies)} report(s)...")
+    paths = generate_all(companies, output_dir=local_dir, max_workers=min(len(companies), 8))
+    print(f"\n{len(paths)} PDF(s) generated locally.")
+
+    # Upload to Google Drive
+    if paths:
+        from gdrive import upload_batch
+
+        folder_parts = batch_folder_parts()
+
+        # Upload PDFs only (companies.json comes after enrichment)
+        print(f"\nUploading to GDrive: {'/'.join(folder_parts)}/")
+        uploaded = upload_batch(paths, folder_parts)
+
+        # Build filename → link map from upload results
+        link_map = {entry["name"]: entry.get("webViewLink", "") for entry in uploaded}
+
+        # Inject gdrive_link into each company
+        for co in companies:
+            pdf_name = sanitize_filename(co["firm_name"]) + ".pdf"
+            co["gdrive_link"] = link_map.get(pdf_name, "")
+
+        # Re-save enriched companies.json locally and upload it too
+        manifest_path.write_text(
+            json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        upload_batch([manifest_path], folder_parts)
+
+        print(f"\nDone — {len(uploaded)} report(s) uploaded. Enriched companies.json saved.")

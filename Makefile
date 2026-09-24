@@ -30,8 +30,7 @@ fix:
 
 # ── Report ───────────────────────────────────────────────────
 report:
-	if (Test-Path src/report_service/report.pdf) { Remove-Item src/report_service/report.pdf }
-	typst compile --root . src/report_service/report.typ src/report_service/report.pdf
+	uv run python src/report_service/generate_report.py src/report_service/companies.json
 
 # ── Cleanup ──────────────────────────────────────────────────
 clean:

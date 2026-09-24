@@ -12,3 +12,6 @@ build/
 .ruff_cache/
 .fastapicloud/
 _docs_site/
+src/report_service/output/
+src/report_service/credentials.json
+src/report_service/token.json
