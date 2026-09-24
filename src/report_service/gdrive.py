@@ -62,9 +62,7 @@ def authenticate() -> Credentials:
                     "Download OAuth credentials from Google Cloud Console "
                     "and save them there. See docstring for steps."
                 )
-            flow = InstalledAppFlow.from_client_secrets_file(
-                str(CREDENTIALS_PATH), SCOPES
-            )
+            flow = InstalledAppFlow.from_client_secrets_file(str(CREDENTIALS_PATH), SCOPES)
             creds = flow.run_local_server(port=0)
         TOKEN_PATH.write_text(creds.to_json(), encoding="utf-8")
 
@@ -88,7 +86,7 @@ def _retry(fn, *args, **kwargs):
                 backoff = min(backoff * 2, 30)
                 continue
             raise
-        except (ConnectionError, TimeoutError) as e:
+        except (ConnectionError, TimeoutError):
             if attempt < MAX_RETRIES:
                 time.sleep(backoff)
                 backoff = min(backoff * 2, 30)
@@ -98,19 +96,12 @@ def _retry(fn, *args, **kwargs):
 
 def _get_or_create_folder(service, name: str, parent_id: str | None = None) -> str:
     """Find a folder by name under parent, or create it. Returns folder ID."""
-    query = (
-        f"name='{name}' and mimeType='application/vnd.google-apps.folder' "
-        f"and trashed=false"
-    )
+    query = f"name='{name}' and mimeType='application/vnd.google-apps.folder' and trashed=false"
     if parent_id:
         query += f" and '{parent_id}' in parents"
 
     def _list():
-        return (
-            service.files()
-            .list(q=query, spaces="drive", fields="files(id, name)", pageSize=1)
-            .execute()
-        )
+        return service.files().list(q=query, spaces="drive", fields="files(id, name)", pageSize=1).execute()
 
     results = _retry(_list)
     files = results.get("files", [])
@@ -141,12 +132,14 @@ def ensure_folder_path(service, path_parts: list[str]) -> str:
 
 def _make_public(service, file_id: str) -> None:
     """Grant 'anyone with the link' read access to a file."""
+
     def _do():
         service.permissions().create(
             fileId=file_id,
             body=ANYONE_READER_PERMISSION,
             fields="id",
         ).execute()
+
     _retry(_do)
 
 
@@ -158,11 +151,7 @@ def _upload_single(creds: Credentials, local_path: Path, folder_id: str) -> dict
     media = MediaFileUpload(str(local_path), mimetype=mime, resumable=True)
 
     def _do_upload():
-        return (
-            service.files()
-            .create(body=metadata, media_body=media, fields="id, name, webViewLink")
-            .execute()
-        )
+        return service.files().create(body=metadata, media_body=media, fields="id, name, webViewLink").execute()
 
     info = _retry(_do_upload)
     _make_public(service, info["id"])
@@ -178,9 +167,7 @@ def _load_progress(progress_path: Path) -> set[str]:
 
 
 def _save_progress(progress_path: Path, uploaded: list[dict]) -> None:
-    progress_path.write_text(
-        json.dumps(uploaded, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    progress_path.write_text(json.dumps(uploaded, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def upload_batch(
@@ -222,14 +209,9 @@ def upload_batch(
     total = len(remaining)
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        futures = {
-            pool.submit(_upload_single, creds, path, folder_id): path
-            for path in remaining
-        }
-        done_count = 0
-        for future in as_completed(futures):
+        futures = {pool.submit(_upload_single, creds, path, folder_id): path for path in remaining}
+        for done_count, future in enumerate(as_completed(futures), 1):
             path = futures[future]
-            done_count += 1
             try:
                 info = future.result()
                 uploaded.append(info)

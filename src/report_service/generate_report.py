@@ -47,13 +47,10 @@ def validate_company(company: dict) -> None:
     if missing:
         raise ValueError(f"Missing fields: {missing}")
     if len(company["problems"]) != 3:
-        raise ValueError(
-            f"Expected exactly 3 problems, got {len(company['problems'])} "
-            f"for {company['firm_name']}"
-        )
+        raise ValueError(f"Expected exactly 3 problems, got {len(company['problems'])} for {company['firm_name']}")
     for i, p in enumerate(company["problems"]):
         if "headline" not in p or "evidence" not in p:
-            raise ValueError(f"Problem {i+1} missing headline or evidence")
+            raise ValueError(f"Problem {i + 1} missing headline or evidence")
 
 
 def generate_report(
@@ -73,9 +70,7 @@ def generate_report(
     data_path = template_path.parent / f"_tmp_{safe_name}.json"
 
     payload = {**company, "report_date": current_report_date()}
-    data_path.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    data_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
     try:
         data_rel = data_path.name
@@ -83,7 +78,8 @@ def generate_report(
             [
                 "typst",
                 "compile",
-                "--root", str(PROJECT_ROOT),
+                "--root",
+                str(PROJECT_ROOT),
                 str(template_path),
                 str(pdf_path),
                 "--input",
@@ -94,9 +90,7 @@ def generate_report(
             timeout=60,
         )
         if result.returncode != 0:
-            raise RuntimeError(
-                f"Typst failed for {company['firm_name']}:\n{result.stderr}"
-            )
+            raise RuntimeError(f"Typst failed for {company['firm_name']}:\n{result.stderr}")
     finally:
         data_path.unlink(missing_ok=True)
 
@@ -115,10 +109,7 @@ def generate_all(
     errors: list[str] = []
 
     with ProcessPoolExecutor(max_workers=max_workers) as pool:
-        futures = {
-            pool.submit(generate_report, co, output_dir, template_path): co
-            for co in companies
-        }
+        futures = {pool.submit(generate_report, co, output_dir, template_path): co for co in companies}
         for future in as_completed(futures):
             co = futures[future]
             try:
@@ -236,9 +227,7 @@ if __name__ == "__main__":
     local_dir.mkdir(parents=True, exist_ok=True)
 
     manifest_path = local_dir / "companies.json"
-    manifest_path.write_text(
-        json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    manifest_path.write_text(json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"Generating {len(companies)} report(s)...")
     paths = generate_all(companies, output_dir=local_dir, max_workers=min(len(companies), 8))
@@ -263,9 +252,7 @@ if __name__ == "__main__":
             co["gdrive_link"] = link_map.get(pdf_name, "")
 
         # Re-save enriched companies.json locally and upload it too
-        manifest_path.write_text(
-            json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
+        manifest_path.write_text(json.dumps(companies, ensure_ascii=False, indent=2), encoding="utf-8")
         upload_batch([manifest_path], folder_parts)
 
         print(f"\nDone — {len(uploaded)} report(s) uploaded. Enriched companies.json saved.")
